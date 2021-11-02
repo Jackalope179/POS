@@ -1,0 +1,31 @@
+.bg-light {
+  background-color: #79fcbf !important;
+}
+
+.navbar-brand {
+  padding: 0 25px;
+}
+
+.navbar {
+  padding: 2px 16px 0;
+}
+
+.nav-item {
+  padding: 4px 20px;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #606060 !important;
+}
+
+.active {
+  position: relative;
+  background-color: #ffffff;
+  color: #333333 !important;
+  border-radius: 10px 10px 0 0;
+}
+
+.navbar-toggler {
+  margin: 4px;
+}

@@ -1,2 +1,344 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<header>
+      <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <span class="navbar-brand" > POS</span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Menu <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Đặt bàn <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Đánh giá <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Liên hệ <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <span class="nav-item ">
+              <a class="nav-link" href="#">Đăng nhập <span class="sr-only">(current)</span></a>
+            </span>
+          </div>
+        </nav>      
+      </div>
+    </header>
+    <body>  
+      <div class="body">
+            <div class="main-body">
+                <div class="main-body__content"></div>
+                <div class="search-bar">
+                    {{!-- ----------------Search-bar ------------------ --}}
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="category-list">
+                    {{!-- ----------------Category-list------------------ --}}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="single-box">
+                                                        <div class="img-area">
+                                                            <img src="./img/image-food1.jpg" alt="">
+                                                        </div>
+                                                        <div class="img-text">
+                                                            <!-- <h2>Phong</h2> -->
+                                                            <p>Tran tuan Phong</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="single-box">
+                                                        <div class="img-area">
+                                                            <img src="./img/image-food1.jpg" alt="">
+                                                        </div>
+                                                        <div class="img-text">
+                                                            <!-- <h2>Phong hi</h2> -->
+                                                            <p>Tran tuan Phong</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="single-box">
+                                                        <div class="img-area">
+                                                            <img src="./img/image-food1.jpg" alt="">
+                                                        </div>
+                                                        <div class="img-text">
+                                                            <!-- <h2>Phong bar nè</h2> -->
+                                                            <p>Tran tuan Phong</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="single-box">
+                                                        <div class="img-area">
+                                                            <img src="./img/image-food1.jpg" alt="">
+                                                        </div>
+                                                        <div class="img-text">
+                                                            <!-- <h2>Phong four</h2> -->
+                                                            <p>Tran tuan Phong</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="single-box">
+                                                        <div class="img-area">
+                                                            <img src="./img/image-food1.jpg" alt="">
+                                                        </div>
+                                                        <div class="img-text">
+                                                            <!-- <h2>Phong phai</h2> -->
+                                                            <p>Tran tuan Phong</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="single-box">
+                                                        <div class="img-area">
+                                                            <img src="./img/image-food1.jpg" alt="">
+                                                        </div>
+                                                        <div class="img-text">
+                                                            <!-- <h2>Phong sít nè</h2> -->
+                                                            <p>Tran tuan Phong</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="menu-list">
+                    {{!-- ----------------Menu-list------------------------------------------------------------------------------------------------------------ --}}
+                    
+                    <div class="food-list-name">
+                        <h3 class="food-list-name-category">Sea food</h3>
+                        <hr class="food-list-name-hr" />
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="row row-card">
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+
+                                        </div>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+
+                                        </div>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+
+                                        </div>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HAMBERGUR</h5>
+                                        <div class="label-control">
+                                            <p class="card-text">GIÁ: 10000</p>
+                                            <a href="" class="label-icon-cart">
+                                                <i class="label-icon fas fa-cart-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ---------------------------------------------------------------------------------------------- -->
+                </div>
+
+            </div>
+            <div class="sub-body">
+                ----------------Cart----------------------------------------------------------------------------------------------------------------------
+
+
+
+            </div>
+        </div> 
+      </div>
+    </body>
+    <footer>
+
+    </footer>
