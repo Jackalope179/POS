@@ -112,11 +112,11 @@
                 <div class="mt-4">
                 <div class="row row-card">
                     {{#each MenuArray }}
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="col-sm-6 col-md-4 col-lg-3">
                             <div class="card">
                                 <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{MenuArray}}</h5>
+                                    <h5 class="card-title">{{this}}</h5>
                                     <div class="label-control">
                                         <p class="card-text">GIÁ: 10000</p>
                                         <a href="" class="label-icon-cart">
@@ -126,7 +126,7 @@
                                 </div>
                             </div>
 
-                    </div>
+                        </div>
                     {{/each}}
                 </div>
                     
@@ -200,7 +200,8 @@
                 </div>
                 <div class="prices">
                     <div class="amount">$2.99</div>
-                    <div class="remove"><u>Remove</u></div>
+                    <div class="remove"><u>Remove</u></div> 
+
                 </div>
 
             </div>
