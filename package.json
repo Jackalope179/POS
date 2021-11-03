@@ -6,8 +6,10 @@
         "start": "nodemon --inspect ./bin/www"
     },
     "dependencies": {
+        "cookie-parser": "~1.4.4",
         "debug": "~2.6.9",
         "express-handlebars": "^5.3.4",
+        "handlebars-helpers": "^0.10.0",
         "hbs": "~4.0.4",
         "http-errors": "~1.6.3",
         "morgan": "~1.9.1"
