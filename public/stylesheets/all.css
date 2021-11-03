@@ -1,40 +1,52 @@
 :root {
-    --margin-left: 100px;
-    --submenu-width: 30%;
-    --header-height: 42px;
-    --primary-color: #ee4d2d;
-    --white-color: #fff;
-    --black-color: #000;
-    --text-color: #333;
-    --border-color: #dbdbdb;
+  --margin-left: 100px;
+  --submenu-width: 30%;
+  --header-height: 50px;
+  --primary-color: #ee4d2d;
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
+  --border-color: #dbdbdb;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --margin-left: 10px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 992px) {
+  :root {
+    --margin-left: 50px;
+  }
 }
 
 .html {
-    margin: 0;
-    border: 0;
-    padding: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 
 .header {
-    position: fixed;
-    height: 100px;
-    height: var(--header-height);
-    top: 0%;
-    left: 0;
-    right: 0%;
-    z-index: 10;
+  position: fixed;
+  height: 100px;
+  height: var(--header-height);
+  top: 0%;
+  left: 0;
+  right: 0%;
+  z-index: 10;
 }
 
 .body {
-    margin-top: var(--header-height);
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+  margin-top: var(--header-height);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 .main-body {
-    width: calc(70% - var(--margin-left));
-    margin-left: var(--margin-left);
-    height: 100px;
-    background-color: #ffffff;
+  width: calc(70% - var(--margin-left));
+  margin-left: var(--margin-left);
+  height: 100px;
+  background-color: #ffffff;
 }
