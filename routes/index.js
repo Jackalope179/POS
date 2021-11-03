@@ -24,4 +24,11 @@ router.get("/", function (req, res, next) {
   });
 });
 
+<<<<<<< HEAD
+=======
+router.get('/error', function(req, res, next) {
+  res.render('error', { title: 'Express' });
+});
+
+>>>>>>> 36c083ac033fa6ffc2795ef4fa143e4513ba86f7
 module.exports = router;
