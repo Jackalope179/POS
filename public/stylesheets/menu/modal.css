@@ -121,3 +121,37 @@
 .food-quantity__button :hover {
   opacity: 0.8;
 }
+
+.food-detail__field {
+  display: flex;
+  padding: 4px 0;
+}
+
+.food-detail__field--name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.food-detail__field--content {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+.modal__button {
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal__button:hover,
+.food-quantity__button :hover {
+  opacity: 0.8;
+}
