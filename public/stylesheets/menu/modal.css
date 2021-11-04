@@ -13,9 +13,8 @@
 
 .modal__box {
   margin: auto;
-  margin-top: 10%;
   background-color: var(--white-color);
-  width: 700px;
+  width: 500px;
   display: flex;
   border-radius: 20px;
 }
@@ -29,29 +28,96 @@
   width: 100%;
 }
 
-.modal-description {
-  flex: 0.7;
+.modal__description {
   padding: 20px;
+  flex: 0.7;
 }
 
-.modal__base-info {
-  border-bottom: 1px solid #333;
+.food-base {
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
 }
 
-.modal__name {
+.food-base__field {
+  padding: 10px 0;
 }
 
-.modal__quantity {
+.food-base__field--name {
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.modal__detail-info {
+.food-base__field--content {
+  font-size: 18px;
+  font-weight: 450;
+  text-align: center;
 }
 
-.modal__detail-field {
+.food-quantity {
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
 }
 
-.modal__field-name {
+.food-quantity__field {
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.modal__field-info {
+.food-quantity__content {
+  display: flex;
+}
+
+.food-quantity__button {
+  background-color: var(--white-color);
+  border-radius: 6px;
+  padding: 2px 10px;
+  min-width: 35px;
+  font-size: 18px;
+  border: 1px solid var(--text-color);
+  font-weight: 800;
+}
+
+.food-quantity__content--body {
+  padding: 5px 15px;
+  font-size: 18px;
+}
+
+.food-detail {
+}
+
+.food-detail__field {
+  display: flex;
+  padding: 4px 0;
+}
+
+.food-detail__field--name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.food-detail__field--content {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+.modal__button {
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal__button:hover,
+.food-quantity__button :hover {
+  opacity: 0.8;
 }
