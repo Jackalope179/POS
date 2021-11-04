@@ -1,0 +1,110 @@
+[
+  {
+    "foodid": "6",
+    "name": "Fried chicken",
+    "price": "25000",
+    "foodDescribe": "Real KFC chicken",
+    "image": "1",
+    "category": "dinner",
+    "isRecommended": "0"
+  },
+  {
+    "foodid": "7",
+    "name": "Salad",
+    "price": "20000",
+    "foodDescribe": "Fresh salad",
+    "image": "1",
+    "category": "lunch",
+    "isRecommended": "1"
+  },
+  {
+    "foodid": "8",
+    "name": "Machiato",
+    "price": "30000",
+    "foodDescribe": "Fresh machiato",
+    "image": "1",
+    "category": "drink",
+    "isRecommended": "1"
+  },
+  {
+    "foodid": "9",
+    "name": "BBQ beef",
+    "price": "25000",
+    "foodDescribe": "Medium BBQ beef",
+    "image": "1",
+    "category": "lunch",
+    "isRecommended": "0"
+  },
+  {
+    "foodid": "10",
+    "name": "French fried rice",
+    "price": "10000",
+    "foodDescribe": "Masterpiece french rice",
+    "image": "1",
+    "category": "breakfast",
+    "isRecommended": "0"
+  },
+  {
+    "foodid": "11",
+    "name": "Orange juice",
+    "price": "13000",
+    "foodDescribe": "Fresh orange juice",
+    "image": "1",
+    "category": "drink",
+    "isRecommended": "0"
+  },
+  {
+    "foodid": "12",
+    "name": "Pineapple juice",
+    "price": "35000",
+    "foodDescribe": "Fresh pineapple juice ",
+    "image": "1",
+    "category": "drink",
+    "isRecommended": "1"
+  },
+  {
+    "foodid": "13",
+    "name": "Cake",
+    "price": "45000",
+    "foodDescribe": "Fat cake, birthday cake",
+    "image": "1",
+    "category": "cake",
+    "isRecommended": "1"
+  },
+  {
+    "foodid": "14",
+    "name": "Luger Bruger",
+    "price": "124000",
+    "foodDescribe": "Lurger Burger fat burger",
+    "image": "1",
+    "category": "breakfast",
+    "isRecommended": "0"
+  },
+  {
+    "foodid": "15",
+    "name": "Mocha",
+    "price": "45000",
+    "foodDescribe": "Coffee cake mocha machiato",
+    "image": "1",
+    "category": "cake",
+    "isRecommended": "1"
+  },
+  {
+    "foodid": "16",
+    "name": "Noodle",
+    "price": "50000",
+    "foodDescribe": "Noodle for family, noodle",
+    "image": "1",
+    "category": "lunch",
+    "isRecommended": "1"
+  },
+  {
+    "foodid": "17",
+    "name": "Bread",
+    "price": "45000",
+    "foodDescribe": "Fat cake, birthday bread",
+    "image": "1",
+    "category": "cake",
+    "isRecommended": "1"
+  }
+]

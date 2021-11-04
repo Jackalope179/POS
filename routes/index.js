@@ -1,34 +1,19 @@
 var express = require("express");
 var router = express.Router();
+var foodapi = require("../public/api/food.json");
 
-var MenuArray = [
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-  "HAMBURGER",
-];
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", async function (req, res, next) {
+  // let foodList = await food.getAllFood();
   res.render("index", {
-    title: "Express",
-    MenuArray: MenuArray,
+    title: "POS restaurant",
+    MenuArray: foodapi,
     array: [1, 2, 3],
   });
 });
 
-// <<<<<<< HEAD
-// =======
-// router.get('/error', function(req, res, next) {
-//   res.render('error', { title: 'Express' });
-// });
+router.get("/error", function (req, res, next) {
+  res.render("error", { title: "Express" });
+});
 
-// >>>>>>> 36c083ac033fa6ffc2795ef4fa143e4513ba86f7
 module.exports = router;
