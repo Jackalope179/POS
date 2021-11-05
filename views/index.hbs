@@ -1,479 +1,407 @@
 <header>
-  <div class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <span class="navbar-brand"> POS</span>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <span class="navbar-brand"> POS</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Menu
-              <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Đặt bàn
-              <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Đánh giá
-              <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Liên hệ
-              <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <span class="nav-item">
-          <a class="nav-link" href="#">Đăng nhập
-            <span class="sr-only">(current)</span></a>
-        </span>
-      </div>
-    </nav>
-  </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Menu
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đặt bàn
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đánh giá
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <span class="nav-item">
+                    <a class="nav-link" href="#">Đăng nhập
+                        <span class="sr-only">(current)</span></a>
+                </span>
+            </div>
+        </nav>
+    </div>
 </header>
 
 <body>
-  <div class="body">
-    <div class="main-body">
-      <div class="search-bar">
-        {{! ----------------Search-bar ------------------ }}
-        {{! <form class="form-inline my-2 my-lg-0">
+    <div class="body">
+        <div class="main-body">
+            <div class="search-bar">
+                {{! ----------------Search-bar ------------------ }}
+                {{! <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0 btn-search" type="submit"> <i
                             class="fas fa-search"></i></button>
                 </form> }}
-        <input type="text" class="input-search" placeholder="Search" />
-        <button class="btn-search"><i class="fas fa-search"></i></button>
-      </div>
-      <div class="category-list">
-        {{! ----------------Category-list------------------ }}
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div
-                id="carouselExampleIndicators"
-                class="carousel slide"
-                data-ride="carousel"
-              >
-                <ol class="carousel-indicators">
-                  <li
-                    data-target="#carouselExampleIndicators"
-                    data-slide-to="0"
-                    class="active"
-                  ></li>
-                  <li
-                    data-target="#carouselExampleIndicators"
-                    data-slide-to="1"
-                  ></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="single-box">
-                          <div class="img-area">
-                            <img src="./img/image-food1.jpg" alt="" />
-                          </div>
-                          <div class="img-text">
-                            <!-- <h2>Phong</h2> -->
-                            <p>Tran tuan Phong</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="single-box">
-
-                          <div class="img-text">
-                            <div class="img-area">
-                              <img src="./img/image-food1.jpg" alt="" />
-                            </div>
-                            <!-- <h2>Phong hi</h2> -->
-                            <p>Tran tuan Phong</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="single-box">
-                          <div class="img-area">
-                            <img src="./img/image-food1.jpg" alt="" />
-                          </div>
-                          <div class="img-text">
-                            <!-- <h2>Phong bar nè</h2> -->
-                            <p>Tran tuan Phong</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="single-box">
-                          <div class="img-area">
-                            <img src="./img/image-food1.jpg" alt="" />
-                          </div>
-                          <div class="img-text">
-                            <!-- <h2>Phong four</h2> -->
-                            <p>Tran tuan Phong</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="single-box">
-                          <div class="img-area">
-                            <img src="./img/image-food1.jpg" alt="" />
-                          </div>
-                          <div class="img-text">
-                            <!-- <h2>Phong phai</h2> -->
-                            <p>Tran tuan Phong</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="single-box">
-                          <div class="img-area">
-                            <img src="./img/image-food1.jpg" alt="" />
-                          </div>
-                          <div class="img-text">
-                            <!-- <h2>Phong sít nè</h2> -->
-                            <p>Tran tuan Phong</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
+                <input type="text" class="input-search" placeholder="Search" />
+                <button class="btn-search"><i class="fas fa-search"></i></button>
             </div>
-          </div>
-        </div>
+            <div class="category-list">
+                {{! ----------------Category-list------------------ }}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
+                                                        <!-- <h2>Phong</h2> -->
+                                                        <p>Tran tuan Phong</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="single-box">
 
-      </div>
-      <div class="menu-list">
-        {{!
+                                                    <div class="img-text">
+                                                        <div class="img-area">
+                                                            <img src="./img/image-food1.jpg" alt="" />
+                                                        </div>
+                                                        <!-- <h2>Phong hi</h2> -->
+                                                        <p>Tran tuan Phong</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
+                                                        <!-- <h2>Phong bar nè</h2> -->
+                                                        <p>Tran tuan Phong</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
+                                                        <!-- <h2>Phong four</h2> -->
+                                                        <p>Tran tuan Phong</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
+                                                        <!-- <h2>Phong phai</h2> -->
+                                                        <p>Tran tuan Phong</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
+                                                        <!-- <h2>Phong sít nè</h2> -->
+                                                        <p>Tran tuan Phong</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="menu-list">
+                {{!
                 ----------------Menu-list------------------------------------------------------------------------------------------------------------
                 }}
 
-        <div class="food-list-name">
-          <h3 class="food-list-name-category">Sea food</h3>
-          <hr class="food-list-name-hr" />
-        </div>
+                <div class="food-list-name">
+                    <h3 class="food-list-name-category">Sea food</h3>
+                    <hr class="food-list-name-hr" />
+                </div>
 
-        <div class="mt-4">
-          <div class="row row-card">
-            {{#each MenuArray}}
-              <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="card card--best-seller">
-                  <img
-                    class="card-img-top"
-                    src="./img/image-food1.jpg"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">{{this.name}}</h5>
-                    <div class="label-control">
-                      <p class="card-text">GIÁ: {{this.price}}</p>
-                      <a href="" class="label-icon-cart">
-                        <i class="label-icon fas fa-cart-plus"></i>
-                      </a>
+                <div class="mt-4">
+                    <div class="row row-card">
+                        {{#each MenuArray}}
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card card--best-seller">
+                                <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap" />
+                                <div class="card-body">
+                                    <h5 class="card-title">{{this.name}}</h5>
+                                    <div class="label-control">
+                                        <p class="card-text">GIÁ: {{this.price}}</p>
+                                        <a href="" class="label-icon-cart">
+                                            <i class="label-icon fas fa-cart-plus"></i>
+                                        </a>
+
+                                    </div>
+                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <!-- ---------------------------------------------------------------------------------------------- -->
+            </div>
+
+        </div>
+        <div class="cart-container">
+            <div class="Header">
+                <div class="shopping-box">
+                    <img src="./img/shopping-cart.png" style="{" height="50px" , width="50px" } />
+                </div>
+                <h2 class="Heading">Giỏ Hàng</h2>
+                <h4 class="Action">Remove all</h4>
+            </div>
+            <hr />
+            <div class="cart">
+                <div class="cart-column-flex">
+                    <div class="flex-col-1">
+                        <div class="image-box">
+                            <img src="./img/image-food1.jpg" style="{" height="65px" , width="65px" } />
+                        </div>
+                    </div>
+                    <div class="flex-col-2">
+                        <p class="title">HAMBERGUR</p>
+                    </div>
+                    <div class="flex-col-3">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count">2</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                    <div class="flex-col-4">
+                        <div class="prices">
+                            <div class="amount">100K</div>
+                            <div class="remove"><u>Remove</u></div>
+                        </div>
 
                     </div>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                  </div>
                 </div>
-              </div>
-            {{/each}}
-          </div>
+                <hr />
+                <div class="cart-column-flex">
+                    <div class="flex-col-1">
+                        <div class="image-box">
+                            <img src="./img/image-food3.jpg" style="{" height="65px" , width="65px" } />
+                        </div>
+                    </div>
+                    <div class="flex-col-2">
+                        <p class="title">HỦ TIẾU NAM VANG</p>
+                    </div>
+                    <div class="flex-col-3">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count">2</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                    <div class="flex-col-4">
+                        <div class="prices">
+                            <div class="amount">100K</div>
+                            <div class="remove"><u>Remove</u></div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr />
+                <div class="cart-column-flex">
+                    <div class="flex-col-1">
+                        <div class="image-box">
+                            <img src="./img/image-food2.jpeg" style="{" height="65px" , width="65px" } />
+                        </div>
+                    </div>
+                    <div class="flex-col-2">
+                        <p class="title">BÁNH MỲ THỊT NƯỚNG</p>
+                    </div>
+                    <div class="flex-col-3">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count">2</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                    <div class="flex-col-4">
+                        <div class="prices">
+                            <div class="amount">50K</div>
+                            <div class="remove"><u>Remove</u></div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr />
+                <div class="cart-column-flex">
+                    <div class="flex-col-1">
+                        <div class="image-box">
+                            <img src="./img/image-food2.jpeg" style="{" height="65px" , width="65px" } />
+                        </div>
+                    </div>
+                    <div class="flex-col-2">
+                        <p class="title">BÁNH MỲ THỊT NƯỚNG</p>
+                    </div>
+                    <div class="flex-col-3">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count">2</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                    <div class="flex-col-4">
+                        <div class="prices">
+                            <div class="amount">50K</div>
+                            <div class="remove"><u>Remove</u></div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr />
+                <div class="cart-column-flex">
+                    <div class="flex-col-1">
+                        <div class="image-box">
+                            <img src="./img/image-food2.jpeg" style="{" height="65px" , width="65px" } />
+                        </div>
+                    </div>
+                    <div class="flex-col-2">
+                        <p class="title">BÁNH MỲ THỊT NƯỚNG</p>
+                    </div>
+                    <div class="flex-col-3">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count">2</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                    <div class="flex-col-4">
+                        <div class="prices">
+                            <div class="amount">50K</div>
+                            <div class="remove"><u>Remove</u></div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr />
+                <div class="cart-column-flex">
+                    <div class="flex-col-1">
+                        <div class="image-box">
+                            <img src="./img/image-food2.jpeg" style="{" height="65px" , width="65px" } />
+                        </div>
+                    </div>
+                    <div class="flex-col-2">
+                        <p class="title">BÁNH MỲ THỊT NƯỚNG</p>
+                    </div>
+                    <div class="flex-col-3">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count">2</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                    <div class="flex-col-4">
+                        <div class="prices">
+                            <div class="amount">50K</div>
+                            <div class="remove"><u>Remove</u></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <div class="checkout">
+                <div class="total">
+                    <div>
+                        <div class="Subtotal">Tổng:</div>
+                        <div class="items">3 items</div>
+                    </div>
+                    <div class="total-amount">250K</div>
+                </div>
+                <button class="button">Thanh toán</button>
+            </div>
+
         </div>
-
-        <!-- ---------------------------------------------------------------------------------------------- -->
-      </div>
-
     </div>
-    <div class="cart-container">
-      <div class="Header">
-        <div class="shopping-box">
-          <img
-            src="./img/shopping-cart.png"
-            style="{"
-            height="50px"
-            ,
-            width="50px"
-            }
-          />
+    {{! MODAL }}
+    <div class="modal-container">
+        <div class="modal__box">
+            <div class="modal__image">
+                <img src="./img/image-food1.jpg" alt="" />
+            </div>
+            <div class="modal__description">
+                <div class="food-base">
+                    <div class="food-base__field">
+                        <div class="food-base__field--name">HAMBERGUR</div>
+                        <div class="food-base__field--content">Burger</div>
+                    </div>
+                    <div class="food-base__field">
+                        <div class="food-base__field--name">Unit Price</div>
+                        <div class="food-base__field--content">10000</div>
+                    </div>
+                </div>
+                <div class="food-quantity">
+                    <div class="food-quantity__field">Quantity</div>
+                    <div class="food-quantity__content">
+                        <button class="food-quantity__button">-</button>
+                        <div class="food-quantity__content--body">1</div>
+                        <button class="food-quantity__button">+</button>
+                    </div>
+                </div>
+                <div class="food-detail">
+                    <div class="food-detail__field">
+                        <div class="food-detail__field--name">Protein:</div>
+                        <div class="food-detail__field--content">What is Lorem ipsum</div>
+                    </div>
+                    <div class="food-detail__field">
+                        <div class="food-detail__field--name">Additivies:</div>
+                        <div class="food-detail__field--content">03</div>
+                    </div>
+                    <div class="food-detail__field">
+                        <div class="food-detail__field--name">Baking material:</div>
+                        <div class="food-detail__field--content">040</div>
+                    </div>
+                    <div class="food-detail__field">
+                        <div class="food-detail__field--name">Food decoration:</div>
+                        <div class="food-detail__field--content">04</div>
+                    </div>
+                </div>
+                <button class="modal__button">Add To Cart</button>
+            </div>
         </div>
-        <h2 class="Heading">Giỏ Hàng</h2>
-        <h4 class="Action">Remove all</h4>
-      </div>
-      <hr />
-      <div class="cart">
-        <div class="cart-column-flex">
-          <div class="flex-col-1">
-            <div class="image-box">
-              <img
-                src="./img/image-food1.jpg"
-                style="{"
-                height="65px"
-                ,
-                width="65px"
-                }
-              />
-            </div>
-          </div>
-          <div class="flex-col-2">
-            <p class="title">HAMBERGUR</p>
-          </div>
-          <div class="flex-col-3">
-            <div class="counter">
-              <div class="btn1">-</div>
-              <div class="count">2</div>
-              <div class="btn2">+</div>
-            </div>
-          </div>
-          <div class="flex-col-4">
-            <div class="prices">
-              <div class="amount">100K</div>
-              <div class="remove"><u>Remove</u></div>
-            </div>
-
-          </div>
-        </div>
-        <hr />
-        <div class="cart-column-flex">
-          <div class="flex-col-1">
-            <div class="image-box">
-              <img
-                src="./img/image-food3.jpg"
-                style="{"
-                height="65px"
-                ,
-                width="65px"
-                }
-              />
-            </div>
-          </div>
-          <div class="flex-col-2">
-            <p class="title">HỦ TIẾU NAM VANG</p>
-          </div>
-          <div class="flex-col-3">
-            <div class="counter">
-              <div class="btn1">-</div>
-              <div class="count">2</div>
-              <div class="btn2">+</div>
-            </div>
-          </div>
-          <div class="flex-col-4">
-            <div class="prices">
-              <div class="amount">100K</div>
-              <div class="remove"><u>Remove</u></div>
-            </div>
-
-          </div>
-        </div>
-        <hr />
-        <div class="cart-column-flex">
-          <div class="flex-col-1">
-            <div class="image-box">
-              <img
-                src="./img/image-food2.jpeg"
-                style="{"
-                height="65px"
-                ,
-                width="65px"
-                }
-              />
-            </div>
-          </div>
-          <div class="flex-col-2">
-            <p class="title">BÁNH MỲ THỊT NƯỚNG</p>
-          </div>
-          <div class="flex-col-3">
-            <div class="counter">
-              <div class="btn1">-</div>
-              <div class="count">2</div>
-              <div class="btn2">+</div>
-            </div>
-          </div>
-          <div class="flex-col-4">
-            <div class="prices">
-              <div class="amount">50K</div>
-              <div class="remove"><u>Remove</u></div>
-            </div>
-
-          </div>
-        </div>
-        <hr />
-        <div class="cart-column-flex">
-          <div class="flex-col-1">
-            <div class="image-box">
-              <img
-                src="./img/image-food2.jpeg"
-                style="{"
-                height="65px"
-                ,
-                width="65px"
-                }
-              />
-            </div>
-          </div>
-          <div class="flex-col-2">
-            <p class="title">BÁNH MỲ THỊT NƯỚNG</p>
-          </div>
-          <div class="flex-col-3">
-            <div class="counter">
-              <div class="btn1">-</div>
-              <div class="count">2</div>
-              <div class="btn2">+</div>
-            </div>
-          </div>
-          <div class="flex-col-4">
-            <div class="prices">
-              <div class="amount">50K</div>
-              <div class="remove"><u>Remove</u></div>
-            </div>
-
-          </div>
-        </div>
-        <hr />
-        <div class="cart-column-flex">
-          <div class="flex-col-1">
-            <div class="image-box">
-              <img
-                src="./img/image-food2.jpeg"
-                style="{"
-                height="65px"
-                ,
-                width="65px"
-                }
-              />
-            </div>
-          </div>
-          <div class="flex-col-2">
-            <p class="title">BÁNH MỲ THỊT NƯỚNG</p>
-          </div>
-          <div class="flex-col-3">
-            <div class="counter">
-              <div class="btn1">-</div>
-              <div class="count">2</div>
-              <div class="btn2">+</div>
-            </div>
-          </div>
-          <div class="flex-col-4">
-            <div class="prices">
-              <div class="amount">50K</div>
-              <div class="remove"><u>Remove</u></div>
-            </div>
-
-          </div>
-        </div>
-        <hr />
-        <div class="cart-column-flex">
-          <div class="flex-col-1">
-            <div class="image-box">
-              <img
-                src="./img/image-food2.jpeg"
-                style="{"
-                height="65px"
-                ,
-                width="65px"
-                }
-              />
-            </div>
-          </div>
-          <div class="flex-col-2">
-            <p class="title">BÁNH MỲ THỊT NƯỚNG</p>
-          </div>
-          <div class="flex-col-3">
-            <div class="counter">
-              <div class="btn1">-</div>
-              <div class="count">2</div>
-              <div class="btn2">+</div>
-            </div>
-          </div>
-          <div class="flex-col-4">
-            <div class="prices">
-              <div class="amount">50K</div>
-              <div class="remove"><u>Remove</u></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <hr />
-      <div class="checkout">
-        <div class="total">
-          <div>
-            <div class="Subtotal">Tổng:</div>
-            <div class="items">3 items</div>
-          </div>
-          <div class="total-amount">250K</div>
-        </div>
-        <button class="button">Thanh toán</button>
-      </div>
-
     </div>
-  </div>
-  {{! MODAL }}
-  <div class="modal-container modal--active">
-    <div class="modal__background"></div>
-    <div class="modal__box">
-      <div class="modal__image">
-        <img src="./img/image-food1.jpg" alt="" />
-      </div>
-      <div class="modal__description">
-        <div class="food-base">
-          <div class="food-base__field">
-            <div class="food-base__field--name">HAMBERGUR</div>
-            <div class="food-base__field--content">Burger</div>
-          </div>
-          <div class="food-base__field">
-            <div class="food-base__field--name">Unit Price</div>
-            <div class="food-base__field--content">10000</div>
-          </div>
-        </div>
-        <div class="food-quantity">
-          <div class="food-quantity__field">Quantity</div>
-          <div class="food-quantity__content">
-            <button class="food-quantity__button">-</button>
-            <div class="food-quantity__content--body">1</div>
-            <button class="food-quantity__button">+</button>
-          </div>
-        </div>
-        <div class="food-detail">
-          <div class="food-detail__field">
-            <div class="food-detail__field--name">Protein:</div>
-            <div class="food-detail__field--content">What is Lorem ipsum</div>
-          </div>
-          <div class="food-detail__field">
-            <div class="food-detail__field--name">Additivies:</div>
-            <div class="food-detail__field--content">03</div>
-          </div>
-          <div class="food-detail__field">
-            <div class="food-detail__field--name">Baking material:</div>
-            <div class="food-detail__field--content">040</div>
-          </div>
-          <div class="food-detail__field">
-            <div class="food-detail__field--name">Food decoration:</div>
-            <div class="food-detail__field--content">04</div>
-          </div>
-        </div>
-        <button class="modal__button">Add To Cart</button>
-      </div>
-    </div>
-  </div>
 </body>
 <footer>
 

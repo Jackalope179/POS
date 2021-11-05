@@ -1,161 +1,160 @@
 .modal-container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 200;
-  background-color: rgba(0, 0, 0, 0.2);
-  display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
 }
 
 .modal--active {
-  display: flex;
+    display: flex;
 }
 
 .modal__box {
-  margin: auto;
-  background-color: var(--white-color);
-  width: 600px;
-  display: flex;
-  border-radius: 20px;
+    margin: auto;
+    background-color: var(--white-color);
+    width: 600px;
+    display: flex;
+    border-radius: 20px;
 }
 
 .modal__image {
-  flex: 0.3;
-  padding: 20px;
-  padding-right: 0;
+    flex: 0.3;
+    padding: 20px;
+    padding-right: 0;
 }
 
 .modal__image img {
-  width: 100%;
+    width: 100%;
 }
 
 .modal__description {
-  padding: 20px;
-  flex: 0.7;
+    padding: 20px;
+    flex: 0.7;
 }
 
 .food-base {
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
 }
 
 .food-base__field {
-  padding: 10px 0;
+    padding: 10px 0;
 }
 
 .food-base__field--name {
-  font-size: 20px;
-  font-weight: 600;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .food-base__field--content {
-  font-size: 18px;
-  font-weight: 450;
-  text-align: center;
+    font-size: 18px;
+    font-weight: 450;
+    text-align: center;
 }
 
 .food-quantity {
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
 }
 
 .food-quantity__field {
-  font-size: 20px;
-  font-weight: 600;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .food-quantity__content {
-  display: flex;
+    display: flex;
 }
 
 .food-quantity__button {
-  background-color: var(--white-color);
-  border-radius: 6px;
-  padding: 0px 10px;
-  min-width: 35px;
-  font-size: 18px;
-  border: 1px solid var(--text-color);
-  font-weight: 800;
-  line-height: 21px;
+    background-color: var(--white-color);
+    border-radius: 6px;
+    padding: 0px 10px;
+    min-width: 35px;
+    font-size: 18px;
+    border: 1px solid var(--text-color);
+    font-weight: 800;
+    line-height: 21px;
 }
 
 .food-quantity__content--body {
-  padding: 5px 15px;
-  font-size: 18px;
+    padding: 5px 15px;
+    font-size: 18px;
 }
 
-.food-detail {
-}
+.food-detail {}
 
 .food-detail__field {
-  display: flex;
-  padding: 4px 0;
+    display: flex;
+    padding: 4px 0;
 }
 
 .food-detail__field--name {
-  font-size: 16px;
-  font-weight: 500;
-  margin-right: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 10px;
 }
 
 .food-detail__field--content {
-  font-size: 16px;
-  font-weight: 400;
-  margin-right: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 10px;
 }
 
 .modal__button {
-  margin-top: 10px;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  width: 100%;
-  color: var(--white-color);
-  font-size: 16px;
-  font-weight: 500;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .modal__button:hover,
 .food-quantity__button :hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .food-detail__field {
-  display: flex;
-  padding: 4px 0;
+    display: flex;
+    padding: 4px 0;
 }
 
 .food-detail__field--name {
-  font-size: 16px;
-  font-weight: 500;
-  margin-right: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 10px;
 }
 
 .food-detail__field--content {
-  font-size: 16px;
-  font-weight: 400;
-  margin-right: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 10px;
 }
 
 .modal__button {
-  margin-top: 10px;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  width: 100%;
-  color: var(--white-color);
-  font-size: 16px;
-  font-weight: 500;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .modal__button:hover,
 .food-quantity__button :hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
