@@ -20,6 +20,15 @@
   color: var(--white-color);
 }
 
+.btn-search:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.btn-search:focus {
+  outline: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -136,6 +145,10 @@
   position: relative;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card--best-seller::before {
   position: absolute;
   content: "";
@@ -183,6 +196,14 @@
   border-radius: 5px;
 }
 
+.label-icon:hover {
+  opacity: 0.7;
+}
+
+.fa-cart-plus:before {
+  font-size: 25px;
+}
+
 .col-4.cart {
   background-color: aqua;
   height: 100%;
@@ -204,8 +225,7 @@
   color: var(--white-color) !important;
 }
 
-#category-full{
-  
+#category-full {
 }
 
 .container {
@@ -241,6 +261,10 @@
 .single-box {
   position: relative;
   margin-bottom: 20px;
+}
+
+.single-box:hover {
+  cursor: pointer;
 }
 
 .img-area {

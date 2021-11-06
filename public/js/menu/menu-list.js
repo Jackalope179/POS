@@ -118,17 +118,16 @@ let food = [
     }
 ];
   
-  
 
-var addcarts = document.querySelectorAll('.label-icon-cart');
-
-for (var i = 0; i < addcarts.length; i++) {
-    addcarts[i].onclick = function(e) {
+// open food detail
+var foodsSelected = document.querySelectorAll('.card');
+for (var i = 0; i < foodsSelected.length; i++) {
+    foodsSelected[i].onclick = function(e) {
         var tem = document.querySelector('.modal-container');
         tem.classList.add('modal--active');
     }
 }
-
+// close food detail
 var outcarts = document.querySelector('.close__modal-icon');
     outcarts.onclick = function(e) {
     var tem = document.querySelector('.modal-container');
@@ -187,6 +186,13 @@ for (var i = 0; i<categoryList.length;i++){
             }
         }
         foodList.innerHTML = temp;
+        var foodsSelected = document.querySelectorAll('.card');
+        for (var i = 0; i < foodsSelected.length; i++) {
+            foodsSelected[i].onclick = function(e) {
+                var tem = document.querySelector('.modal-container');
+                tem.classList.add('modal--active');
+            }
+        }
     };
 }
 
