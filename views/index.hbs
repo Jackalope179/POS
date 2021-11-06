@@ -233,18 +233,21 @@
                 <div class="mt-4">
                     {{#each CartArray}}
                     <div class="row" id="cart-row">
-                        <div class="col-sm-12 col-md-6 col-lg-5 col-xl-3" id="img-row">
+                        {{!-- <div class="col-sm-12 col-md-6 col-lg-5 col-xl-3" id="img-row"> --}}
+                        <div class="col-sm-3" id="img-row">
                             <div class="image-box">
-                                <img src="./img/image-food1.jpg" style="{" height="80px" , width="80px" } />
+                                {{!-- <img src="./img/image-food1.jpg" style="{" height="80px" , width="80px" } /> --}}
+                                <img src="./img/image-food1.jpg" style="{" height="80px" , width="100%" } />
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-6 col-lg-7 col-xl-6" id="name-button-row">
+                        {{!-- <div class="col-sm-6 col-md-6 col-lg-7 col-xl-6" id="name-button-row"> --}}
+                        <div class="col-sm-6" id="name-button-row">
                             <div class="row">
                                 <div class="col" id="title-row">
                                     <p class="title">{{this.name}}</p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row num-change">
                                 <div class="col" id="button-row">
                                     <div class="counter">
                                         <div class="btn1">-</div>
@@ -257,7 +260,8 @@
 
                         </div>
 
-                        <div class="col-sm-12 col-md-6 col-lg-5 col-xl-3">
+                        {{!-- <div class="col-sm-12 col-md-6 col-lg-5 col-xl-3"> --}}
+                        <div class="col-sm-3" id="remove-price">
                             <div class="prices">
                                 <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px"
                                         } /></div>
