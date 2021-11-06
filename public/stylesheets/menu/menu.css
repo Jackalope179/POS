@@ -52,7 +52,6 @@
     color: var(--text-color);
     display: flex;
     margin-left: 15px;
-    font-weight: 700;
 }
 
 .food-list-name-hr {
@@ -130,7 +129,7 @@
     flex-basis: 30%;
     border-radius: 15px;
     /* border: 3px solid var(--border-color); */
-    box-shadow: 0 1px 2px #e0e0e0;
+    box-shadow: 0 2px 2px #e0e0e0;
     position: relative;
 }
 
@@ -155,31 +154,19 @@
 }
 
 .card-title {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 14px;
 }
 
 .card-text {
     display: flex;
     margin: auto 0;
-    font-size: 15px;
-    font-weight: 500;
-    color: #505050;
+    font-size: 12px;
 }
 
 .label-icon-cart {
     display: inline-flex;
     align-items: center;
 }
-
-
-/* .fas .fa-cart-plus {
-    height: 30px;
-    width: 30px;
-    font-weight: 400;
-    color: blue;
-    background-color: red;
-} */
 
 .label-icon {
     /* height: 20px;
@@ -198,62 +185,6 @@
 
 
 /* ================================== CAROUSEL ======================================= */
-
-
-/* .multi-item-carousel .carousel-inner>.item {
-    transition: 500ms ease-in-out left;
-}
-
-.multi-item-carousel .carousel-inner .active.left {
-    left: -33%;
-}
-
-.multi-item-carousel .carousel-inner .active.right {
-    left: 33%;
-}
-
-.multi-item-carousel .carousel-inner .next {
-    left: 33%;
-}
-
-.multi-item-carousel .carousel-inner .prev {
-    left: -33%;
-}
-
-@media all and (transform-3d),
-(-webkit-transform-3d) {
-    .multi-item-carousel .carousel-inner>.item {
-        transition: 500ms ease-in-out left;
-        transition: 500ms ease-in-out all;
-        -webkit-backface-visibility: visible;
-        backface-visibility: visible;
-        transform: none !important;
-    }
-}
-
-.multi-item-carousel .carouse-control.left,
-.multi-item-carousel .carouse-control.right {
-    background-image: none;
-} */
-
-
-/* // non-related styling: */
-
-
-/* body{
-    background: #333;
-    color: #ddd;
-  } */
-
-
-/* h1{
-    color: white;
-    font-size: 2.25em;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
-  } */
 
 .category-list {
     background: linear-gradient(-100deg, white 100%);
@@ -334,4 +265,21 @@
 
 .carousel-indicators .active {
     background: var(--primary-color);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    bottom: 20px;
+    opacity: 0.7;
 }

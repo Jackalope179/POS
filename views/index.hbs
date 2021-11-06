@@ -137,6 +137,14 @@
                                     </div>
 
                                 </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -163,12 +171,10 @@
                                     <h5 class="card-title">{{this.name}}</h5>
                                     <div class="label-control">
                                         <p class="card-text">GIÁ: {{this.price}}</p>
-                                        <a href="" class="label-icon-cart">
+                                        <a href="#" class="label-icon-cart">
                                             <i class="label-icon fas fa-cart-plus"></i>
                                         </a>
-
                                     </div>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                                 </div>
                             </div>
                         </div>
@@ -358,48 +364,55 @@
     {{! MODAL }}
     <div class="modal-container">
         <div class="modal__box">
-            <div class="modal__image">
-                <img src="./img/image-food1.jpg" alt="" />
+            <div class="modal__header">
+              <h3 class="modal__header-name">ADD TO CART</h3>
+              <i class="fas fa-times close__modal-icon"></i>
             </div>
-            <div class="modal__description">
-                <div class="food-base">
-                    <div class="food-base__field">
-                        <div class="food-base__field--name">HAMBERGUR</div>
-                        <div class="food-base__field--content">Burger</div>
-                    </div>
-                    <div class="food-base__field">
-                        <div class="food-base__field--name">Unit Price</div>
-                        <div class="food-base__field--content">10000</div>
-                    </div>
-                </div>
-                <div class="food-quantity">
-                    <div class="food-quantity__field">Quantity</div>
-                    <div class="food-quantity__content">
-                        <button class="food-quantity__button">-</button>
-                        <div class="food-quantity__content--body">1</div>
-                        <button class="food-quantity__button">+</button>
-                    </div>
-                </div>
-                <div class="food-detail">
-                    <div class="food-detail__field">
-                        <div class="food-detail__field--name">Protein:</div>
-                        <div class="food-detail__field--content">What is Lorem ipsum</div>
-                    </div>
-                    <div class="food-detail__field">
-                        <div class="food-detail__field--name">Additivies:</div>
-                        <div class="food-detail__field--content">03</div>
-                    </div>
-                    <div class="food-detail__field">
-                        <div class="food-detail__field--name">Baking material:</div>
-                        <div class="food-detail__field--content">040</div>
-                    </div>
-                    <div class="food-detail__field">
-                        <div class="food-detail__field--name">Food decoration:</div>
-                        <div class="food-detail__field--content">04</div>
-                    </div>
-                </div>
-                <button class="modal__button">Add To Cart</button>
+            <div class="modal__body">
+              <div class="modal__image">
+                  <img src="./img/image-food1.jpg" alt="" />
+              </div>
+              <div class="modal__description">
+                  <div class="food-base">
+                      <div class="food-base__field">
+                          <div class="food-base__field--name">HAMBERGUR</div>
+                          <div class="food-base__field--content">Burger</div>
+                      </div>
+                      <div class="food-base__field">
+                          <div class="food-base__field--name">Unit Price</div>
+                          <div class="food-base__field--content">10000</div>
+                      </div>
+                  </div>
+                  <div class="food-quantity">
+                      <div class="food-quantity__field">Quantity</div>
+                      <div class="food-quantity__content">
+                          <button class="food-quantity__button">-</button>
+                          <div class="food-quantity__content--body">1</div>
+                          <button class="food-quantity__button">+</button>
+                      </div>
+                  </div>
+                  <div class="food-detail">
+                      <div class="food-detail__field">
+                          <div class="food-detail__field--name">Protein:</div>
+                          <div class="food-detail__field--content">What is Lorem ipsum</div>
+                      </div>
+                      <div class="food-detail__field">
+                          <div class="food-detail__field--name">Additivies:</div>
+                          <div class="food-detail__field--content">03</div>
+                      </div>
+                      <div class="food-detail__field">
+                          <div class="food-detail__field--name">Baking material:</div>
+                          <div class="food-detail__field--content">040</div>
+                      </div>
+                      <div class="food-detail__field">
+                          <div class="food-detail__field--name">Food decoration:</div>
+                          <div class="food-detail__field--content">04</div>
+                      </div>
+                  </div>
+                  <button class="modal__button">Add To Cart</button>
+              </div>
             </div>
+            
         </div>
     </div>
 </body>
