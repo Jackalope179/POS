@@ -20,6 +20,15 @@
   color: var(--white-color);
 }
 
+.btn-search:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.btn-search:focus {
+  outline: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -136,6 +145,10 @@
   position: relative;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card--best-seller::before {
   position: absolute;
   content: "";
@@ -183,6 +196,14 @@
   border-radius: 5px;
 }
 
+.label-icon:hover {
+  opacity: 0.7;
+}
+
+.fa-cart-plus:before {
+  font-size: 25px;
+}
+
 .col-4.cart {
   background-color: aqua;
   height: 100%;
@@ -196,12 +217,15 @@
   font-family: poppins;
 }
 
-.category-active {
-  background-color: var(--primary-color) !important;
+.category-active .img-text {
+  background-color: #7a7a7a !important;
 }
 
-.category-active p {
+.category-active .img-text p {
   color: var(--white-color) !important;
+}
+
+#category-full {
 }
 
 .container {
@@ -239,6 +263,10 @@
   margin-bottom: 20px;
 }
 
+.single-box:hover {
+  cursor: pointer;
+}
+
 .img-area {
   position: absolute;
   width: 100px;
@@ -255,6 +283,7 @@
 
 .img-area img {
   width: 100%;
+  height: 95%;
 }
 
 .carousel-indicators {

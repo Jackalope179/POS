@@ -6,7 +6,7 @@
     "foodDescribe": "nước uống",
     "image": "./img/image-food4.jpg",
     "category": "nước uống",
-    "isRecommended": "0"
+    "isRecommended": 0
   },
   {
     "foodid": "7",
@@ -33,7 +33,7 @@
     "foodDescribe": "Medium BBQ beef",
      "image": "./img/image-food7.jpg",
     "category": "nước uống",
-    "isRecommended": "0"
+    "isRecommended": 0
   },
   {
     "foodid": "10",
@@ -42,7 +42,7 @@
     "foodDescribe": "Masterpiece french rice",
      "image": "./img/image-food8.jpg",
     "category": "nước uống",
-    "isRecommended": "0"
+    "isRecommended": 0
   },
   {
     "foodid": "11",
@@ -51,7 +51,7 @@
     "foodDescribe": "Fresh orange juice",
      "image": "./img/image-food9.jpg",
     "category": "cơm bún phở",
-    "isRecommended": "0"
+    "isRecommended": 0
   },
   {
     "foodid": "12",
@@ -78,7 +78,7 @@
     "foodDescribe": "Lurger Burger fat burger",
      "image": "./img/image-food1.jpg",
     "category": "thức ăn nhanh",
-    "isRecommended": "0"
+    "isRecommended": 0
   },
   {
     "foodid": "15",
