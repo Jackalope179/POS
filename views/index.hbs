@@ -58,84 +58,96 @@
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                 </ol> --}}
-                                <div class="carousel-inner">
+                               <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-sm-3 cart-category">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food4.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text category-active">
+                                                        <p>Nước uống</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 cart-category">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food10.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
+                                                        <p>Cơm, bún phở</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 cart-category">
                                                 <div class="single-box">
                                                     <div class="img-area">
                                                         <img src="./img/image-food1.jpg" alt="" />
                                                     </div>
                                                     <div class="img-text">
-                                                        <!-- <h2>Phong</h2> -->
+                                                        <p>Thức ăn nhanh</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 cart-category">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food14.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
+                                                        <p>Lẩu</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <div class="col-sm-3 cart-category">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
                                                         <p>Tran tuan Phong</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-sm-3 cart-category">
                                                 <div class="single-box">
 
                                                     <div class="img-text">
                                                         <div class="img-area">
                                                             <img src="./img/image-food1.jpg" alt="" />
                                                         </div>
-                                                        <!-- <h2>Phong hi</h2> -->
                                                         <p>Tran tuan Phong</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-sm-3 cart-category">
                                                 <div class="single-box">
                                                     <div class="img-area">
                                                         <img src="./img/image-food1.jpg" alt="" />
                                                     </div>
                                                     <div class="img-text">
-                                                        <!-- <h2>Phong bar nè</h2> -->
+                                                        <p>Tran tuan Phong</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 cart-category">
+                                                <div class="single-box">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <div class="img-text">
                                                         <p>Tran tuan Phong</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="carousel-item">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="single-box">
-                                                    <div class="img-area">
-                                                        <img src="./img/image-food1.jpg" alt="" />
-                                                    </div>
-                                                    <div class="img-text">
-                                                        <!-- <h2>Phong four</h2> -->
-                                                        <p>Tran tuan Phong</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="single-box">
-                                                    <div class="img-area">
-                                                        <img src="./img/image-food1.jpg" alt="" />
-                                                    </div>
-                                                    <div class="img-text">
-                                                        <!-- <h2>Phong phai</h2> -->
-                                                        <p>Tran tuan Phong</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="single-box">
-                                                    <div class="img-area">
-                                                        <img src="./img/image-food1.jpg" alt="" />
-                                                    </div>
-                                                    <div class="img-text">
-                                                        <!-- <h2>Phong sít nè</h2> -->
-                                                        <p>Tran tuan Phong</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                     data-slide="prev">
@@ -168,7 +180,7 @@
                         {{#each MenuArray}}
                         <div class="col-sm-6 col-md-4 col-lg-3">
                             <div class="card card--best-seller">
-                                <img class="card-img-top" src="./img/image-food1.jpg" alt="Card image cap" />
+                                <img class="card-img-top" src={{this.image}} alt="Card image cap" />
                                 <div class="card-body">
                                     <h5 class="card-title">{{this.name}}</h5>
                                     <div class="label-control">
