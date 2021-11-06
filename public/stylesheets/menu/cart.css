@@ -126,18 +126,18 @@
     font-size: 20px;
     font-weight: 650;
     color: #e44c4c;
+    padding-top: 1em;
 }
 
 .remove {
     cursor: pointer;
-    padding-top: 0.5em;
 }
 
 .cart-column-grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 50px 50px;
-    grid-template-areas: "p p n n n n g g" "p p c c c c g g";
+    grid-template-areas: "p p n n n n n g g" "p p c c c c c g g";
 }
 
 .grid-col-1 {
@@ -151,9 +151,8 @@
     padding-left: 0.5em;
     display: flex;
     flex: wrap;
-    justify-items: center;
     align-items: center;
-    margin-top: 20%;
+    padding-top: 2em;
 }
 
 .grid-col-3 {

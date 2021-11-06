@@ -52,6 +52,7 @@
     color: var(--text-color);
     display: flex;
     margin-left: 15px;
+    font-weight: 600;
 }
 
 .food-list-name-hr {
@@ -154,13 +155,15 @@
 }
 
 .card-title {
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 650;
 }
 
 .card-text {
     display: flex;
     margin: auto 0;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .label-icon-cart {
