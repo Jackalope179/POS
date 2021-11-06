@@ -2,36 +2,36 @@
         "foodid": "1",
         "name": "Hamburger",
         "image": "1",
-        "price": "40.000"
+        "price": "40.000đ"
     },
     {
         "foodid": "2",
         "name": "Hủ tíu Nam Vang",
         "image": "1",
-        "price": "50.000"
+        "price": "250.000đ"
     },
     {
         "foodid": "3",
         "name": "Bánh mỳ thịt nướng",
         "image": "1",
-        "price": "25.000"
+        "price": "25.000đ"
     },
     {
         "foodid": "4",
         "name": "Bún bò Huế",
         "image": "1",
-        "price": "55.000"
+        "price": "55.000đ"
     },
     {
         "foodid": "5",
         "name": "Bánh canh cá lóc",
         "image": "1",
-        "price": "55.000"
+        "price": "55.000đ"
     },
     {
         "foodid": "6",
         "name": "Bánh tráng nướng",
         "image": "1",
-        "price": "35.000"
+        "price": "35.000đ"
     }
 ]

@@ -58,7 +58,7 @@
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                 </ol> --}}
-                               <div class="carousel-inner">
+                                <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <div class="row">
                                             <div class="col-sm-3 cart-category">
@@ -202,44 +202,56 @@
             {{! CART }}
         </div>
         <div class="cart-container">
-            <div class="Header">
-                <div class="shopping-box">
-                    <img src="./img/shopping-cart.png" style="{" height="50px" , width="50px" } />
+            <div class="row" id="Header">
+                <div class="col-sm-2">
+                    <img src="./img/shopping-cart.png" style="{" height="60px" , width="60px" } />
                 </div>
-                <h2 class="Heading">Giỏ Hàng</h2>
-                <h4 class="Action">Xóa tất cả</h4>
+                <div class="col-sm-6" id="Heading">Giỏ Hàng</div>
+                <div class="col-sm-4" id="Action">Xóa tất cả</div>
             </div>
+
             <hr />
             <div class="cart">
-                {{#each CartArray}}
-                <div class="cart-column-grid">
-                    <div class="grid-col-1">
-                        <div class="image-box">
-                            <img src="./img/image-food1.jpg" style="{" height="80px" , width="80px" } />
+                <div class="mt-4">
+                    {{#each CartArray}}
+                    <div class="row" id="cart-row">
+                        <div class="col-sm-12 col-md-6 col-lg-5 col-xl-3" id="img-row">
+                            <div class="image-box">
+                                <img src="./img/image-food1.jpg" style="{" height="80px" , width="80px" } />
+                            </div>
                         </div>
-                    </div>
-                    <div class="grid-col-2">
-                        <p class="title">{{this.name}}</p>
-                    </div>
-                    <div class="grid-col-3">
-                        <div class="counter">
-                            <div class="btn1">-</div>
-                            <div class="count">2</div>
-                            <div class="btn2">+</div>
-                        </div>
-                    </div>
-                    <div class="grid-col-4">
-                        <div class="prices">
-                            <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px"
-                                    } /></div>
-                            <div class="amount">{{this.price}}</div>
+                        <div class="col-sm-12 col-md-6 col-lg-7 col-xl-6" id="name-button-row">
+                            <div class="row">
+                                <div class="col" id="title-row">
+                                    <p class="title">{{this.name}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col" id="button-row">
+                                    <div class="counter">
+                                        <div class="btn1">-</div>
+                                        <div class="count">2</div>
+                                        <div class="btn2">+</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
 
+                        <div class="col-sm-12 col-md-6 col-lg-5 col-xl-3">
+                            <div class="prices">
+                                <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px"
+                                        } /></div>
+                                <div class="amount">{{this.price}}</div>
+                            </div>
+
+                        </div>
                     </div>
+                    <hr />
+                    {{/each}}
+
                 </div>
-                <hr />
-                {{/each}}
-
             </div>
 
             <hr />
@@ -248,7 +260,7 @@
                     <div>
                         <div class="Subtotal">Tổng tiền:</div>
                     </div>
-                    <div class="total-amount">250.000
+                    <div class="total-amount">250.000 VNĐ
                     </div>
                 </div>
                 <div class="button-border">
@@ -307,31 +319,3 @@
 <footer>
 
 </footer>
-
-
-
-<div class="row">
-    <div class="grid-col-1">
-        <div class="image-box">
-            <img src="./img/image-food1.jpg" style="{" height="80px" , width="80px" } />
-        </div>
-    </div>
-    <div class="grid-col-2">
-        <p class="title">{{this.name}}</p>
-    </div>
-    <div class="grid-col-3">
-        <div class="counter">
-            <div class="btn1">-</div>
-            <div class="count">2</div>
-            <div class="btn2">+</div>
-        </div>
-    </div>
-    <div class="grid-col-4">
-        <div class="prices">
-            <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px" } /></div>
-            <div class="amount">{{this.price}}</div>
-        </div>
-
-    </div>
-</div>
-<hr />

@@ -1,4 +1,4 @@
-.Header {
+#Header {
     margin: auto;
     width: 90%;
     height: 15%;
@@ -7,23 +7,28 @@
     padding-top: 2em;
 }
 
-.Heading {
-    padding-top: 0.5em;
-    padding-left: 0.25em;
+#Heading {
+    padding-left: 1em;
     font-size: 26px;
     font-weight: 700;
     color: #2f3841;
+    flex: 1;
 }
 
-.Action {
-    margin-top: 5.5em;
-    flex: 1 120px;
+#Action {
+    flex: 1;
     text-align: right;
     font-size: 17px;
     font-weight: 700;
     color: #e44c4c;
     cursor: pointer;
-    margin-right: 0.75em;
+}
+
+#Money {
+    font-size: 15px;
+    text-align: right;
+    font-weight: 600;
+    margin: 0 20px;
 }
 
 .cart-container {
@@ -58,11 +63,8 @@
     background-color: black;
 }
 
-.Cart-Items {
-    padding-top: 1.5em;
-    margin: auto;
-    display: flex;
-    align-items: center;
+.image-box {
+    padding-left: 0.75em;
 }
 
 .shopping-box {
@@ -74,6 +76,7 @@
     font-size: 18px;
     font-weight: 700;
     color: #202020;
+    padding-top: 0.75em;
 }
 
 .counter {
@@ -120,54 +123,35 @@
 .prices {
     height: 100%;
     text-align: center;
+    margin-right: 5%;
 }
 
 .amount {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 650;
     color: #e44c4c;
-    padding-top: 1em;
-    padding-right: 1em;
+    padding-top: 0.75em;
+    padding-right: 2em;
 }
 
 .remove {
     cursor: pointer;
-    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
 }
 
-@media all and (min-width: 50px) and (max-width: 120px) {
-    .cart-column-grid {
-        display: grid;
-        grid-template-columns: repeat(9, 1fr);
-        grid-template-rows: 50px 50px;
-        grid-template-areas: "p p n n n n n g g" "p p c c c c c g g";
-    }
+#cart-row {
+    padding: 10px 0;
 }
 
-.grid-col-1 {
-    margin: auto;
-    grid-area: p;
-    padding-left: 0.5em;
-}
-
-.grid-col-2 {
-    grid-area: n;
-    padding-left: 1em;
+#title-row {
     display: flex;
-    flex: wrap;
-    align-items: center;
-    padding-top: 2em;
+    align-content: center;
 }
 
-.grid-col-3 {
-    grid-area: c;
+#button-row {
     display: flex;
-    padding-left: 1em;
-}
-
-.grid-col-4 {
-    grid-area: g;
-    padding-top: 1em;
+    justify-content: left;
 }
 
 hr {
@@ -175,8 +159,6 @@ hr {
     margin-right: 5%;
     border-width: 1px;
 }
-
-.checkout {}
 
 .total {
     width: 100%;
