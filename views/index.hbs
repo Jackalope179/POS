@@ -64,6 +64,16 @@
                                             <div class="col-sm-3 cart-category">
                                                 <div class="single-box category-active">
                                                     <div class="img-area">
+                                                        <img src="./img/allmenu.jpg" alt="" />
+                                                    </div>                                                  
+                                                    <div class="img-text">
+                                                        <p>MENU</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 cart-category">
+                                                <div class="single-box ">
+                                                    <div class="img-area">
                                                         <img src="./img/image-food4.jpg" alt="" />
                                                     </div>
                                                     <div class="img-text">
@@ -91,16 +101,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3 cart-category">
-                                                <div class="single-box">
-                                                    <div class="img-area">
-                                                        <img src="./img/image-food14.jpg" alt="" />
-                                                    </div>
-                                                    <div class="img-text">
-                                                        <p>Lẩu</p>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
@@ -108,10 +108,10 @@
                                             <div class="col-sm-3 cart-category">
                                                 <div class="single-box">
                                                     <div class="img-area">
-                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                        <img src="./img/image-food14.jpg" alt="" />
                                                     </div>
                                                     <div class="img-text">
-                                                        <p>Tran tuan Phong</p>
+                                                        <p>Lẩu</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -178,20 +178,38 @@
                 <div class="mt-4">
                     <div class="row row-card food_list-js">
                         {{#each MenuArray}}
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="card card--best-seller">
-                                <img class="card-img-top" src={{this.image}} alt="Card image cap" />
-                                <div class="card-body">
-                                    <h5 class="card-title">{{this.name}}</h5>
-                                    <div class="label-control">
-                                        <p class="card-text">GIÁ: {{this.price}}</p>
-                                        <a href="#" class="label-icon-cart">
-                                            <i class="label-icon fas fa-cart-plus"></i>
-                                        </a>
+                            {{#if this.isRecommended}}
+                                <div class="col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card card--best-seller">
+                                        <img class="card-img-top" src={{this.image}} alt="Card image cap" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{this.name}}</h5>
+                                            <div class="label-control">
+                                                <p class="card-text">GIÁ: {{this.price}}</p>
+                                                <a href="#" class="label-icon-cart">
+                                                    <i class="label-icon fas fa-cart-plus"></i>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            {{else}}
+                                <div class="col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card">
+                                        <img class="card-img-top" src={{this.image}} alt="Card image cap" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{this.name}}</h5>
+                                            <div class="label-control">
+                                                <p class="card-text">GIÁ: {{this.price}}</p>
+                                                <a href="#" class="label-icon-cart">
+                                                    <i class="label-icon fas fa-cart-plus"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        
                         {{/each}}
                     </div>
                 </div>

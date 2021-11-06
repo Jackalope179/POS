@@ -6,7 +6,7 @@ let food = [
       "foodDescribe": "nước uống",
       "image": "./img/image-food4.jpg",
       "category": "nước uống",
-      "isRecommended": "0"
+      "isRecommended": 0
     },
     {
       "foodid": "7",
@@ -33,7 +33,7 @@ let food = [
       "foodDescribe": "Medium BBQ beef",
        "image": "./img/image-food7.jpg",
       "category": "nước uống",
-      "isRecommended": "0"
+      "isRecommended": 0
     },
     {
       "foodid": "10",
@@ -42,7 +42,7 @@ let food = [
       "foodDescribe": "Masterpiece french rice",
        "image": "./img/image-food8.jpg",
       "category": "nước uống",
-      "isRecommended": "0"
+      "isRecommended": 0
     },
     {
       "foodid": "11",
@@ -51,7 +51,7 @@ let food = [
       "foodDescribe": "Fresh orange juice",
        "image": "./img/image-food9.jpg",
       "category": "cơm bún phở",
-      "isRecommended": "0"
+      "isRecommended": 0
     },
     {
       "foodid": "12",
@@ -78,7 +78,7 @@ let food = [
       "foodDescribe": "Lurger Burger fat burger",
        "image": "./img/image-food1.jpg",
       "category": "thức ăn nhanh",
-      "isRecommended": "0"
+      "isRecommended": 0
     },
     {
       "foodid": "15",
@@ -118,6 +118,7 @@ let food = [
     }
 ];
   
+  
 
 var addcarts = document.querySelectorAll('.label-icon-cart');
 
@@ -148,23 +149,41 @@ for (var i = 0; i<categoryList.length;i++){
         cateName.innerText = this.innerText;
         var temp = ``;
         for (var i =0;i<food.length;i++){
-            if (food[i].category == this.innerText.toLowerCase()){
-                temp += `
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card card--best-seller">
-                            <img class="card-img-top" src=${food[i].image} alt="Card image cap" />
-                            <div class="card-body">
-                                <h5 class="card-title">${food[i].name}</h5>
-                                <div class="label-control">
-                                    <p class="card-text">GIÁ: ${food[i].price}</p>
-                                    <a href="#" class="label-icon-cart">
-                                        <i class="label-icon fas fa-cart-plus"></i>
-                                    </a>
+            if (food[i].category == this.innerText.toLowerCase() || this.innerText == 'MENU'){
+                if (food[i].isRecommended == 1)
+                    temp += `
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card card--best-seller">
+                                <img class="card-img-top" src=${food[i].image} alt="Card image cap" />
+                                <div class="card-body">
+                                    <h5 class="card-title">${food[i].name}</h5>
+                                    <div class="label-control">
+                                        <p class="card-text">GIÁ: ${food[i].price}</p>
+                                        <a href="#" class="label-icon-cart">
+                                            <i class="label-icon fas fa-cart-plus"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                `
+                    `
+                else 
+                    temp+= `
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="card-img-top" src=${food[i].image} alt="Card image cap" />
+                                <div class="card-body">
+                                    <h5 class="card-title">${food[i].name}</h5>
+                                    <div class="label-control">
+                                        <p class="card-text">GIÁ: ${food[i].price}</p>
+                                        <a href="#" class="label-icon-cart">
+                                            <i class="label-icon fas fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
             }
         }
         foodList.innerHTML = temp;
