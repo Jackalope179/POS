@@ -196,11 +196,11 @@
   font-family: poppins;
 }
 
-.category-active {
+.category-active .img-text {
   background-color: #7a7a7a !important;
 }
 
-.category-active p {
+.category-active .img-text p {
   color: var(--white-color) !important;
 }
 

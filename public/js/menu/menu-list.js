@@ -136,12 +136,12 @@ var outcarts = document.querySelector('.close__modal-icon');
 
 
 // select category
-var categoryList = document.getElementsByClassName('img-text');
+var categoryList = document.getElementsByClassName('single-box');
 for (var i = 0; i<categoryList.length;i++){
     categoryList[i].onclick = function(){
-        var categoryListTemp = document.getElementsByClassName('img-text');
+        var categoryListTemp = document.getElementsByClassName('single-box');
         for (var i = 0;i<categoryListTemp.length;i++)
-            categoryListTemp[i].className = 'img-text';
+            categoryListTemp[i].className = 'single-box';
         this.classList.add('category-active');
         let foodList = document.querySelector('.food_list-js');
         let cateName = document.querySelector('.food_list_name-js');
