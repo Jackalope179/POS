@@ -12,6 +12,8 @@ router.get("/", async function (req, res, next) {
   });
 });
 
+console.log(foodapi);
+
 router.get("/error", function (req, res, next) {
   res.render("error", { title: "Express" });
 });
