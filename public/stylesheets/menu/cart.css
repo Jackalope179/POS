@@ -19,11 +19,11 @@
     margin-top: 5.5em;
     flex: 1 120px;
     text-align: right;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     color: #e44c4c;
     cursor: pointer;
-    margin-right: 1em;
+    margin-right: 0.75em;
 }
 
 .cart-container {
@@ -61,18 +61,13 @@
     align-items: center;
 }
 
-.image-box {
-    width: 20%;
-    text-align: center;
-}
-
 .shopping-box {
     width: 15%;
     text-align: left;
 }
 
 .title {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     color: #202020;
 }
@@ -107,11 +102,12 @@
     justify-content: center;
     display: flex;
     align-items: center;
+    padding-bottom: 1.75px;
 }
 
 .count {
-    padding-left: 0.25em;
-    padding-right: 0.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
     font-size: 20px;
     font-weight: 650;
     color: #202020;
@@ -125,44 +121,46 @@
 .amount {
     font-size: 20px;
     font-weight: 650;
-    color: #202020;
+    color: #e44c4c;
 }
 
 .remove {
-    font-size: 14px;
-    font-weight: 650;
-    color: #e44c4c;
     cursor: pointer;
     padding-top: 0.5em;
 }
 
-.cart-column-flex {
+.cart-column-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 50px 50px;
+    grid-template-areas: "p p n n n n g g" "p p c c c c g g";
+}
+
+.grid-col-1 {
+    margin: auto;
+    grid-area: p;
+    padding-left: 0.5em;
+}
+
+.grid-col-2 {
+    grid-area: n;
+    padding-left: 0.5em;
     display: flex;
-    flex-flow: row wrap;
-    align-items: stretch;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    flex: wrap;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20%;
 }
 
-.flex-col-1 {
-    flex: 0 60px;
-    padding-left: 0.75em;
+.grid-col-3 {
+    grid-area: c;
+    display: flex;
+    padding-left: 0.5em;
 }
 
-.flex-col-2 {
-    padding-left: 0.75em;
-    flex: 0 130px;
-}
-
-.flex-col-3 {
-    flex: 0 65px;
-    padding-left: 0.75em;
-}
-
-.flex-col-4 {
-    flex: 1;
-    padding-right: 1.5em;
-    padding-left: 0.75em;
+.grid-col-4 {
+    grid-area: g;
+    padding-top: 1em;
 }
 
 hr {
@@ -198,13 +196,13 @@ hr {
 .total-amount {
     font-size: 22px;
     font-weight: 700;
-    color: #202020;
+    color: #ee4d2d;
     padding-left: 0.25em;
 }
 
 .button {
     margin-top: 5px;
-    width: 100%;
+    width: 90%;
     height: 40px;
     border: none;
     background: #ee4d2d;
