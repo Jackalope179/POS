@@ -2,37 +2,37 @@
         "foodid": "6",
         "name": "Nước lọc Dasani",
         "image": "./img/image-food4.jpg",
-        "price": "20.000đ"
+        "price": "20.000"
     },
     {
         "foodid": "11",
         "name": "Bún bò Huế",
         "image": "./img/image-food9.jpg",
-        "price": "70.000đ"
+        "price": "70.000"
     },
     {
         "foodid": "15",
         "name": "Pizza",
         "image": "./img/image-food12.jpg",
-        "price": "40.000đ"
+        "price": "40.000"
     },
     {
         "foodid": "17",
         "name": "Lẩu thái",
         "image": "./img/image-food14.jpg",
-        "price": "200.000đ"
+        "price": "200.000"
     },
     {
         "foodid": "8",
         "name": "Bia Tiger",
         "image": "./img/image-food6.jpg",
-        "price": "20.000đ"
+        "price": "20.000"
     },
     {
         "foodid": "13",
         "name": "Phở gà",
         "image": "./img/image-food11.jpg",
-        "price": "35.000đ"
+        "price": "35.000"
     }
 
 ]

@@ -1,10 +1,10 @@
 #Header {
     margin: auto;
     width: 90%;
-    height: 10%;
+    height: 7%;
     display: flex;
     align-items: center;
-    padding: 25px 0 0 0;
+    padding: 30px 0 20px 0;
 }
 
 #Heading {
@@ -20,7 +20,7 @@
     font-weight: 700;
     color: #e44c4c;
     cursor: pointer;
-    padding: 0 20px 0 0;
+    padding: 50px 20px 0 0;
 }
 
 #cart-img {
@@ -93,7 +93,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 80%;
     padding: 0 10px;
     justify-items: center;
 }

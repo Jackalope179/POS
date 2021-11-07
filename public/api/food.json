@@ -1,7 +1,7 @@
 [{
         "foodid": "6",
         "name": "Nước lọc Dasani",
-        "price": "10000",
+        "price": "10.000",
         "foodDescribe": "nước uống",
         "image": "./img/image-food4.jpg",
         "category": "nước uống",
@@ -10,7 +10,7 @@
     {
         "foodid": "7",
         "name": "Bia Heneiken",
-        "price": "20000",
+        "price": "20.000",
         "foodDescribe": "nước uống",
         "image": "./img/image-food5.jpg",
         "category": "nước uống",
@@ -19,7 +19,7 @@
     {
         "foodid": "8",
         "name": "Bia Tiger",
-        "price": "20000",
+        "price": "20.000",
         "foodDescribe": "Fresh machiato",
         "image": "./img/image-food6.jpg",
         "category": "nước uống",
@@ -28,7 +28,7 @@
     {
         "foodid": "9",
         "name": "Coca cola",
-        "price": "15000",
+        "price": "15.000",
         "foodDescribe": "Medium BBQ beef",
         "image": "./img/image-food7.jpg",
         "category": "nước uống",
@@ -37,7 +37,7 @@
     {
         "foodid": "10",
         "name": "Pepsi",
-        "price": "15000",
+        "price": "15.000",
         "foodDescribe": "Masterpiece french rice",
         "image": "./img/image-food8.jpg",
         "category": "nước uống",
@@ -46,7 +46,7 @@
     {
         "foodid": "11",
         "name": "Bún bò Huế",
-        "price": "35000",
+        "price": "35.000",
         "foodDescribe": "Fresh orange juice",
         "image": "./img/image-food9.jpg",
         "category": "cơm bún phở",
@@ -55,7 +55,7 @@
     {
         "foodid": "12",
         "name": "Cơm tấm",
-        "price": "35000",
+        "price": "35.000",
         "foodDescribe": "Fresh pineapple juice ",
         "image": "./img/image-food10.jpg",
         "category": "cơm bún phở",
@@ -64,7 +64,7 @@
     {
         "foodid": "13",
         "name": "Phở gà",
-        "price": "35000",
+        "price": "35.000",
         "foodDescribe": "Fat cake, birthday cake",
         "image": "./img/image-food11.jpg",
         "category": "cơm bún phở",
@@ -73,7 +73,7 @@
     {
         "foodid": "14",
         "name": "Hamburger",
-        "price": "20000",
+        "price": "20.000",
         "foodDescribe": "Lurger Burger fat burger",
         "image": "./img/image-food1.jpg",
         "category": "thức ăn nhanh",
@@ -82,7 +82,7 @@
     {
         "foodid": "15",
         "name": "Pizza",
-        "price": "20000",
+        "price": "20.000",
         "foodDescribe": "Coffee cake mocha machiato",
         "image": "./img/image-food12.jpg",
         "category": "thức ăn nhanh",
@@ -91,7 +91,7 @@
     {
         "foodid": "16",
         "name": "Khoai tây chiên",
-        "price": "50000",
+        "price": "50.000",
         "foodDescribe": "Noodle for family, noodle",
         "image": "./img/image-food13.jpg",
         "category": "thức ăn nhanh",
@@ -100,7 +100,7 @@
     {
         "foodid": "17",
         "name": "Lẩu thái",
-        "price": "100000",
+        "price": "100.000",
         "foodDescribe": "Fat cake, birthday bread",
         "image": "./img/image-food14.jpg",
         "category": "lẩu",
@@ -109,7 +109,7 @@
     {
         "foodid": "17",
         "name": "Lẩu ếch",
-        "price": "100000",
+        "price": "100.000",
         "foodDescribe": "Fat cake, birthday bread",
         "image": "./img/image-food15.jpg",
         "category": "lẩu",
