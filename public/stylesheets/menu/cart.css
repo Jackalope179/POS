@@ -111,11 +111,11 @@
 .btn2 {
     background-color: var(--white-color);
     border-radius: 6px;
-    padding: 0px 7px;
+    padding: 0px 6px;
     font-size: 18px;
     border: 1px solid var(--text-color);
     font-weight: 700;
-    line-height: 23px;
+    line-height: 22px;
 }
 
 .count {
@@ -152,9 +152,13 @@
 }
 
 hr {
+    width: 85%;
+    border-width: 1px;
+}
+
+#hr-main {
     width: 90%;
-    margin-right: 5%;
-    border-width: 1.5px;
+    border-width: 2px;
 }
 
 .total {
