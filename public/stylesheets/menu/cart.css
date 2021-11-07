@@ -1,11 +1,10 @@
 #Header {
     margin: auto;
     width: 90%;
-    height: 12%;
+    height: 10%;
     display: flex;
     align-items: center;
-    margin-top: 5%;
-    padding: 20px 0 0 0;
+    padding: 25px 0 0 0;
 }
 
 #Heading {
@@ -93,37 +92,30 @@
 .counter {
     display: flex;
     justify-content: space-between;
-    align-items: left;
-    position: absolute;
-    padding: 0 0 0 10px;
+    align-items: center;
     width: 50%;
+    padding: 0 10px;
+    justify-items: center;
 }
 
 .btn1 {
-    width: 20px;
-    height: 20px;
     background-color: var(--white-color);
     border-radius: 6px;
+    padding: 0px 8px;
     font-size: 18px;
     border: 1px solid var(--text-color);
-    font-weight: 800;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+    font-weight: 700;
+    line-height: 22px;
 }
 
 .btn2 {
-    width: 20px;
-    height: 20px;
     background-color: var(--white-color);
     border-radius: 6px;
+    padding: 0px 7px;
     font-size: 18px;
     border: 1px solid var(--text-color);
-    font-weight: 800;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    padding-bottom: 1.75px;
+    font-weight: 700;
+    line-height: 23px;
 }
 
 .count {
@@ -162,7 +154,7 @@
 hr {
     width: 90%;
     margin-right: 5%;
-    border-width: 1px;
+    border-width: 1.5px;
 }
 
 .total {
@@ -173,20 +165,14 @@ hr {
 }
 
 .Subtotal {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     color: #202020;
     padding: 0 0 0 10px;
 }
 
-.items {
-    font-size: 18px;
-    font-weight: 650;
-    color: #909090;
-}
-
 .total-amount {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     padding: 0 15px 0 0;
     color: #e44c4c;
