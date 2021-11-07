@@ -65,7 +65,7 @@
                                                 <div class="single-box category-active">
                                                     <div class="img-area">
                                                         <img src="./img/allmenu.jpg" alt="" />
-                                                    </div>                                                  
+                                                    </div>
                                                     <div class="img-text">
                                                         <p>MENU</p>
                                                     </div>
@@ -178,38 +178,38 @@
                 <div class="mt-4">
                     <div class="row row-card food_list-js">
                         {{#each MenuArray}}
-                            {{#if this.isRecommended}}
-                                <div class="col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card card--best-seller">
-                                        <img class="card-img-top" src={{this.image}} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{this.name}}</h5>
-                                            <div class="label-control">
-                                                <p class="card-text">GIÁ: {{this.price}}</p>
-                                                <a href="#" class="label-icon-cart">
-                                                    <i class="label-icon fas fa-cart-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
+                        {{#if this.isRecommended}}
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card card--best-seller">
+                                <img class="card-img-top" src={{this.image}} alt="Card image cap" />
+                                <div class="card-body">
+                                    <h5 class="card-title">{{this.name}}</h5>
+                                    <div class="label-control">
+                                        <p class="card-text">GIÁ: {{this.price}}</p>
+                                        <a href="#" class="label-icon-cart">
+                                            <i class="label-icon fas fa-cart-plus"></i>
+                                        </a>
                                     </div>
                                 </div>
-                            {{else}}
-                                <div class="col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={{this.image}} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{this.name}}</h5>
-                                            <div class="label-control">
-                                                <p class="card-text">GIÁ: {{this.price}}</p>
-                                                <a href="#" class="label-icon-cart">
-                                                    <i class="label-icon fas fa-cart-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="card-img-top" src={{this.image}} alt="Card image cap" />
+                                <div class="card-body">
+                                    <h5 class="card-title">{{this.name}}</h5>
+                                    <div class="label-control">
+                                        <p class="card-text">GIÁ: {{this.price}}</p>
+                                        <a href="#" class="label-icon-cart">
+                                            <i class="label-icon fas fa-cart-plus"></i>
+                                        </a>
                                     </div>
                                 </div>
-                            {{/if}}
-                        
+                            </div>
+                        </div>
+                        {{/if}}
+
                         {{/each}}
                     </div>
                 </div>
@@ -220,12 +220,15 @@
             {{! CART }}
         </div>
         <div class="cart-container">
+
             <div class="row" id="Header">
-                <div class="col-sm-2">
-                    <img src="./img/shopping-cart.png" style="{" height="60px" , width="60px" } />
+                <div class="col-sm-2" id="cart-img">
+                    <img src="./img/shopping-cart.png" style="{" height="65px" , width="65px" } />
                 </div>
-                <div class="col-sm-6" id="Heading">Giỏ Hàng</div>
-                <div class="col-sm-4" id="Action">Xóa tất cả</div>
+                <div class="col-sm-10" id="Heading">Giỏ Hàng</div>
+            </div>
+            <div class="row" id="Action">
+                <div class="col-sm-12">Xóa tất cả</div>
             </div>
 
             <hr />
@@ -233,15 +236,12 @@
                 <div class="mt-4">
                     {{#each CartArray}}
                     <div class="row" id="cart-row">
-                        {{!-- <div class="col-sm-12 col-md-6 col-lg-5 col-xl-3" id="img-row"> --}}
                         <div class="col-sm-3" id="img-row">
                             <div class="image-box">
-                                {{!-- <img src="./img/image-food1.jpg" style="{" height="80px" , width="80px" } /> --}}
-                                <img src= {{this.image}} style="{" height="80px" , width="100%" } />
+                                <img src={{this.image}} style="{" height="80px" , width="100%" } />
                             </div>
                         </div>
-                        {{!-- <div class="col-sm-6 col-md-6 col-lg-7 col-xl-6" id="name-button-row"> --}}
-                        <div class="col-sm-6" id="name-button-row">
+                        <div class="col-sm-5" id="name-button-row">
                             <div class="row">
                                 <div class="col" id="title-row">
                                     <p class="title">{{this.name}}</p>
@@ -259,9 +259,7 @@
 
 
                         </div>
-
-                        {{!-- <div class="col-sm-12 col-md-6 col-lg-5 col-xl-3"> --}}
-                        <div class="col-sm-3" id="remove-price">
+                        <div class="col-sm-4" id="remove-price">
                             <div class="prices">
                                 <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px"
                                         } /></div>
@@ -326,7 +324,8 @@
                             <div class="food-detail">
                                 <div class="food-detail__field">
                                     <div class="food-detail__field--name">Thành phần:</div>
-                                    <div class="food-detail__field--content">Bánh mỳ, salad, thịt bò, phô mai, tôm, cà
+                                    <div class="food-detail__field--content">Bánh mỳ, salad, thịt bò, phô mai,
+                                        tôm, cà
                                         chua.
                                     </div>
                                 </div>
