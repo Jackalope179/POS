@@ -67,7 +67,7 @@
 .food-list-name-hr {
   display: flex;
   /* margin-left: 30px; */
-  width: 75%;
+  width: 100%;
   /* width: fit-content; */
   size: 5px;
   align-items: center;

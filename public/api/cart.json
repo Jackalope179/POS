@@ -1,37 +1,25 @@
 [{
-        "foodid": "1",
-        "name": "Hamburger",
-        "image": "1",
+        "foodid": "6",
+        "name": "Nước lọc Dasani",
+        "image": "./img/image-food4.jpg",
+        "price": "20.000đ"
+    },
+    {
+        "foodid": "11",
+        "name": "Bún bò Huế",
+        "image": "./img/image-food9.jpg",
+        "price": "70.000đ"
+    },
+    {
+        "foodid": "15",
+        "name": "Pizza",
+        "image": "./img/image-food12.jpg",
         "price": "40.000đ"
     },
     {
-        "foodid": "2",
-        "name": "Hủ tíu Nam Vang",
-        "image": "1",
-        "price": "250.000đ"
-    },
-    {
-        "foodid": "3",
-        "name": "Bánh mỳ thịt nướng",
-        "image": "1",
-        "price": "25.000đ"
-    },
-    {
-        "foodid": "4",
-        "name": "Bún bò Huế",
-        "image": "1",
-        "price": "55.000đ"
-    },
-    {
-        "foodid": "5",
-        "name": "Bánh canh cá lóc",
-        "image": "1",
-        "price": "55.000đ"
-    },
-    {
-        "foodid": "6",
-        "name": "Bánh tráng nướng",
-        "image": "1",
-        "price": "35.000đ"
+        "foodid": "17",
+        "name": "Lẩu thái",
+        "image": "./img/image-food14.jpg",
+        "price": "200.000đ"
     }
 ]
