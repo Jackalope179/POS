@@ -14,7 +14,6 @@ var app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
-
 // const hbs = exphbs.create({
 //   defaultLayout: "layout",
 //   layoutsDir: path.join(__dirname, "views"),
