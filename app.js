@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 // const { times } = require("./helpers/handlebars");
 var helpers = require("handlebars-helpers")();
 var logger = require("morgan");
+var hbs = require("hbs");
 const exphbs = require("express-handlebars");
 
 var indexRouter = require("./routes/index");
@@ -21,7 +22,7 @@ app.set("views", path.join(__dirname, "views"));
 //   helpers: helpers,
 // });
 app.set("view engine", "hbs");
-
+hbs.registerPartials(__dirname + '/views/partials');
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
