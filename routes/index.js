@@ -7,7 +7,7 @@ var cartapi = require("../public/api/cart.json");
 /* GET home page. */
 router.get("/", async function(req, res, next) {
     // let foodList = await food.getAllFood();
-    res.render("index", {
+    res.render("menu", {
         title: "POS restaurant",
         MenuArray: foodapi,
         CartArray: cartapi,
