@@ -1,0 +1,48 @@
+.payment-body {
+    width: calc(70% - var(--margin-left));
+    margin-left: 50px;
+    height: 100px;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+#payment-title {
+    font-size: 35px;
+    font-weight: 650;
+    color: #4d4d4d;
+}
+
+.sub_total_row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+}
+
+.total_row {
+    font-size: 18px;
+    font-weight: 650;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+}
+
+.btn-primary {
+    background: #ee4d2d;
+    border-style: none;
+    font-weight: 650;
+    font-size: 18px;
+}
+
+.btn-block {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.card-footer {
+    background: none;
+    border-style: none;
+}
+
+#cash_button {
+    padding-top: 15px;
+}

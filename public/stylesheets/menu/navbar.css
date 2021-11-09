@@ -19,7 +19,7 @@
         font-weight: 550;
         display: flex;
         justify-content: center;
-        padding-top: 0.5em;
+        align-items: center;
     }
     
     .nav-link {
@@ -27,12 +27,18 @@
     }
     
     #navbarSupportedContent ul li:hover {
-        border-radius: 6px 6px 0 0;
-        background: rgba(220, 220, 220, 0.4)
+        border-radius: 7px 7px 0 0;
+        background: rgba(220, 220, 220, 0.4);
     }
     
     #navbarSupportedContent ul li {
         transition: all 1s;
+    }
+    
+    .active {
+        background: none !important;
+        color: var(--text-color) !important;
+        border-radius: 6px 6px 6px 6px;
     }
     
     .nav-item:hover {
@@ -42,6 +48,10 @@
     
     .navbar-toggler {
         margin: 4px;
+    }
+    
+    #login-text {
+        width: 150px;
     }
     
     @media (max-width: 992px) {
