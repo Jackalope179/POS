@@ -1,6 +1,4 @@
 <div class="body">
-
-
     <div class="payment-body">
         <div class="container py-4">
             <!-- For demo purpose -->
@@ -37,7 +35,7 @@
                                         <div class="form-group"> <label for="cardNumber">
                                                 <h6>Mã số thẻ</h6>
                                             </label>
-                                            <div class="input-group"> <input type="text" name="cardNumber"
+                                            <div class="input-group"> <input type="date" name="cardNumber"
                                                     placeholder="Mã số thẻ hợp lệ" class="form-control " required>
                                                 <div class="input-group-append"> <span
                                                         class="input-group-text text-muted"> <i
@@ -69,7 +67,7 @@
                                             <div class="sub_money">120.000 VNĐ</div>
                                         </div>
                                         <div class="sub_total_row">
-                                            <div class="sub_total">VAT(10%)</div>
+                                            <div class="sub_total">VAT (10%)</div>
                                             <div class="sub_money">12.000 VNĐ</div>
                                         </div>
 
@@ -96,7 +94,7 @@
                                     <div class="sub_money">120.000 VNĐ</div>
                                 </div>
                                 <div class="sub_total_row">
-                                    <div class="sub_total">VAT(10%)</div>
+                                    <div class="sub_total">VAT (10%)</div>
                                     <div class="sub_money">12.000 VNĐ</div>
                                 </div>
 
@@ -129,7 +127,7 @@
                                     <div class="sub_money">120.000 VNĐ</div>
                                 </div>
                                 <div class="sub_total_row">
-                                    <div class="sub_total">VAT(10%)</div>
+                                    <div class="sub_total">VAT (10%)</div>
                                     <div class="sub_money">12.000 VNĐ</div>
                                 </div>
 
@@ -153,15 +151,13 @@
         </div>
         <div class="cart-container">
 
-            <div class="row" id="Header">
+            <div class="row" id="Header_payment">
                 <div class="col-sm-2" id="cart-img">
                     <img src="./img/shopping-cart.png" style="{" height="65px" , width="65px" } />
                 </div>
                 <div class="col-sm-10" id="Heading">Giỏ Hàng</div>
             </div>
-            <div class="row" id="Action">
-                <div class="col-sm-12">Xóa tất cả</div>
-            </div>
+        
 
             <hr id="hr-main" />
             <div class="cart">
@@ -169,7 +165,7 @@
                 <div class="row" id="cart-row">
                     <div class="col-sm-3" id="img-row">
                         <div class="image-box">
-                            <img src={{this.image}} style="{" height="80px" , width="100%" } />
+                            <img src={{this.image}} style="{" height="80px" , width="100%" id="img-food"}  />
                         </div>
                     </div>
                     <div class="col-sm-5" id="name-button-row">

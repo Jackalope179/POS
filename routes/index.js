@@ -24,6 +24,11 @@ router.get("/thanhtoan", async function(req, res, next) {
         array: [1, 2, 3],
     });
 });
+
+router.get("/datban", async function(req, res, next) {
+    // let foodList = await food.getAllFood();
+    res.render("tablebooking");
+});
 console.log(foodapi);
 
 router.get("/error", function(req, res, next) {
