@@ -42,22 +42,10 @@
   /* overflow-y: scroll; */
 }
 
-@media screen and (max-width: 600px) {
-  .cart-container {
-    display: none;
-  }
-}
-
 .cart {
-<<<<<<< HEAD
-    width: 100%;
-    height: 45%;
-    overflow-y: scroll;
-=======
   width: 100%;
-  height: 400px;
+  height: calc(57% - var(--checkout-height));
   overflow-y: scroll;
->>>>>>> 734eda48dd586a40af44468ea7c34f107f3ffe72
 }
 
 .cart::-webkit-scrollbar {
@@ -85,13 +73,8 @@
 }
 
 .image-box {
-<<<<<<< HEAD
-    padding-left: 0.75em;
-    padding: 0 0 0 10px;
-=======
   padding-left: 0.75em;
-  padding: 0 0 0 5px;
->>>>>>> 734eda48dd586a40af44468ea7c34f107f3ffe72
+  padding: 0 0 0 10px;
 }
 
 #title-row {
@@ -205,26 +188,7 @@ hr {
 }
 
 .button {
-<<<<<<< HEAD
-    width: 45%;
-    height: 40px;
-    border: none;
-    background: #ee4d2d;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 650;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.checkout {
-    margin-top: 7%;
-}
-=======
-  width: 45%;
+  padding: 0 20px;
   height: 40px;
   border: none;
   background: #ee4d2d;
@@ -237,4 +201,14 @@ hr {
   align-items: center;
   justify-content: center;
 }
->>>>>>> 734eda48dd586a40af44468ea7c34f107f3ffe72
+
+.checkout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  height: var(--checkout-height);
+  flex-wrap: wrap;
+  justify-content: space-around;
+  display: flex;
+}

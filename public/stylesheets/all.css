@@ -8,20 +8,7 @@
   --text-color: #333;
   --border-color: #dbdbdb;
   --mainmenu-width: calc(98% - var(--submenu-width));
-}
-
-@media only screen and (min-width: 601px) and (max-width: 992px) {
-  :root {
-    --margin-left: 50px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  :root {
-    --margin-left: 20px !important;
-    --submenu-width: 0%;
-    --mainmenu-width: calc(98% - var(--submenu-width));
-  }
+  --checkout-height: 10%;
 }
 
 .html {
@@ -41,6 +28,7 @@
 }
 
 .body {
+  width: 100%;
   margin-top: var(--header-height);
   position: relative;
   display: flex;
