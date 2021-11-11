@@ -1,7 +1,7 @@
 #Header {
   margin: auto;
   width: 90%;
-  height: 7%;
+  height: var(--cart-header-height);
   display: flex;
   align-items: center;
   padding: 30px 0 20px 0;
@@ -44,7 +44,7 @@
 
 .cart {
   width: 100%;
-  height: calc(57% - var(--checkout-height));
+  height: calc(65% - var(--cart-header-height) - var(--checkout-height));
   overflow-y: scroll;
 }
 
@@ -143,6 +143,7 @@
 
 #cart-row {
   padding: 10px 0;
+  width: 100%;
 }
 
 #title-row {

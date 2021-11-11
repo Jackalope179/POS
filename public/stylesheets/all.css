@@ -1,5 +1,5 @@
 :root {
-  --margin-left: 100px;
+  --margin-left: 80px;
   --submenu-width: 28%;
   --header-height: 50px;
   --primary-color: #ee4d2d;
@@ -8,6 +8,7 @@
   --text-color: #333;
   --border-color: #dbdbdb;
   --mainmenu-width: calc(98% - var(--submenu-width));
+  --cart-header-height: 5%;
   --checkout-height: 10%;
 }
 
