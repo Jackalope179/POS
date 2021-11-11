@@ -18,6 +18,10 @@
   .cart {
     height: calc(70% - var(--cart-header-height) - var(--checkout-height));
   }
+
+  .cart-mobile {
+    display: none;
+  }
 }
 
 @media (max-width: 992px) {
@@ -26,6 +30,10 @@
     display: block;
     text-align: left;
     padding-left: 40px;
+  }
+
+  .cart-mobile {
+    display: none;
   }
 }
 
@@ -69,6 +77,10 @@
 
   .image-box img {
     height: 100%;
+  }
+
+  .cart-mobile {
+    display: none;
   }
 }
 
