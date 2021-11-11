@@ -1,6 +1,5 @@
 :root {
-<<<<<<< HEAD
-    --margin-left: 100px;
+    --margin-left: 80px;
     --submenu-width: 28%;
     --header-height: 50px;
     --primary-color: #ee4d2d;
@@ -8,31 +7,9 @@
     --black-color: #000;
     --text-color: #333;
     --border-color: #dbdbdb;
-}
-
-@media (max-width: 600px) {
-     :root {
-        --margin-left: 10px;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 1024px) {
-     :root {
-        --margin-left: 50px;
-    }
-=======
-  --margin-left: 80px;
-  --submenu-width: 28%;
-  --header-height: 50px;
-  --primary-color: #ee4d2d;
-  --white-color: #fff;
-  --black-color: #000;
-  --text-color: #333;
-  --border-color: #dbdbdb;
-  --mainmenu-width: calc(98% - var(--submenu-width));
-  --cart-header-height: 5%;
-  --checkout-height: 10%;
->>>>>>> 0a26adba18c9a2cc6a0d316ea144ab0973378106
+    --mainmenu-width: calc(98% - var(--submenu-width));
+    --cart-header-height: 5%;
+    --checkout-height: 10%;
 }
 
 .html {
@@ -52,18 +29,11 @@
 }
 
 .body {
-<<<<<<< HEAD
+    width: 100%;
     margin-top: var(--header-height);
     position: relative;
     display: flex;
     justify-content: space-between;
-=======
-  width: 100%;
-  margin-top: var(--header-height);
-  position: relative;
-  display: flex;
-  justify-content: space-between;
->>>>>>> 0a26adba18c9a2cc6a0d316ea144ab0973378106
 }
 
 .main-body {
