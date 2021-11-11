@@ -1,4 +1,7 @@
 @media (max-width: 1025px) {
+  :root {
+    --margin-left: 50px;
+  }
   .nav-link {
     display: block;
     padding: 0;
