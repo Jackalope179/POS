@@ -208,5 +208,7 @@ document.querySelector('.cart-mobile__button').onclick = function(){
     cartMobile.style.display = 'none'
     cartMobileStatus = false
   }
-
 };
+
+
+
