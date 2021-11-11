@@ -193,4 +193,25 @@ for (var i = 0; i < categoryList.length; i++) {
             }
         }
     };
+<<<<<<< HEAD
 }
+=======
+}
+
+
+// show cart mobile
+var cartMobileStatus = false
+document.querySelector('.cart-mobile__button').onclick = function(){
+  var cartMobile = document.querySelector('.cart-mobile');
+  if (!cartMobileStatus){
+    cartMobile.style.display = 'flex'
+    cartMobileStatus = true
+  }
+  else{
+    cartMobile.style.display = 'none'
+    cartMobileStatus = false
+  }
+
+};
+
+>>>>>>> main
