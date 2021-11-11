@@ -1,15 +1,18 @@
 .payment-body {
     width: calc(70% - var(--margin-left));
-    margin-left: 50px;
-    height: 100px;
     background-color: #ffffff;
     font-size: 16px;
+    margin-left: 3%;
 }
 
 #payment-title {
-    font-size: 35px;
+    font-size: 32px;
     font-weight: 650;
     color: #4d4d4d;
+}
+
+.card {
+    line-height: 20px;
 }
 
 .sub_total_row {
@@ -55,8 +58,75 @@
 #Header_payment {
     margin: auto;
     width: 90%;
-    height: 12%;
+    height: 15%;
     display: flex;
     align-items: center;
-    padding: 30px 0 20px 0;
+    padding: 25px 0 20px 0;
+}
+
+.cart-container-payment {
+    margin-right: 10%;
+    margin-top: 4%;
+    height: 650px;
+    background-color: #ffffff;
+    position: fixed;
+    right: 0;
+    top: var(--header-height);
+    width: var(--submenu-width);
+    border-radius: 20px;
+    border: 2px solid #e6e2f5;
+    box-shadow: 0 10px 10px #1687d933;
+}
+
+#cart-payment {
+    width: 100%;
+    height: 60%;
+}
+
+#main-block {
+    display: flex;
+    align-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .cart-container-payment {
+        margin-right: 5%;
+        width: 30%;
+    }
+    .payment-body {
+        margin-left: -5px;
+        width: 70%;
+    }
+}
+
+@media screen and (min-height: 981px) {
+    .cart-container-payment {
+        margin-top: 10%;
+    }
+    .payment-body {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 981px) {
+    .cart-container-payment {
+        display: none;
+    }
+    .payment-body {
+        margin: auto;
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 526px) {
+    .btn-block {
+        width: 0%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-height: 780px) {
+    .cart-container-payment {
+        height: 80%;
+    }
 }

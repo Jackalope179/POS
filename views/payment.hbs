@@ -1,8 +1,8 @@
-<div class="body">
+<div class="body" id="main-block">
     <div class="payment-body">
         <div class="container py-4">
             <!-- For demo purpose -->
-            <div class="row mb-4">
+            <div class="row mb-3">
                 <div class="col-lg-8 mx-auto text-center">
                     <div class="display-6" id="payment-title">THANH TOÁN</div>
                 </div>
@@ -35,7 +35,7 @@
                                         <div class="form-group"> <label for="cardNumber">
                                                 <h6>Mã số thẻ</h6>
                                             </label>
-                                            <div class="input-group"> <input type="date" name="cardNumber"
+                                            <div class="input-group"> <input type="text" name="cardNumber"
                                                     placeholder="Mã số thẻ hợp lệ" class="form-control " required>
                                                 <div class="input-group-append"> <span
                                                         class="input-group-text text-muted"> <i
@@ -149,7 +149,7 @@
                 </div>
             </div>
         </div>
-        <div class="cart-container">
+        <div class="cart-container-payment">
 
             <div class="row" id="Header_payment">
                 <div class="col-sm-2" id="cart-img">
@@ -157,15 +157,15 @@
                 </div>
                 <div class="col-sm-10" id="Heading">Giỏ Hàng</div>
             </div>
-        
+
 
             <hr id="hr-main" />
-            <div class="cart">
+            <div class="cart" id="cart-payment">
                 {{#each CartArray}}
                 <div class="row" id="cart-row">
                     <div class="col-sm-3" id="img-row">
                         <div class="image-box">
-                            <img src={{this.image}} style="{" height="80px" , width="100%" id="img-food"}  />
+                            <img src={{this.image}} style="{" height="80px" , width="100%" id="img-food" } />
                         </div>
                     </div>
                     <div class="col-sm-5" id="name-button-row">
@@ -211,3 +211,4 @@
             </div>
         </div>
     </div>
+</div>

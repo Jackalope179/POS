@@ -1,6 +1,6 @@
 .booking-container {
     position: relative;
-    margin-top: 100px;
+    margin-top: 120px;
     background-color: #ffffff;
 }
 
@@ -98,4 +98,10 @@
 #person {
     font-size: 18px;
     font-weight: 650;
+}
+
+@media screen and (max-width: 534px) {
+    .btn-block {
+        width: 90%;
+    }
 }
