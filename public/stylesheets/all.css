@@ -1,5 +1,5 @@
 :root {
-    --margin-left: 100px;
+    --margin-left: 80px;
     --submenu-width: 28%;
     --header-height: 50px;
     --primary-color: #ee4d2d;
@@ -7,18 +7,9 @@
     --black-color: #000;
     --text-color: #333;
     --border-color: #dbdbdb;
-}
-
-@media (max-width: 600px) {
-     :root {
-        --margin-left: 10px;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 1024px) {
-     :root {
-        --margin-left: 50px;
-    }
+    --mainmenu-width: calc(98% - var(--submenu-width));
+    --cart-header-height: 5%;
+    --checkout-height: 10%;
 }
 
 .html {
@@ -38,6 +29,7 @@
 }
 
 .body {
+    width: 100%;
     margin-top: var(--header-height);
     position: relative;
     display: flex;
