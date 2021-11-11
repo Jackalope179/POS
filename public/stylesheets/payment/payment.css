@@ -1,8 +1,15 @@
+.main-block {
+    width: 100%;
+    margin-top: var(--header-height);
+    position: relative;
+}
+
 .payment-body {
-    width: calc(70% - var(--margin-left));
+    width: calc(65% - var(--margin-left));
     background-color: #ffffff;
     font-size: 16px;
     margin-left: 3%;
+    margin-top: 80px;
 }
 
 #payment-title {
@@ -12,7 +19,7 @@
 }
 
 .card {
-    line-height: 20px;
+    line-height: 15px;
 }
 
 .sub_total_row {
@@ -47,6 +54,11 @@
     border-style: none;
 }
 
+#tab-list {
+    margin: auto;
+    background-color: deepskyblue;
+}
+
 #cash_button {
     padding-top: 15px;
 }
@@ -65,8 +77,8 @@
 }
 
 .cart-container-payment {
-    margin-right: 10%;
-    margin-top: 4%;
+    margin-right: 11%;
+    margin-top: 50px;
     height: 650px;
     background-color: #ffffff;
     position: fixed;
@@ -101,10 +113,10 @@
 
 @media screen and (min-height: 981px) {
     .cart-container-payment {
-        margin-top: 10%;
+        margin-top: 100px;
     }
     .payment-body {
-        margin-top: 5%;
+        margin-top: 130px;
     }
 }
 

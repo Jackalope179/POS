@@ -1,109 +1,99 @@
 @media (max-width: 1025px) {
-  :root {
-    --margin-left: 50px;
-  }
-  .nav-link {
-    display: block;
-    padding: 0;
-  }
-
-  .nav-item {
-    width: 130px;
-    height: 50px;
-    font-weight: 550;
-    justify-content: center;
-    padding: 10px 4px;
-    display: block;
-    text-align: center;
-    line-height: 35px;
-  }
-
-  .cart {
-    height: calc(70% - var(--cart-header-height) - var(--checkout-height));
-  }
-
-  .cart-mobile {
-    display: none;
-  }
+     :root {
+        --margin-left: 50px;
+    }
+    .nav-link {
+        display: block;
+        padding: 0;
+    }
+    .nav-item {
+        width: 130px;
+        height: 50px;
+        font-weight: 550;
+        justify-content: center;
+        padding: 10px 4px;
+        display: block;
+        text-align: center;
+        line-height: 35px;
+    }
+    .cart {
+        height: calc(70% - var(--cart-header-height) - var(--checkout-height));
+    }
+    .cart-mobile {
+        display: none;
+    }
 }
 
 @media (max-width: 992px) {
-  .nav-item {
-    width: 100%;
-    display: block;
-    text-align: left;
-    padding-left: 40px;
-  }
-
-  .cart-mobile {
-    display: none;
-  }
+    .nav-item {
+        width: 100%;
+        display: block;
+        text-align: left;
+        padding-left: 40px;
+    }
+    .cart-mobile {
+        display: none;
+    }
 }
+
 
 /* ipad */
-@media (min-width: 600px) and (max-width: 770px) {
-  :root {
-    --margin-left: 30px;
-    --submenu-width: 32%;
-    --mainmenu-width: calc(98% - var(--submenu-width));
-  }
 
-  .card {
-    min-height: 260px;
-  }
-
-  .card-text {
-    font-size: 13px;
-  }
-  .card-img-top {
-    height: 140px;
-  }
-
-  .cart .title,
-  .cart .amount,
-  .cart .count {
-    font-size: 14px;
-  }
-
-  .btn1 {
-    padding: 0px 6px;
-    line-height: 20px;
-  }
-  .btn2 {
-    padding: 0px 4px;
-    line-height: 20px;
-  }
-
-  .image-box {
-    height: 60px;
-  }
-
-  .image-box img {
-    height: 100%;
-  }
-
-  .cart-mobile {
-    display: none;
-  }
+@media (min-width: 600px) and (max-width: 1024px) {
+     :root {
+        --margin-left: 15px;
+        --submenu-width: 33%;
+        --mainmenu-width: calc(98% - var(--submenu-width));
+    }
+    .card {
+        min-height: 260px;
+    }
+    .card-text {
+        font-size: 13px;
+    }
+    .card-img-top {
+        height: 140px;
+    }
+    .cart .title,
+    .cart .amount,
+    .cart .count {
+        font-size: 14px;
+    }
+    .btn1 {
+        padding: 0px 6px;
+        line-height: 20px;
+    }
+    .btn2 {
+        padding: 0px 4px;
+        line-height: 20px;
+    }
+    .image-box {
+        height: 60px;
+    }
+    .image-box img {
+        height: 100%;
+    }
+    .cart-mobile {
+        display: none;
+    }
 }
 
+
 /* mobile */
+
 @media (max-width: 599px) {
-  :root {
-    --margin-left: 20px !important;
-    --submenu-width: 0%;
-    --mainmenu-width: calc(98% - var(--submenu-width));
-  }
-
-  .cart-container {
-    display: none;
-  }
-
-  .cart-mobile {
-    display: none;
-  }
-
-  .cart-mobile__button {
-    display: block;
-  }
+     :root {
+        --margin-left: 20px !important;
+        --submenu-width: 0%;
+        --mainmenu-width: calc(98% - var(--submenu-width));
+    }
+    .cart-container {
+        display: none;
+    }
+    .cart-mobile {
+        display: none;
+    }
+    .cart-mobile__button {
+        display: block;
+    }
 }
