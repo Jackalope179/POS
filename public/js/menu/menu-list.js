@@ -198,17 +198,31 @@ for (var i = 0; i < categoryList.length; i++) {
 
 // show cart mobile
 var cartMobileStatus = false
-document.querySelector('.cart-mobile__button').onclick = function(){
-  var cartMobile = document.querySelector('.cart-mobile');
-  if (!cartMobileStatus){
-    cartMobile.style.display = 'flex'
-    cartMobileStatus = true
-  }
-  else{
-    cartMobile.style.display = 'none'
-    cartMobileStatus = false
-  }
+document.querySelector('.cart-mobile__button').onclick = function() {
+    var cartMobile = document.querySelector('.cart-mobile');
+    if (!cartMobileStatus) {
+        cartMobile.style.display = 'flex'
+        cartMobileStatus = true
+    } else {
+        cartMobile.style.display = 'none'
+        cartMobileStatus = false
+    }
 };
 
+//  category
+$('.carousel[data-type="multi"] .item').each(function() {
+    var next = $(this).next();
+    if (!next.length) {
+        next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
 
+    for (var i = 0; i < 2; i++) {
+        next = next.next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
 
+        next.children(':first-child').clone().appendTo($(this));
+    }
+});

@@ -15,6 +15,16 @@ router.get("/", async function(req, res, next) {
     });
 });
 
+router.get("/menunew", async function(req, res, next) {
+    // let foodList = await food.getAllFood();
+    res.render("menunew", {
+        title: "POS restaurant",
+        MenuArray: foodapi,
+        CartArray: cartapi,
+        array: [1, 2, 3],
+    });
+});
+
 router.get("/thanhtoan", async function(req, res, next) {
     // let foodList = await food.getAllFood();
     res.render("payment", {

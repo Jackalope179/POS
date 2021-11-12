@@ -1,171 +1,172 @@
 .search-bar {
-  margin: 20px 40px;
-  display: flex;
+    margin: 20px 40px;
+    display: flex;
 }
 
 .input-search {
-  outline: none;
-  border-radius: 10px;
-  padding: 5px 10px;
-  border: 1px solid #333333;
-  flex: 1;
-  margin-right: 15px;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 1px solid #333333;
+    flex: 1;
+    margin-right: 15px;
 }
 
 .btn-search {
-  background-color: var(--primary-color);
-  padding: 5px 30px;
-  border-radius: 5px;
-  border: none;
-  color: var(--white-color);
+    background-color: var(--primary-color);
+    padding: 5px 30px;
+    border-radius: 5px;
+    border: none;
+    color: var(--white-color);
 }
 
 .btn-search:hover {
-  cursor: pointer;
-  opacity: 0.7;
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 .btn-search:focus {
-  outline: none;
+    outline: none;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes growth {
-  from {
-    transform: scale(var(--growth-from));
-  }
-  to {
-    transform: scale(var(--growth-to));
-  }
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
 }
 
 .col-8 {
-  padding: 0 0 0 15px;
-  background-color: #fcf4f4;
+    padding: 0 0 0 15px;
+    background-color: #fcf4f4;
 }
 
 .food-list-name {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .food-list-name-category {
-  color: var(--text-color);
-  display: flex;
-  margin-left: 15px;
-  font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    margin-left: 15px;
+    font-weight: 600;
 }
 
 .food-list-name-hr {
-  display: flex;
-  /* margin-left: 30px; */
-  width: 100%;
-  /* width: fit-content; */
-  size: 5px;
-  align-items: center;
-  color: var(--border-color);
+    display: flex;
+    /* margin-left: 30px; */
+    width: 100%;
+    /* width: fit-content; */
+    size: 5px;
+    align-items: center;
+    color: var(--border-color);
 }
 
 .mt-4 {
-  padding-left: 8px;
-  padding-right: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .about-picture {
-  position: relative;
-  margin-top: 50px;
-  align-items: center;
+    position: relative;
+    margin-top: 50px;
+    align-items: center;
 }
 
 .about-picture img {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid #c2e1fd;
-  /* box-shadow: 0px 5px 15px 5px #265077; */
-  transition: all 0.5s;
-  /* x y độ mờ - độ phóng rộng màu */
-  /* filter: brightness(50%) blur(2px); */
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #c2e1fd;
+    /* box-shadow: 0px 5px 15px 5px #265077; */
+    transition: all 0.5s;
+    /* x y độ mờ - độ phóng rộng màu */
+    /* filter: brightness(50%) blur(2px); */
 }
 
 .card-img-top {
-  align-items: center;
-  margin: auto;
-  height: 160px;
-  width: 97%;
-  padding-top: 3px;
+    align-items: center;
+    margin: auto;
+    height: 160px;
+    width: 97%;
+    padding-top: 3px;
 }
 
 .info-food {
-  margin: 8px auto;
+    margin: 8px auto;
 }
 
 .label-control {
-  /* display: inline-flex; */
-  align-items: center;
-  align-content: center;
-  display: flex;
-  justify-content: space-between;
+    /* display: inline-flex; */
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 .row.row-card {
-  /* margin-top: 36px; */
-  margin: 0 0;
-  display: flex;
-  justify-content: space-around;
+    /* margin-top: 36px; */
+    margin: 0 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 .col-sm-6.col-md-4 {
-  /* padding: 10px 10px 10px 20px; */
-  padding: 0 8px 0 8px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 0;
+    /* padding: 10px 10px 10px 20px; */
+    padding: 0 8px 0 8px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 0;
 }
+
 
 /* .col-md-4:nth-child(1) {
     margin-left: 8px;
 } */
 
 .card {
-  flex-basis: 30%;
-  border-radius: 15px;
-  box-shadow: 0 2px 2px #e0e0e0;
-  position: relative;
-  min-height: 280px;
+    flex-basis: 30%;
+    border-radius: 15px;
+    box-shadow: 0 2px 2px #e0e0e0;
+    position: relative;
+    min-height: 280px;
 }
 
 .card:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .card--best-seller::before {
-  position: absolute;
-  content: "";
-  background-image: url(../../img/best-seller.png);
-  width: 40%;
-  height: 30%;
-  top: -7%;
-  right: -15%;
-  background-size: contain;
-  background-repeat: no-repeat;
+    position: absolute;
+    content: "";
+    background-image: url(../../img/best-seller.png);
+    width: 40%;
+    height: 30%;
+    top: -7%;
+    right: -15%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .card-img-top {
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
 .card-body {
-  padding: 14px 10px;
-  display: flex;
-  flex-wrap: wrap;
+    padding: 14px 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .label-control {
@@ -173,51 +174,52 @@
 }
 
 .card-title {
-  font-size: 18px;
-  font-weight: 650;
+    font-size: 18px;
+    font-weight: 650;
 }
 
 .card-text {
-  display: flex;
-  margin: auto 0;
-  font-size: 15px;
-  font-weight: 550;
-  color: red;
+    display: flex;
+    margin: auto 0;
+    font-size: 15px;
+    font-weight: 550;
+    color: red;
 }
 
 .label-icon-cart {
-  display: inline-flex;
-  align-items: center;
+    display: inline-flex;
+    align-items: center;
 }
 
 .label-icon {
-  /* height: 20px;
+    /* height: 20px;
     width: 20px; */
-  /* color: blue; */
-  color: white;
-  padding: 4px;
-  background-color: #ee4d2d;
-  border-radius: 5px;
+    /* color: blue; */
+    color: white;
+    padding: 4px;
+    background-color: #ee4d2d;
+    border-radius: 5px;
 }
 
 .label-icon:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .fa-cart-plus:before {
-  font-size: 25px;
+    font-size: 25px;
 }
 
 .col-4.cart {
-  background-color: aqua;
-  height: 100%;
+    background-color: aqua;
+    height: 100%;
 }
+
 
 /* ================================== CAROUSEL ======================================= */
 
-.category-list {
+
+/* .category-list {
   background: linear-gradient(-100deg, white 100%);
-  /* height: 30vh; */
   font-family: poppins;
 }
 
@@ -237,7 +239,7 @@
 }
 
 .carousel-inner {
-  /* padding: auto 10px; */
+  /* padding: auto 10px; 
   width: 80%;
   left: 10%;
 }
@@ -282,7 +284,7 @@
   top: 0px;
   left: 35px;
   left: 15%;
-  /* right: 25%; */
+  /* right: 25%; 
   border-radius: 50%;
 }
 
@@ -310,7 +312,7 @@
 
 /* .carousel-control-prev,
 .carousel-control-next {
-} */
+} 
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
@@ -337,4 +339,4 @@
 
 .cart-category {
   padding: 15px;
-}
+} */
