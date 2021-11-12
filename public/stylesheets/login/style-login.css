@@ -184,3 +184,10 @@ label.form-label {
 .input-pass span i.hide-btn::before {
     content: "\f070";
 }
+
+@media (max-width: 768px) {
+    .card-signin .card-login-body {
+        padding: 2rem;
+        width: 100%;
+    }
+}
