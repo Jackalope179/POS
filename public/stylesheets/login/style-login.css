@@ -255,6 +255,10 @@ label.form-label {
     color: #777;
 }
 
+.form-control {
+    padding: 8px 24px;
+}
+
 .form-control:hover {
     border-color: #1dbfaf;
 }
@@ -290,7 +294,7 @@ label.form-label {
     cursor: pointer;
     position: relative;
     width: 20px;
-    transform: translateY(-165%);
+    transform: translateY(-180%);
     display: block;
 }
 
