@@ -3,6 +3,10 @@
     --input-padding-y: .5rem;
 }
 
+.header {
+    display: none;
+}
+
 body {
     background: #d18d35;
     background: linear-gradient(to right, #db9728, #945921);
@@ -10,6 +14,92 @@ body {
     background: linear-gradient(to right, #747270, #dbd6d2);
     background: #f15333;
     background: linear-gradient(to right, #f15030, #ec5739);
+    height: 95vh;
+    top: -24px;
+    position: inherit;
+}
+
+
+/* add bubbles */
+
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+
+/* 
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #8C9EFF, #9320ff, #d09eff)
+}
+
+body::-webkit-scrollbar {
+    display: none
+} */
+
+.circle {
+    position: absolute;
+    z-index: -100;
+    border-radius: 50%;
+    background-color: rgb(235, 235, 235);
+    animation: flying 7s infinite ease-in;
+    opacity: 0.5;
+    bottom: -100px
+}
+
+@keyframes flying {
+    0% {
+        bottom: -100px;
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(100px)
+    }
+    100% {
+        bottom: 1080px;
+        transform: translateX(-250px)
+    }
+}
+
+.circle:nth-child(1) {
+    width: 60px;
+    height: 60px;
+    left: 20%;
+    animation-delay: 5s
+}
+
+.circle:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    left: 40%;
+    animation-delay: 6s
+}
+
+.circle:nth-child(3) {
+    width: 65px;
+    height: 65px;
+    animation-delay: 4s
+}
+
+.circle:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    left: 80%;
+    animation-delay: 9s
+}
+
+
+/* end */
+
+.container-login {
+    height: 100%;
+}
+
+.row-login {
+    height: 100%;
 }
 
 .card-signin {
@@ -18,6 +108,33 @@ body {
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin-top: 72px !important;
+}
+
+.card-confirmotp {
+    top: 15%;
+}
+
+.card.card-signin {
+    margin: auto !important;
+    transform: translateY(10%);
+}
+
+@media (min-width: 768px) {
+    .card.card-signin {
+        transform: translateY(20%);
+    }
+}
+
+@media (max-width: 767px) {
+    .card.card-signin {
+        transform: translateY(10%);
+    }
+}
+
+@media (max-width: 360px) {
+    .card.card-signin {
+        transform: translateY(5%);
+    }
 }
 
 .card.card-signin:hover {
@@ -138,6 +255,10 @@ label.form-label {
     color: #777;
 }
 
+.form-control {
+    padding: 8px 24px;
+}
+
 .form-control:hover {
     border-color: #1dbfaf;
 }
@@ -173,7 +294,7 @@ label.form-label {
     cursor: pointer;
     position: relative;
     width: 20px;
-    transform: translateY(-165%);
+    transform: translateY(-180%);
     display: block;
 }
 
@@ -183,4 +304,11 @@ label.form-label {
 
 .input-pass span i.hide-btn::before {
     content: "\f070";
+}
+
+@media (max-width: 768px) {
+    .card-signin .card-login-body {
+        padding: 2rem;
+        width: 100%;
+    }
 }
