@@ -97,3 +97,15 @@
         display: block;
     }
 }
+
+@media (min-width: 720px) {
+    .container-carousel-second {
+        display: none;
+    }
+}
+
+@media (max-width: 720px) {
+    .container-carousel-first {
+        display: none;
+    }
+}
