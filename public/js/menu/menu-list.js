@@ -209,6 +209,23 @@ function SetDetail(name){
             <button class="food-quantity__button">+</button>
         </div>
     `
+    const buttons = document.getElementsByClassName('food-quantity__button');
+    buttons[0].onclick = ()=>{
+        foodNum--;
+        let count = modalQuantity.querySelector('.food-quantity__content--body');
+        count.innerText = foodNum;
+    }
+    buttons[1].onclick = ()=>{
+        foodNum++;
+        let count = modalQuantity.querySelector('.food-quantity__content--body');
+        count.innerText = foodNum;
+    }
+    const addToCartButton = document.querySelector('.modal__button');
+    addToCartButton.onclick = ()=>{
+        AddToCart(foodSelected,foodNum);
+        var tem = document.querySelector('.modal-container');
+        tem.classList.remove('modal--active');
+    }
 }
 
 // close food detail
@@ -238,6 +255,87 @@ for (var i = 0; i < categoryList.length; i++) {
         SetShowDetail();
     };
 }
+
+// add to cart
+var cartList = [];
+function AddToCart(food, foodNum){
+    var check = cartList.find((item)=>{
+        return item.foodid === food.foodid;
+    })
+    if (check)
+        check.number += foodNum  
+    else
+        cartList.push({...food, number: foodNum});
+
+    RenderCart();
+    RenderCartMobile();
+}
+
+var removeAllButton = document.querySelector('.remove-all-button');
+removeAllButton.onclick = ()=>{
+    cartList = []
+    RenderCart();
+    RenderCartMobile();
+}
+
+function RenderCart(){
+    let cart = document.querySelector('.cart');
+    let total = document.querySelector('.total-amount');
+    cart.innerHTML = cartList.reduce((temp, item)=>{
+        return temp += `
+        <div class="row" id="cart-row">
+            <div class="col-sm-3" id="img-row">
+                <div class="image-box">
+                    <img src=${item.image} style="{" height="80px" , width="100%" } id="img-food"/>
+                </div>
+            </div>
+            <div class="col-sm-6" id="name-button-row">
+                <div class="row">
+                    <div class="col" id="title-row">
+                        <p class="title">${item.name}</p>
+                    </div>
+                </div>
+                <div class="row num-change">
+                    <div class="col" id="button-row">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count">${item.number}</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-3" id="remove-price">
+                <div class="prices">
+                    <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px" } />
+                    </div>
+                    <div class="amount">${NumberWithCommas(Number(item.price)*item.number)}</div>
+                </div>
+
+            </div>
+        </div>
+        <hr />
+        `;
+    }, ``);
+    var sum = cartList.reduce((temp,item)=>{
+        return temp + Number(item.price)*item.number;
+    },0)
+    total.innerText = NumberWithCommas(sum) + '';
+}
+
+function RenderCartMobile(){
+
+}
+
+function NumberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1.$2");
+    return x;
+}
+
 
 
 // show cart mobile
