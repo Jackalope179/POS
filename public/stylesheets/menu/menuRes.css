@@ -98,13 +98,13 @@
     }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 840px) {
     .container-carousel-second {
         display: none;
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 840px) {
     .container-carousel-first {
         display: none;
     }
