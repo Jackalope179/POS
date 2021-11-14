@@ -132,9 +132,9 @@ function ShowMenu(category){
                                 <h5 class="card-title">${foods[i].name}</h5>
                                 <div class="label-control">
                                     <p class="card-text">GIÁ: ${foods[i].price}</p>
-                                    <a href="#" class="label-icon-cart">
-                                        <i class="label-icon fas fa-cart-plus"></i>
-                                    </a>
+                                    <button href="#" class="admin__remove">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -149,9 +149,9 @@ function ShowMenu(category){
                                 <h5 class="card-title">${foods[i].name}</h5>
                                 <div class="label-control">
                                     <p class="card-text">GIÁ: ${foods[i].price}</p>
-                                    <a href="#" class="label-icon-cart">
-                                        <i class="label-icon fas fa-cart-plus"></i>
-                                    </a>
+                                    <button href="#" class="admin__remove">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -163,14 +163,14 @@ function ShowMenu(category){
 }
 
 // set button show info
-function SetShowDetail(){
+function SetShowEdit(){
     var foodsSelected = document.querySelectorAll('.card');
     foodsSelected.forEach(food=>{
         food.onclick = function(e) {
             var tem = document.querySelector('.modal-container');
             tem.classList.add('modal--active');
-            var info = food.innerText.split('\n');
-            SetDetail(info[0]);
+            // var info = food.innerText.split('\n');
+            // SetDetail(info[0]);
         } 
         return food;
     })
@@ -228,8 +228,16 @@ function SetDetail(name){
     }
 }
 
+var adminAdd = document.querySelector('.admin-add');
+adminAdd.onclick = ()=>{
+    var tem = document.querySelector('.modal-container');
+    tem.classList.add('modal--active');
+}
+
+
 // close food detail
 var outcarts = document.querySelector('.close__modal-icon');
+// console.log(outcarts);
 outcarts.onclick = function(e) {
     var tem = document.querySelector('.modal-container');
     tem.classList.remove('modal--active');
@@ -256,77 +264,6 @@ for (var i = 0; i < categoryList.length; i++) {
     };
 }
 
-// add to cart
-var cartList = [];
-function AddToCart(food, foodNum){
-    var check = cartList.find((item)=>{
-        return item.foodid === food.foodid;
-    })
-    if (check)
-        check.number += foodNum  
-    else
-        cartList.push({...food, number: foodNum});
-
-    RenderCart();
-    RenderCartMobile();
-}
-
-var removeAllButton = document.querySelector('.remove-all-button');
-removeAllButton.onclick = ()=>{
-    cartList = []
-    RenderCart();
-    RenderCartMobile();
-}
-
-function RenderCart(){
-    let cart = document.querySelector('.cart');
-    let total = document.querySelector('.total-amount');
-    cart.innerHTML = cartList.reduce((temp, item)=>{
-        return temp += `
-        <div class="row" id="cart-row">
-            <div class="col-sm-3" id="img-row">
-                <div class="image-box">
-                    <img src=${item.image} style="{" height="80px" , width="100%" } id="img-food"/>
-                </div>
-            </div>
-            <div class="col-sm-6" id="name-button-row">
-                <div class="row">
-                    <div class="col" id="title-row">
-                        <p class="title">${item.name}</p>
-                    </div>
-                </div>
-                <div class="row num-change">
-                    <div class="col" id="button-row">
-                        <div class="counter">
-                            <div class="btn1">-</div>
-                            <div class="count">${item.number}</div>
-                            <div class="btn2">+</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-sm-3" id="remove-price">
-                <div class="prices">
-                    <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px" } />
-                    </div>
-                    <div class="amount">${NumberWithCommas(Number(item.price)*item.number)}</div>
-                </div>
-
-            </div>
-        </div>
-        <hr />
-        `;
-    }, ``);
-    var sum = cartList.reduce((temp,item)=>{
-        return temp + Number(item.price)*item.number;
-    },0)
-    total.innerText = NumberWithCommas(sum) + '';
-}
-
-function RenderCartMobile(){
-
-}
 
 // format number xxx.xxx
 function NumberWithCommas(x) {
@@ -337,24 +274,22 @@ function NumberWithCommas(x) {
     return x;
 }
 
-
-
 // show cart mobile
-var cartMobileButton = document.querySelector('.cart-mobile__button');
-var cartMobile = document.querySelector('.cart-mobile');
-cartMobileButton.onclick = function(){
-    cartMobile.style.display = 'flex';
-    this.style.display = "none";
-};
-// close cart mobile 
-var cartMobileClose = cartMobile.querySelector('i');
-cartMobileClose.onclick = ()=>{
-    cartMobile.style.display = "none";
-    cartMobileButton.style.display = "block";
-}
+// var cartMobileButton = document.querySelector('.cart-mobile__button');
+// var cartMobile = document.querySelector('.cart-mobile');
+// cartMobileButton.onclick = function(){
+//     cartMobile.style.display = 'flex';
+//     this.style.display = "none";
+// };
+// // close cart mobile 
+// var cartMobileClose = cartMobile.querySelector('i');
+// cartMobileClose.onclick = ()=>{
+//     cartMobile.style.display = "none";
+//     cartMobileButton.style.display = "block";
+// }
 
 
 // first run
 
 ShowMenu('menu');
-SetShowDetail();
+SetShowEdit();
