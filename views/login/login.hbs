@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="/stylesheets/login/style-login.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    {{!-- <link rel="stylesheet" href="style.css"> --}}
-    {{!-- <link rel="stylesheet" href="/public/stylesheets/login/style-login.css"> --}}
-    <link rel="stylesheet" href="/stylesheets/login/style-login.css">
-</head>
-
-<body>
+<body id="login-body">
     <div class="bubbles">
         <div class="circle"></div>
         <div class="circle"></div>
@@ -32,7 +19,8 @@
                         <form class="form-signin" id="form-2" method="GET" action="/">
                             <div class="form-label-group">
                                 <label for="phone" class="form-label">Số điện thoại</label>
-                                <input id="phone" name="phone" type="text" placeholder="Số điện thoại của bạn" class="form-control">
+                                <input id="phone" name="phone" type="text" placeholder="Số điện thoại của bạn"
+                                    class="form-control">
                                 <!-- <label for="inputEmail">Email address</label> -->
                                 <span class="form-message"></span>
                             </div>
@@ -40,7 +28,8 @@
                             <div class="form-label-group">
                                 <label for="password" class="form-label">Mật khẩu</label>
                                 <div class="input-pass">
-                                    <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu của bạn">
+                                    <input type="password" id="password" name="password" class="form-control"
+                                        placeholder="Mật khẩu của bạn">
                                     <span class="show-btn-eye">
                                         <i class="fas fa-eye"></i>
                                     </span>
@@ -50,7 +39,8 @@
                                 <span class="form-message"></span>
                             </div>
 
-                            <button class="form-submit btn btn-lg btn-primary btn-block text-uppercase" type="submit">Đăng nhập</button>
+                            <button class="form-submit btn btn-lg btn-primary btn-block"
+                                type="submit">Đăng nhập</button>
                             <!-- <a class="d-block text-center mt-2 small" href="#">Đăng ký</a> -->
                             <div class="form-move">
                                 <span>
@@ -70,7 +60,7 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Mong muốn của chúng ta
             Validator({
                 form: '#form-2',
@@ -87,16 +77,5 @@
         });
     </script>
 
-    <footer>
-        <!-- Created with <i class="fa fa-heart"></i> by -->
-        <!-- <a target="_blank" href="https://florin-pop.com">Florin Pop</a> - Read how I created this and how you can join the challenge -->
-        <!-- <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>. -->
-    </footer>
-    <script src="/js/login.js"></script>
-    {{!-- <script src="/index.js"></script> --}}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
 
-</html>
+</body>

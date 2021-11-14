@@ -3,20 +3,27 @@
     --input-padding-y: .5rem;
 }
 
-.header {
-    display: none;
+#login-body {
+    background-color: #ffffff;
+    height: 65vh;
+    top: -10px;
+    position: inherit;
 }
 
-body {
-    background: #d18d35;
-    background: linear-gradient(to right, #db9728, #945921);
-    background: #747270;
-    background: linear-gradient(to right, #747270, #dbd6d2);
-    background: #f15333;
-    background: linear-gradient(to right, #f15030, #ec5739);
-    height: 95vh;
-    top: -24px;
-    position: inherit;
+#register-body {
+    background-color: #ffffff;
+    height: 90vh;
+    margin-top: 1px;
+}
+
+#confirm-register-body {
+    background-color: #ffffff;
+    height: 55vh;
+    margin-top: 1px;
+}
+
+.header {
+    display: none;
 }
 
 
@@ -44,7 +51,7 @@ body::-webkit-scrollbar {
     position: absolute;
     z-index: -100;
     border-radius: 50%;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(220, 220, 220);
     animation: flying 7s infinite ease-in;
     opacity: 0.5;
     bottom: -100px
@@ -105,9 +112,10 @@ body::-webkit-scrollbar {
 .card-signin {
     border: 0;
     border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 20px 20px #0000001a;
     overflow: hidden;
-    margin-top: 72px !important;
+    border: 1px solid #e7e5e5;
+    margin-top: 40px !important;
 }
 
 .card-confirmotp {
@@ -158,6 +166,7 @@ body::-webkit-scrollbar {
 .card-signin .card-login-body {
     padding: 2rem;
     width: 55%;
+    background-color: rgb(245, 245, 245);
 }
 
 .form-signin {
@@ -165,13 +174,10 @@ body::-webkit-scrollbar {
 }
 
 .form-signin .btn {
-    font-size: 80%;
-    border-radius: 5rem;
-    letter-spacing: .1rem;
-    font-weight: bold;
-    padding: 0.75rem;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 0.5rem;
     margin-top: 16px;
-    font-size: 100%;
     transition: all 0.2s;
     background-color: #f66c2c;
 }
@@ -277,7 +283,7 @@ label.form-label {
 .form-move {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    margin-top: 25px;
 }
 
 .form-move-link {
