@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.cart-mobile--active {
+  display: none;
+}
+
 .cart-mobile__button {
   display: none;
   position: fixed;
@@ -17,6 +21,10 @@
   right: 8%;
   width: 15%;
   z-index: 50;
+}
+
+.cart-mobile__button--active {
+  display: none;
 }
 
 .cart-mobile__button:hover {
