@@ -1,4 +1,4 @@
-let food = [{
+let foods = [{
         "foodid": "6",
         "name": "Nước lọc Dasani",
         "price": "10000",
@@ -62,15 +62,6 @@ let food = [{
         "isRecommended": "1"
     },
     {
-        "foodid": "13",
-        "name": "Phở gà",
-        "price": "35000",
-        "foodDescribe": "Fat cake, birthday cake",
-        "image": "./img/image-food11.jpg",
-        "category": "cơm bún phở",
-        "isRecommended": "1"
-    },
-    {
         "foodid": "14",
         "name": "Hamburger",
         "price": "20000",
@@ -78,6 +69,15 @@ let food = [{
         "image": "./img/image-food1.jpg",
         "category": "thức ăn nhanh",
         "isRecommended": 0
+    },
+    {
+        "foodid": "13",
+        "name": "Phở gà",
+        "price": "35000",
+        "foodDescribe": "Fat cake, birthday cake",
+        "image": "./img/image-food11.jpg",
+        "category": "cơm bún phở",
+        "isRecommended": "1"
     },
     {
         "foodid": "15",
@@ -117,15 +117,117 @@ let food = [{
     }
 ];
 
+// render menu
+function ShowMenu(category){
+    var temp = ``;
+    let foodList = document.querySelector('.food_list-js');
+    for (var i = 0; i < foods.length; i++) {
+        if (foods[i].category == category || category == 'menu'){
+            if (foods[i].isRecommended == 1)
+                temp += `
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card card--best-seller">
+                            <img class="card-img-top" src=${foods[i].image} alt="Card image cap" />
+                            <div class="card-body">
+                                <h5 class="card-title">${foods[i].name}</h5>
+                                <div class="label-control">
+                                    <p class="card-text">GIÁ: ${foods[i].price}</p>
+                                    <a href="#" class="label-icon-cart">
+                                        <i class="label-icon fas fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            else
+                temp += `
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src=${foods[i].image} alt="Card image cap" />
+                            <div class="card-body">
+                                <h5 class="card-title">${foods[i].name}</h5>
+                                <div class="label-control">
+                                    <p class="card-text">GIÁ: ${foods[i].price}</p>
+                                    <a href="#" class="label-icon-cart">
+                                        <i class="label-icon fas fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+        }
+    }
+    foodList.innerHTML = temp;
+}
 
-// open food detail
-var foodsSelected = document.querySelectorAll('.card');
-for (var i = 0; i < foodsSelected.length; i++) {
-    foodsSelected[i].onclick = function(e) {
+// set button show info
+function SetShowDetail(){
+    var foodsSelected = document.querySelectorAll('.card');
+    foodsSelected.forEach(food=>{
+        food.onclick = function(e) {
+            var tem = document.querySelector('.modal-container');
+            tem.classList.add('modal--active');
+            var info = food.innerText.split('\n');
+            SetDetail(info[0]);
+        } 
+        return food;
+    })
+}
+
+// set info for modal food detail
+function SetDetail(name){
+    // get info food
+    let foodSelected = foods.find((food) =>{
+        return food.name === name;
+    });
+    let foodNum = 1;
+    // get element modal
+    const modalImage = document.getElementsByClassName('modal__image')[0];
+    const modalInfo = document.getElementsByClassName('food-base')[0];
+    const modalQuantity = document.getElementsByClassName('food-quantity')[0];
+    // set image
+    modalImage.innerHTML= `<img src=${foodSelected.image} alt="" /> `
+    // set name
+    modalInfo.innerHTML = `
+        <div class="food-base__field">
+            <div class="food-base__field--name">${foodSelected.name}</div>
+            <div class="food-base__field--content">Khai vị</div>
+        </div>
+        <div class="food-base__field">
+            <div class="food-base__field--name">Giá</div>
+            <div class="food-base__field--content">${foodSelected.price}</div>
+        </div>
+    `
+    // set quantity
+    modalQuantity.innerHTML = `
+        <div class="food-quantity__field">Số Lượng</div>
+        <div class="food-quantity__content">
+            <button class="food-quantity__button">-</button>
+            <div class="food-quantity__content--body">${foodNum}</div>
+            <button class="food-quantity__button">+</button>
+        </div>
+    `
+    const buttons = document.getElementsByClassName('food-quantity__button');
+    buttons[0].onclick = ()=>{
+        foodNum--;
+        let count = modalQuantity.querySelector('.food-quantity__content--body');
+        count.innerText = foodNum;
+    }
+    buttons[1].onclick = ()=>{
+        foodNum++;
+        let count = modalQuantity.querySelector('.food-quantity__content--body');
+        count.innerText = foodNum;
+    }
+    const addToCartButton = document.querySelector('.modal__button');
+    addToCartButton.onclick = ()=>{
+        AddToCart(foodSelected,foodNum);
         var tem = document.querySelector('.modal-container');
-        tem.classList.add('modal--active');
+        tem.classList.remove('modal--active');
     }
 }
+
 // close food detail
 var outcarts = document.querySelector('.close__modal-icon');
 outcarts.onclick = function(e) {
@@ -138,62 +240,102 @@ outcarts.onclick = function(e) {
 var categoryList = document.getElementsByClassName('single-box');
 for (var i = 0; i < categoryList.length; i++) {
     categoryList[i].onclick = function() {
+        // active select category
         var categoryListTemp = document.getElementsByClassName('single-box');
         for (var i = 0; i < categoryListTemp.length; i++)
             categoryListTemp[i].className = 'single-box';
         this.classList.add('category-active');
+
+        // render food
         let foodList = document.querySelector('.food_list-js');
         let cateName = document.querySelector('.food_list_name-js');
+        this.innerText.toLowerCase()
         cateName.innerText = this.innerText;
-        var temp = ``;
-        for (var i = 0; i < food.length; i++) {
-            if (food[i].category == this.innerText.toLowerCase() || this.innerText == 'MENU') {
-                if (food[i].isRecommended == 1)
-                    temp += `
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="card card--best-seller">
-                                <img class="card-img-top" src=${food[i].image} alt="Card image cap" />
-                                <div class="card-body">
-                                    <h5 class="card-title">${food[i].name}</h5>
-                                    <div class="label-control">
-                                        <p class="card-text">GIÁ: ${food[i].price}</p>
-                                        <a href="#" class="label-icon-cart">
-                                            <i class="label-icon fas fa-cart-plus"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `
-                else
-                    temp += `
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="card">
-                                <img class="card-img-top" src=${food[i].image} alt="Card image cap" />
-                                <div class="card-body">
-                                    <h5 class="card-title">${food[i].name}</h5>
-                                    <div class="label-control">
-                                        <p class="card-text">GIÁ: ${food[i].price}</p>
-                                        <a href="#" class="label-icon-cart">
-                                            <i class="label-icon fas fa-cart-plus"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `
-            }
-        }
-        foodList.innerHTML = temp;
-        var foodsSelected = document.querySelectorAll('.card');
-        for (var i = 0; i < foodsSelected.length; i++) {
-            foodsSelected[i].onclick = function(e) {
-                var tem = document.querySelector('.modal-container');
-                tem.classList.add('modal--active');
-            }
-        }
+        ShowMenu(cateName.innerText.toLowerCase())
+        SetShowDetail();
     };
 }
+
+// add to cart
+var cartList = [];
+function AddToCart(food, foodNum){
+    var check = cartList.find((item)=>{
+        return item.foodid === food.foodid;
+    })
+    if (check)
+        check.number += foodNum  
+    else
+        cartList.push({...food, number: foodNum});
+
+    RenderCart();
+    RenderCartMobile();
+}
+
+var removeAllButton = document.querySelector('.remove-all-button');
+removeAllButton.onclick = ()=>{
+    cartList = []
+    RenderCart();
+    RenderCartMobile();
+}
+
+function RenderCart(){
+    let cart = document.querySelector('.cart');
+    let total = document.querySelector('.total-amount');
+    cart.innerHTML = cartList.reduce((temp, item)=>{
+        return temp += `
+        <div class="row" id="cart-row">
+            <div class="col-sm-3" id="img-row">
+                <div class="image-box">
+                    <img src=${item.image} style="{" height="80px" , width="100%" } id="img-food"/>
+                </div>
+            </div>
+            <div class="col-sm-6" id="name-button-row">
+                <div class="row">
+                    <div class="col" id="title-row">
+                        <p class="title">${item.name}</p>
+                    </div>
+                </div>
+                <div class="row num-change">
+                    <div class="col" id="button-row">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count">${item.number}</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-3" id="remove-price">
+                <div class="prices">
+                    <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px" } />
+                    </div>
+                    <div class="amount">${NumberWithCommas(Number(item.price)*item.number)}</div>
+                </div>
+
+            </div>
+        </div>
+        <hr />
+        `;
+    }, ``);
+    var sum = cartList.reduce((temp,item)=>{
+        return temp + Number(item.price)*item.number;
+    },0)
+    total.innerText = NumberWithCommas(sum) + '';
+}
+
+function RenderCartMobile(){
+
+}
+
+function NumberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1.$2");
+    return x;
+}
+
 
 
 // show cart mobile
@@ -210,5 +352,7 @@ document.querySelector('.cart-mobile__button').onclick = function(){
   }
 };
 
+// first run
 
-
+ShowMenu('menu');
+SetShowDetail();
