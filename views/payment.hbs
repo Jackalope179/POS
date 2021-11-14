@@ -231,6 +231,7 @@
             <div class="cart-mobile__container">
                 <div class="cart-header">
                     <div class="cart-header__content">Giỏ Hàng</div>
+                    <i class="fas fa-times close__modal-icon "></i>
                 </div>
                 <hr id="hr-main" />
                 <div class="cart-mobile__body">
@@ -246,41 +247,41 @@
                             <div class="content-box__number">
                                 <div class="content-box__button">-</div>
                                 2
-                                <div class="content-box__button">+</div>
+                                    <div class="content-box__button">+</div>
+                                </div>
+                            </div>
+                            <div class="remove-box">
+                                <div class="remove-box__garbage">
+                                    <img src="./img/garbage1.png">
+                                </div>
+                                <div class="remove-box__price">
+                                    {{this.price}}
+                                </div>
                             </div>
                         </div>
-                        <div class="remove-box">
-                            <div class="remove-box__garbage">
-                                <img src="./img/garbage1.png">
-                            </div>
-                            <div class="remove-box__price">
-                                {{this.price}}
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-                    {{/each}}
+                        <hr />
+                        {{/each}}
 
-                    <hr />
-                </div>
-                <div class="cart-mobile__checkout">
-                    <div class="total">
-                        <div>
-                            <div class="Subtotal">Tổng:</div>
+                        <hr />
+                    </div>
+                    <div class="cart-mobile__checkout">
+                        <div class="total">
+                            <div>
+                                <div class="Subtotal">Tổng:</div>
+                            </div>
+                            <div class="total-amount">330.000 VNĐ
+                            </div>
                         </div>
-                        <div class="total-amount">330.000 VNĐ
+                        <div class="button-border">
+                            <a href="/thanhtoan">
+                                <div class="button">Thanh toán</div>
+                            </a>
                         </div>
                     </div>
-                    <div class="button-border">
-                        <a href="/thanhtoan">
-                            <div class="button">Thanh toán</div>
-                        </a>
-                    </div>
-                </div>
 
+                </div>
             </div>
-
         </div>
     </div>
-    <script src="./js/menu/menu-list.js"></script>
+    <script src="./js/payment.js"></script>
 </div>

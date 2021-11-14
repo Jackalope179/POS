@@ -328,6 +328,7 @@ function RenderCartMobile(){
 
 }
 
+// format number xxx.xxx
 function NumberWithCommas(x) {
     x = x.toString();
     var pattern = /(-?\d+)(\d{3})/;
@@ -339,18 +340,19 @@ function NumberWithCommas(x) {
 
 
 // show cart mobile
-var cartMobileStatus = false
-document.querySelector('.cart-mobile__button').onclick = function(){
-  var cartMobile = document.querySelector('.cart-mobile');
-  if (!cartMobileStatus){
-    cartMobile.style.display = 'flex'
-    cartMobileStatus = true
-  }
-  else{
-    cartMobile.style.display = 'none'
-    cartMobileStatus = false
-  }
+var cartMobileButton = document.querySelector('.cart-mobile__button');
+var cartMobile = document.querySelector('.cart-mobile');
+cartMobileButton.onclick = function(){
+    cartMobile.style.display = 'flex';
+    this.style.display = "none";
 };
+// close cart mobile 
+var cartMobileClose = cartMobile.querySelector('i');
+cartMobileClose.onclick = ()=>{
+    cartMobile.style.display = "none";
+    cartMobileButton.style.display = "block";
+}
+
 
 // first run
 
