@@ -34,21 +34,38 @@ router.get("/login", async function(req, res, next) {
     res.render("login/login");
 });
 
+router.post("/", async function(req, res, next) {
+    res.render("menu", {
+        title: "POS restaurant",
+        MenuArray: foodapi,
+        CartArray: cartapi,
+        array: [1, 2, 3],
+    });
+});
+
 router.get("/register", async function(req, res, next) {
     res.render("register/register");
 });
 
-router.get("/register/confirmotp", async function(req, res, next) {
+router.post("/register/confirmotp", async function(req, res, next) {
     res.render("register/confirmotp");
+});
+
+router.post("/login", async function(req, res, next) {
+    res.render("login/login");
 });
 
 router.get("/forgotpassword", async function(req, res, next) {
     res.render("forgotpassword/forgotpassword");
 });
 
-router.get("/forgotpassword/confirmotp", async function(req, res, next) {
+router.post("/forgotpassword/confirmotp", async function(req, res, next) {
     res.render("forgotpassword/confirmotp");
 });
+
+// router.post("/forgotpassword/confirmotp", async function(req, res, next) {
+//     res.render("forgotpassword/confirmotp");
+// });
 
 console.log(foodapi);
 
