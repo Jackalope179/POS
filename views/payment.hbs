@@ -62,6 +62,12 @@
                                                     </label> <input type="text" required class="form-control"> </div>
                                             </div>
                                         </div>
+                                        <div class="form-group"> <label for="username">
+                                                <h6>Số bàn</h6>
+                                            </label> <input type="text" name="username"
+                                                placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'"
+                                                required class="form-control ">
+                                        </div>
                                         <div class="sub_total_row">
                                             <div class="sub_total">Số tiền</div>
                                             <div class="sub_money">120.000 VNĐ</div>
@@ -86,8 +92,9 @@
                             <div id="direct-cash" class="tab-pane fade pt-3">
                                 <div class="form-group"> <label for="username">
                                         <h6>Số bàn</h6>
-                                    </label> <input type="text" name="username" placeholder="Vui lòng nhập vào số bàn"
-                                        required class="form-control ">
+                                    </label> <input type="text" name="username"
+                                        placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
+                                        class="form-control ">
                                 </div>
                                 <div class="sub_total_row">
                                     <div class="sub_total">Số tiền</div>
@@ -106,13 +113,18 @@
                                     <p> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm  "><i
                                                 class="fas fa-dollar-sign mr-2"></i> Xác nhận</button> </p>
                                 </div>
-                                <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", vui lòng chờ trong giây
-                                    lát
-                                    để nhân viên đến nhận tiền mặt và hoàn tất quá trình thanh toán của bạn. </p>
+                                <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", vui lòng đến quầy thanh
+                                    toán và thực hiện thanh toán với nhân viên. </p>
 
                             </div>
                             <!-- Internet Banking info -->
                             <div id="net-banking" class="tab-pane fade pt-3">
+                                <div class="form-group"> <label for="username">
+                                        <h6>Số bàn</h6>
+                                    </label> <input type="text" name="username"
+                                        placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
+                                        class="form-control ">
+                                </div>
                                 <div class="form-group "> <label for="Select Your Bank">
                                         <h6>Ví điện tử</h6>
                                     </label> <select class="form-control" id="ccmonth">
@@ -210,5 +222,65 @@
 
             </div>
         </div>
+
+        {{!-- Cart mobile --}}
+        <span class="cart-mobile__button">
+            <img src="./img/shopping-cart.png" style="{ height=" 65px" , width="65px" }" />
+        </span>
+        <div class="cart-mobile">
+            <div class="cart-mobile__container">
+                <div class="cart-header">
+                    <div class="cart-header__content">Giỏ Hàng</div>
+                </div>
+                <hr id="hr-main" />
+                <div class="cart-mobile__body">
+                    {{#each CartArray}}
+                    <div class="cart-item">
+                        <div class="image-box">
+                            <img src="{{this.image}}" alt="" />
+                        </div>
+                        <div class="content-box">
+                            <div class="content-box__name">
+                                {{this.name}}
+                            </div>
+                            <div class="content-box__number">
+                                <div class="content-box__button">-</div>
+                                2
+                                <div class="content-box__button">+</div>
+                            </div>
+                        </div>
+                        <div class="remove-box">
+                            <div class="remove-box__garbage">
+                                <img src="./img/garbage1.png">
+                            </div>
+                            <div class="remove-box__price">
+                                {{this.price}}
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    {{/each}}
+
+                    <hr />
+                </div>
+                <div class="cart-mobile__checkout">
+                    <div class="total">
+                        <div>
+                            <div class="Subtotal">Tổng:</div>
+                        </div>
+                        <div class="total-amount">330.000 VNĐ
+                        </div>
+                    </div>
+                    <div class="button-border">
+                        <a href="/thanhtoan">
+                            <div class="button">Thanh toán</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
+    <script src="./js/menu/menu-list.js"></script>
 </div>
