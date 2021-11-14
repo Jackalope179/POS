@@ -249,18 +249,19 @@
     height: 115px;
     display: block;
     text-align: center;
-    padding: 45% 5% 10% 5%;
+    padding: 45% 5% 0% 5%;
     background: #fff;
     color: var(--text-color);
     border-radius: 15px;
     border: 1px solid var(--border-color);
+    padding-top: 65px;
 }
 
 .img-text p {
     display: block;
     font-size: 14px;
     text-transform: uppercase;
-    margin-top: 20px;
+    margin-top: 15px;
     font-weight: 600;
 }
 
@@ -290,6 +291,8 @@
 
 .img-area img {
     width: 100%;
+    height: 65px;
+    border-radius: 20%;
 }
 
 .carousel-indicators {
