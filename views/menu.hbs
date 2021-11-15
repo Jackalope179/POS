@@ -373,11 +373,14 @@
         <div class="cart-mobile__container">
             <div class="cart-header">
                 <div class="cart-header__content">Giỏ Hàng</div>
+                <div class="row" id="Action" style="padding: 0; font-size:20px">
+                    <div class="col-sm-12 remove-all-button">Xóa tất cả</div>
+                </div>
                 <i class="fas fa-times close__modal-icon "></i>
             </div>
             <hr id="hr-main" />
             <div class="cart-mobile__body">
-                {{#each CartArray}}
+                {{!-- {{#each CartArray}}
                 <div class="cart-item">
                     <div class="image-box">
                         <img src="{{this.image}}" alt="" />
@@ -402,16 +405,16 @@
                     </div>
                 </div>
                 <hr />
-                {{/each}}
+                {{/each}} --}}
 
-                <hr />
             </div>
             <div class="cart-mobile__checkout">
+                <hr />
                 <div class="total">
                     <div>
                         <div class="Subtotal">Tổng:</div>
                     </div>
-                    <div class="total-amount">330.000 VNĐ
+                    <div class="total-amount">0 VNĐ
                     </div>
                 </div>
                 <div class="button-border">

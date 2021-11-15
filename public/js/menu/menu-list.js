@@ -117,6 +117,7 @@ let foods = [{
     }
 ];
 
+// -------------------MENU------------------------------------------
 // render menu
 function ShowMenu(category) {
     var temp = ``;
@@ -162,6 +163,7 @@ function ShowMenu(category) {
     foodList.innerHTML = temp;
 }
 
+// ---------------------MODAL----------------------------------------------------
 // set button show info
 function SetShowDetail() {
     var foodsSelected = document.querySelectorAll('.card');
@@ -211,7 +213,8 @@ function SetDetail(name) {
     `
     const buttons = document.getElementsByClassName('food-quantity__button');
     buttons[0].onclick = () => {
-        foodNum--;
+        if(foodNum > 1)
+            foodNum--;
         let count = modalQuantity.querySelector('.food-quantity__content--body');
         count.innerText = foodNum;
     }
@@ -236,7 +239,8 @@ outcarts.onclick = function(e) {
 }
 
 
-// select category
+// ---------------------------CATEGORY------------------------------------
+// select category 
 var categoryList = document.getElementsByClassName('single-box');
 for (var i = 0; i < categoryList.length; i++) {
     categoryList[i].onclick = function() {
@@ -256,8 +260,10 @@ for (var i = 0; i < categoryList.length; i++) {
     };
 }
 
+// -------------------CART-------------------------------------------
 // add to cart
 var cartList = [];
+var totalPrice = 0;
 
 function AddToCart(food, foodNum) {
     var check = cartList.find((item) => {
@@ -272,8 +278,8 @@ function AddToCart(food, foodNum) {
     RenderCartMobile();
 }
 
-var removeAllButton = document.querySelector('.remove-all-button');
-removeAllButton.onclick = () => {
+var removeAllButton = document.querySelectorAll('.remove-all-button');
+removeAllButton[0].onclick = removeAllButton[1].onclick = () => {
     cartList = []
     RenderCart();
     RenderCartMobile();
@@ -281,10 +287,9 @@ removeAllButton.onclick = () => {
 
 function RenderCart() {
     let cart = document.querySelector('.cart');
-    let total = document.querySelector('.total-amount');
     cart.innerHTML = cartList.reduce((temp, item) => {
         return temp += `
-        <div class="row" id="cart-row">
+        <div class="row cart__item" id="cart-row">
             <div class="col-sm-3" id="img-row">
                 <div class="image-box">
                     <img src=${item.image} style="{" height="80px" , width="100%" } id="img-food"/>
@@ -319,26 +324,114 @@ function RenderCart() {
         <hr />
         `;
     }, ``);
-    var sum = cartList.reduce((temp, item) => {
+
+    // get price
+    GetTotalPrice();
+
+    // setup count button
+    let cartItems = document.querySelectorAll('.cart__item')
+    cartItems.forEach(item=>{
+        SetCartButton(item);
+    });
+    
+    
+}
+
+function GetTotalPrice(){
+    let total = document.querySelector('.total-amount');
+    let totalMobile = document.querySelector('.cart-mobile__checkout .total-amount');
+    totalPrice = cartList.reduce((temp, item) => {
         return temp + Number(item.price) * item.number;
     }, 0)
-    total.innerText = NumberWithCommas(sum) + '';
+    total.innerText = totalMobile.innerText =NumberWithCommas(totalPrice) + ' VND';
 }
 
-function RenderCartMobile() {
+function SetCartButton(item){
+    let subtractButton = item.querySelector('.counter .btn1');
+    let addButton = item.querySelector('.counter .btn2');
+    let numCount = item.querySelector('.counter .count')
+    let itemData = cartList.find((food) =>{
+        return food.name === item.innerText.split('\n')[0];
+    }) 
+    subtractButton.onclick = ()=>{
+        if (itemData.number > 0) {
+            itemData.number--;
+            RenderCount();
+            GetTotalPrice();
+        }
+    };
+    addButton.onclick = ()=>{
+        itemData.number++;
+        RenderCount();
+        GetTotalPrice();
+    };
 
 }
 
-// format number xxx.xxx
-function NumberWithCommas(x) {
-    x = x.toString();
-    var pattern = /(-?\d+)(\d{3})/;
-    while (pattern.test(x))
-        x = x.replace(pattern, "$1.$2");
-    return x;
+// cart mobile----------------
+function RenderCartMobile(){
+    let cart = document.querySelector('.cart-mobile__body');
+    cart.innerHTML = cartList.reduce((temp, item) => {
+        return temp += `
+            <div class="cart-item">
+                <div class="image-box">
+                    <img src="${item.image}" alt="" />
+                </div>
+                <div class="content-box">
+                    <div class="content-box__name">${item.name}</div>
+                    <div class="content-box__number">
+                        <div class="content-box__button">-</div>
+                        <div class="content-box__count">${item.number}</div>
+                        <div class="content-box__button">+</div>
+                    </div>
+                </div>
+                <div class="remove-box">
+                    <div class="remove-box__garbage">
+                        <img src="./img/garbage1.png">
+                    </div>
+                    <div class="remove-box__price">${item.price}</div>
+                </div>
+            </div>
+            <hr />
+        `;
+    }, ``);
+    GetTotalPrice();
+    let cartItems = document.querySelectorAll('.cart-item')
+    cartItems.forEach(item=>{
+        SetCartButtonMobile(item);
+    });
 }
 
 
+function SetCartButtonMobile(item){
+    let btn = item.getElementsByClassName('content-box__button');
+    let numCountMobile = item.querySelector('.content-box__count');
+    let itemData = cartList.find((food) =>{
+        return food.name === item.querySelector('.content-box__name').innerText;
+    }) 
+    // console.log(numCount);
+    btn[0].onclick = ()=>{
+        if (itemData.number > 0) {
+            itemData.number--;
+            RenderCount();
+            GetTotalPrice();
+        }
+    };
+    btn[1].onclick = ()=>{
+        itemData.number++;
+        RenderCount();
+        GetTotalPrice();
+    };
+
+}
+
+function RenderCount(){
+    let count = document.querySelectorAll('.cart__item .count');
+    let countMobie = document.querySelectorAll('.cart-item .content-box__count')
+    for(var i = 0; i < cartList.length;i++){
+        count[i].innerText = countMobie[i].innerText = cartList[i].number;
+    }
+}
 
 // show cart mobile
 var cartMobileButton = document.querySelector('.cart-mobile__button');
@@ -355,8 +448,20 @@ cartMobileClose.onclick = () => {
     cartMobileButton.classList.add('cart-mobile__button--active');
 }
 
+// -----------------FORMAT NUMBER: xxx.xxx------------------------
+function NumberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1.$2");
+    return x;
+}
 
-// first run
+
+
+
+
+// ----------------------FIRST RUN ------------------------------------------------
 
 ShowMenu('menu');
 SetShowDetail();
