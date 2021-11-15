@@ -1,0 +1,41 @@
+.container {
+    padding: 2rem 0rem;
+}
+  
+h4 {
+    margin: 2rem 0rem 1rem;
+}
+  
+td, th {
+    vertical-align: center;
+}
+
+.modal-detail {
+    /* position: fixed; */
+    position: relative;
+    left: 0 ;
+    right: 0;
+    top: 0;
+    bottom: 0 ;
+    z-index: 200 ;
+    background-color: rgba(0, 0, 0, 0.4) ;
+    display: none;
+  }
+  
+  .modal-dialog-detail {
+    margin: auto;
+    background-color: var(--white-color);
+    width: 600px;
+    display: flex;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+  }
+
+.scroll_table{
+    overflow-y:scroll;
+    height: 400px;
+}
+/* .scroll_table::-webkit-scrollbar {
+    display: none;
+} */
