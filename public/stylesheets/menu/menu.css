@@ -291,6 +291,10 @@
 
 .img-area img {
     width: 100%;
+<<<<<<< HEAD
+=======
+    border-radius: 15px;
+>>>>>>> 7748e10b25b0f1592278343645d69e00f9fb6b86
     height: 65px;
     border-radius: 20%;
 }

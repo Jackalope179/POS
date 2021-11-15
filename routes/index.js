@@ -63,6 +63,13 @@ router.post("/forgotpassword/confirmotp", async function(req, res, next) {
     res.render("forgotpassword/confirmotp");
 });
 
+router.get("/menu-admin", async function(req, res, next) {
+    res.render("admin/menu", {
+        title: "Admin Menu",
+        MenuArray: foodapi,
+    });
+});
+
 // router.post("/forgotpassword/confirmotp", async function(req, res, next) {
 //     res.render("forgotpassword/confirmotp");
 // });

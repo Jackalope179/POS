@@ -1,0 +1,112 @@
+.main-body-admin {
+  padding: 0 50px;
+}
+
+.main-body-admin .food-list-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-body-admin .food-list-name-category {
+  margin: 0 0 0 10px;
+}
+
+.fa-times:before {
+  content: "\f00d";
+  padding: 5px;
+}
+
+.admin-add {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--white-color);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+.admin-add:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.admin__remove {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.admin__remove:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.admin__remove img {
+  width: 100%;
+}
+
+.modal--active {
+  display: flex;
+}
+
+.admin-modal .modal__image {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+}
+
+.modal {
+  position: fixed;
+  left: 0 ;
+  right: 0;
+  top: 0;
+  bottom: 0 ;
+  z-index: 200 ;
+  background-color: rgba(0, 0, 0, 0.4) ;
+}
+
+.modal-dialog {
+  margin: auto;
+  background-color: var(--white-color);
+  width: 600px;
+  display: flex;
+  border-radius: 20px;
+  display: block;
+  max-width: 90%;
+}
+
+.admin-modal .modal__description {
+  padding: 20px 20px 20px 0;
+}
+
+.modal__input {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input label {
+  margin-bottom: 2px;
+}
+
+.modal__input input,
+.modal__input select {
+  margin-bottom: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--text-color);
+  padding: 3px 6px;
+}
+
+.btn-primary {
+  background-color: #ee4d2d !important;
+}
+.btn-primary:hover{
+  cursor: pointer !important;
+  opacity: 0.8 !important;
+}

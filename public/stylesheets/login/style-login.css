@@ -382,7 +382,7 @@ label.form-label {
     cursor: pointer;
     position: relative;
     width: 20px;
-    transform: translateY(-180%);
+    transform: translateY(-150%);
     display: block;
 }
 
