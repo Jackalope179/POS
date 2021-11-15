@@ -75,7 +75,12 @@ router.get("/ordered-admin", async function(req, res, next) {
         MenuArray: foodapi,
     });
 });
-
+router.get("/account-admin", async function(req, res, next) {
+    res.render("admin/account", {
+        title: "Admin Account",
+        MenuArray: foodapi,
+    });
+});
 // router.post("/forgotpassword/confirmotp", async function(req, res, next) {
 //     res.render("forgotpassword/confirmotp");
 // });
