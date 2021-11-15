@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/stylesheets/payment/paymentRes.css">
 <div class="main-block">
     <div class="payment-body">
         <div class="container py-4">
@@ -223,63 +224,55 @@
             </div>
         </div>
 
-         {{!-- Cart mobile --}}
-    <span class="cart-mobile__button cart-mobile__button--active">
-        <img src="./img/shopping-cart.png" style="{ height=" 65px" , width="65px" }" />
-    </span>
-    <div class="cart-mobile ">
-        <div class="cart-mobile__container">
-            <div class="cart-header">
-                <div class="cart-header__content">Giỏ Hàng</div>
-                <i class="fas fa-times close__modal-icon "></i>
-            </div>
-            <hr id="hr-main" />
-            <div class="cart-mobile__body">
-                {{#each CartArray}}
-                <div class="cart-item">
-                    <div class="image-box">
-                        <img src="{{this.image}}" alt="" />
-                    </div>
-                    <div class="content-box">
-                        <div class="content-box__name">
-                            {{this.name}}
-                        </div>
-                        <div class="content-box__number">
-                            <div class="content-box__button">-</div>
-                            2
-                            <div class="content-box__button">+</div>
-                        </div>
-                    </div>
-                    <div class="remove-box">
-                        <div class="remove-box__garbage">
-                            <img src="./img/garbage1.png">
-                        </div>
-                        <div class="remove-box__price">
-                            {{this.price}}
-                        </div>
-                    </div>
+        {{!-- Cart mobile --}}
+        <span class="cart-mobile__button cart-mobile__button--active">
+            <img src="./img/shopping-cart.png" style="{ height=" 65px" , width="65px" }" />
+        </span>
+        <div class="cart-mobile ">
+            <div class="cart-mobile__container">
+                <div class="cart-header">
+                    <div class="cart-header__content">Giỏ Hàng</div>
+                    <i class="fas fa-times close__modal-icon "></i>
                 </div>
-                <hr />
-                {{/each}}
+                <hr id="hr-main" />
+                <div class="cart-mobile__body">
+                    {{#each CartArray}}
+                    <div class="cart-item">
+                        <div class="image-box">
+                            <img src="{{this.image}}" alt="" />
+                        </div>
+                        <div class="content-box">
+                            <div class="content-box__name">
+                                {{this.name}}
+                            </div>
+                            <div class="content-box__number">
+                                <div class="num">SL:</div>
+                                <div class="count">2</div>
+                            </div>
+                        </div>
+                        <div class="remove-box">
+                            <div class="remove-box__price">
+                                {{this.price}}
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    {{/each}}
 
-                <hr />
-            </div>
-            <div class="cart-mobile__checkout">
-                <div class="total">
-                    <div>
-                        <div class="Subtotal">Tổng:</div>
-                    </div>
-                    <div class="total-amount">330.000 VNĐ
-                    </div>
+                    <hr />
                 </div>
-                <div class="button-border">
-                    <a href="/thanhtoan">
-                        <div class="button">Thanh toán</div>
-                    </a>
+                <div class="cart-mobile__checkout">
+                    <div class="total">
+                        <div>
+                            <div class="Subtotal">Tổng:</div>
+                        </div>
+                        <div class="total-amount">330.000 VNĐ
+                        </div>
+                    </div>
+                
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
     </div>
 </div>
