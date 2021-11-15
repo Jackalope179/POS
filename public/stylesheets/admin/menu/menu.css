@@ -61,6 +61,26 @@
   flex-shrink: 1;
 }
 
+.modal {
+  position: fixed;
+  left: 0 ;
+  right: 0;
+  top: 0;
+  bottom: 0 ;
+  z-index: 200 ;
+  background-color: rgba(0, 0, 0, 0.4) ;
+}
+
+.modal-dialog {
+  margin: auto;
+  background-color: var(--white-color);
+  width: 600px;
+  display: flex;
+  border-radius: 20px;
+  display: block;
+  max-width: 90%;
+}
+
 .admin-modal .modal__description {
   padding: 20px 20px 20px 0;
 }
@@ -81,4 +101,12 @@
   border-radius: 5px;
   border: 1px solid var(--text-color);
   padding: 3px 6px;
+}
+
+.btn-primary {
+  background-color: #ee4d2d !important;
+}
+.btn-primary:hover{
+  cursor: pointer !important;
+  opacity: 0.8 !important;
 }

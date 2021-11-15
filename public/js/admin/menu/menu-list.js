@@ -164,17 +164,54 @@ function ShowMenu(category){
 
 // set button show info
 function SetShowEdit(){
-    var foodsSelected = document.querySelectorAll('.card');
+    var foodsSelected = document.querySelectorAll('.card-img-top');
     foodsSelected.forEach(food=>{
         food.onclick = function(e) {
             var tem = document.querySelector('.modal-container');
             tem.classList.add('modal--active');
-            // var info = food.innerText.split('\n');
-            // SetDetail(info[0]);
         } 
         return food;
     })
 }
+function SetShowEdit1(){
+    var foodsSelected = document.querySelectorAll('.card-title');
+    foodsSelected.forEach(food=>{
+        food.onclick = function(e) {
+            var tem = document.querySelector('.modal-container');
+            tem.classList.add('modal--active');
+        } 
+        return food;
+    })
+}
+function SetShowEdit2(){
+    var foodsSelected = document.querySelectorAll('.card-text');
+    foodsSelected.forEach(food=>{
+        food.onclick = function(e) {
+            var tem = document.querySelector('.modal-container');
+            tem.classList.add('modal--active');
+        } 
+        return food;
+    })
+}
+
+function SetShowConfirm(){
+    var foodsSelected = document.querySelectorAll('.admin__remove');
+    foodsSelected.forEach(food=>{
+        food.onclick = function(e) {
+            var tem = document.querySelector('.modal');
+            tem.classList.add('modal--active');
+        } 
+        return food;
+    })
+}
+
+// close confirm
+var confirms = document.querySelector('.btn-secondary');
+confirms.onclick = function(e) {
+    var tem = document.querySelector('.modal');
+    tem.classList.remove('modal--active');
+}
+
 
 // set info for modal food detail
 function SetDetail(name){
@@ -274,22 +311,8 @@ function NumberWithCommas(x) {
     return x;
 }
 
-// show cart mobile
-// var cartMobileButton = document.querySelector('.cart-mobile__button');
-// var cartMobile = document.querySelector('.cart-mobile');
-// cartMobileButton.onclick = function(){
-//     cartMobile.style.display = 'flex';
-//     this.style.display = "none";
-// };
-// // close cart mobile 
-// var cartMobileClose = cartMobile.querySelector('i');
-// cartMobileClose.onclick = ()=>{
-//     cartMobile.style.display = "none";
-//     cartMobileButton.style.display = "block";
-// }
-
-
-// first run
-
 ShowMenu('menu');
 SetShowEdit();
+SetShowEdit1();
+SetShowEdit2();
+SetShowConfirm();
