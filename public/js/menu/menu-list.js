@@ -118,11 +118,11 @@ let foods = [{
 ];
 
 // render menu
-function ShowMenu(category){
+function ShowMenu(category) {
     var temp = ``;
     let foodList = document.querySelector('.food_list-js');
     for (var i = 0; i < foods.length; i++) {
-        if (foods[i].category == category || category == 'menu'){
+        if (foods[i].category == category || category == 'menu') {
             if (foods[i].isRecommended == 1)
                 temp += `
                     <div class="col-sm-6 col-md-4 col-lg-3">
@@ -163,23 +163,23 @@ function ShowMenu(category){
 }
 
 // set button show info
-function SetShowDetail(){
+function SetShowDetail() {
     var foodsSelected = document.querySelectorAll('.card');
-    foodsSelected.forEach(food=>{
+    foodsSelected.forEach(food => {
         food.onclick = function(e) {
             var tem = document.querySelector('.modal-container');
             tem.classList.add('modal--active');
             var info = food.innerText.split('\n');
             SetDetail(info[0]);
-        } 
+        }
         return food;
     })
 }
 
 // set info for modal food detail
-function SetDetail(name){
+function SetDetail(name) {
     // get info food
-    let foodSelected = foods.find((food) =>{
+    let foodSelected = foods.find((food) => {
         return food.name === name;
     });
     let foodNum = 1;
@@ -188,19 +188,19 @@ function SetDetail(name){
     const modalInfo = document.getElementsByClassName('food-base')[0];
     const modalQuantity = document.getElementsByClassName('food-quantity')[0];
     // set image
-    modalImage.innerHTML= `<img src=${foodSelected.image} alt="" /> `
-    // set name
+    modalImage.innerHTML = `<img src=${foodSelected.image} alt="" /> `
+        // set name
     modalInfo.innerHTML = `
         <div class="food-base__field">
             <div class="food-base__field--name">${foodSelected.name}</div>
             <div class="food-base__field--content">Khai vị</div>
         </div>
         <div class="food-base__field">
-            <div class="food-base__field--name">Giá</div>
-            <div class="food-base__field--content">${foodSelected.price}</div>
+            <div class="food-base__field--price_name">Giá</div>
+            <div class="food-base__field--price">${foodSelected.price}</div>
         </div>
     `
-    // set quantity
+        // set quantity
     modalQuantity.innerHTML = `
         <div class="food-quantity__field">Số Lượng</div>
         <div class="food-quantity__content">
@@ -210,19 +210,19 @@ function SetDetail(name){
         </div>
     `
     const buttons = document.getElementsByClassName('food-quantity__button');
-    buttons[0].onclick = ()=>{
+    buttons[0].onclick = () => {
         foodNum--;
         let count = modalQuantity.querySelector('.food-quantity__content--body');
         count.innerText = foodNum;
     }
-    buttons[1].onclick = ()=>{
+    buttons[1].onclick = () => {
         foodNum++;
         let count = modalQuantity.querySelector('.food-quantity__content--body');
         count.innerText = foodNum;
     }
     const addToCartButton = document.querySelector('.modal__button');
-    addToCartButton.onclick = ()=>{
-        AddToCart(foodSelected,foodNum);
+    addToCartButton.onclick = () => {
+        AddToCart(foodSelected, foodNum);
         var tem = document.querySelector('.modal-container');
         tem.classList.remove('modal--active');
     }
@@ -258,30 +258,31 @@ for (var i = 0; i < categoryList.length; i++) {
 
 // add to cart
 var cartList = [];
-function AddToCart(food, foodNum){
-    var check = cartList.find((item)=>{
+
+function AddToCart(food, foodNum) {
+    var check = cartList.find((item) => {
         return item.foodid === food.foodid;
     })
     if (check)
-        check.number += foodNum  
+        check.number += foodNum
     else
-        cartList.push({...food, number: foodNum});
+        cartList.push({...food, number: foodNum });
 
     RenderCart();
     RenderCartMobile();
 }
 
 var removeAllButton = document.querySelector('.remove-all-button');
-removeAllButton.onclick = ()=>{
+removeAllButton.onclick = () => {
     cartList = []
     RenderCart();
     RenderCartMobile();
 }
 
-function RenderCart(){
+function RenderCart() {
     let cart = document.querySelector('.cart');
     let total = document.querySelector('.total-amount');
-    cart.innerHTML = cartList.reduce((temp, item)=>{
+    cart.innerHTML = cartList.reduce((temp, item) => {
         return temp += `
         <div class="row" id="cart-row">
             <div class="col-sm-3" id="img-row">
@@ -318,13 +319,13 @@ function RenderCart(){
         <hr />
         `;
     }, ``);
-    var sum = cartList.reduce((temp,item)=>{
-        return temp + Number(item.price)*item.number;
-    },0)
+    var sum = cartList.reduce((temp, item) => {
+        return temp + Number(item.price) * item.number;
+    }, 0)
     total.innerText = NumberWithCommas(sum) + '';
 }
 
-function RenderCartMobile(){
+function RenderCartMobile() {
 
 }
 
@@ -342,14 +343,14 @@ function NumberWithCommas(x) {
 // show cart mobile
 var cartMobileButton = document.querySelector('.cart-mobile__button');
 var cartMobile = document.querySelector('.cart-mobile');
-cartMobileButton.onclick = function(){
+cartMobileButton.onclick = function() {
     cartMobile.classList.add('cart-mobile--active');
     this.classList.remove('cart-mobile__button--active');
 };
 
 // close cart mobile 
 var cartMobileClose = cartMobile.querySelector('i');
-cartMobileClose.onclick = ()=>{
+cartMobileClose.onclick = () => {
     cartMobile.classList.remove('cart-mobile--active');
     cartMobileButton.classList.add('cart-mobile__button--active');
 }

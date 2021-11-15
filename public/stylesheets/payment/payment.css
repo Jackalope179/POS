@@ -52,7 +52,6 @@
 
 #tab-list {
     margin: auto;
-    background-color: deepskyblue;
 }
 
 #cash_button {
@@ -75,7 +74,6 @@
 .cart-container-payment {
     margin-right: 11%;
     height: 650px;
-    background-color: #ffffff;
     position: absolute;
     right: 0;
     top: 70px;
@@ -90,13 +88,15 @@
     height: 60%;
 }
 
-#main-block {
-    display: flex;
-    align-content: center;
-}
-
 .text-muted {
     line-height: 22px;
+}
+
+li.nav-item {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 0 0;
 }
 
 @media screen and (max-width: 1024px) {
@@ -118,7 +118,7 @@
 
 @media screen and (min-height: 1170px) {
     .payment-body {
-        margin-top: 180px;
+        margin-top: 160px;
     }
 }
 
