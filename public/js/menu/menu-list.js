@@ -213,7 +213,7 @@ function SetDetail(name) {
     `
     const buttons = document.getElementsByClassName('food-quantity__button');
     buttons[0].onclick = () => {
-        if(foodNum > 1)
+        if (foodNum > 1)
             foodNum--;
         let count = modalQuantity.querySelector('.food-quantity__content--body');
         count.innerText = foodNum;
@@ -330,37 +330,37 @@ function RenderCart() {
 
     // setup count button
     let cartItems = document.querySelectorAll('.cart__item')
-    cartItems.forEach(item=>{
+    cartItems.forEach(item => {
         SetCartButton(item);
     });
-    
-    
+
+
 }
 
-function GetTotalPrice(){
+function GetTotalPrice() {
     let total = document.querySelector('.total-amount');
     let totalMobile = document.querySelector('.cart-mobile__checkout .total-amount');
     totalPrice = cartList.reduce((temp, item) => {
         return temp + Number(item.price) * item.number;
     }, 0)
-    total.innerText = totalMobile.innerText =NumberWithCommas(totalPrice) + ' VND';
+    total.innerText = totalMobile.innerText = NumberWithCommas(totalPrice) + ' VND';
 }
 
-function SetCartButton(item){
+function SetCartButton(item) {
     let subtractButton = item.querySelector('.counter .btn1');
     let addButton = item.querySelector('.counter .btn2');
     let numCount = item.querySelector('.counter .count')
-    let itemData = cartList.find((food) =>{
+    let itemData = cartList.find((food) => {
         return food.name === item.innerText.split('\n')[0];
-    }) 
-    subtractButton.onclick = ()=>{
+    })
+    subtractButton.onclick = () => {
         if (itemData.number > 0) {
             itemData.number--;
             RenderCount();
             GetTotalPrice();
         }
     };
-    addButton.onclick = ()=>{
+    addButton.onclick = () => {
         itemData.number++;
         RenderCount();
         GetTotalPrice();
@@ -369,7 +369,7 @@ function SetCartButton(item){
 }
 
 // cart mobile----------------
-function RenderCartMobile(){
+function RenderCartMobile() {
     let cart = document.querySelector('.cart-mobile__body');
     cart.innerHTML = cartList.reduce((temp, item) => {
         return temp += `
@@ -397,27 +397,27 @@ function RenderCartMobile(){
     }, ``);
     GetTotalPrice();
     let cartItems = document.querySelectorAll('.cart-item')
-    cartItems.forEach(item=>{
+    cartItems.forEach(item => {
         SetCartButtonMobile(item);
     });
 }
 
 
-function SetCartButtonMobile(item){
+function SetCartButtonMobile(item) {
     let btn = item.getElementsByClassName('content-box__button');
     let numCountMobile = item.querySelector('.content-box__count');
-    let itemData = cartList.find((food) =>{
-        return food.name === item.querySelector('.content-box__name').innerText;
-    }) 
-    // console.log(numCount);
-    btn[0].onclick = ()=>{
+    let itemData = cartList.find((food) => {
+            return food.name === item.querySelector('.content-box__name').innerText;
+        })
+        // console.log(numCount);
+    btn[0].onclick = () => {
         if (itemData.number > 0) {
             itemData.number--;
             RenderCount();
             GetTotalPrice();
         }
     };
-    btn[1].onclick = ()=>{
+    btn[1].onclick = () => {
         itemData.number++;
         RenderCount();
         GetTotalPrice();
@@ -425,10 +425,10 @@ function SetCartButtonMobile(item){
 
 }
 
-function RenderCount(){
+function RenderCount() {
     let count = document.querySelectorAll('.cart__item .count');
     let countMobie = document.querySelectorAll('.cart-item .content-box__count')
-    for(var i = 0; i < cartList.length;i++){
+    for (var i = 0; i < cartList.length; i++) {
         count[i].innerText = countMobie[i].innerText = cartList[i].number;
     }
 }

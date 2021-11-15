@@ -10,155 +10,154 @@
             </div> <!-- End -->
             <div class="row" id="payment-form">
                 <div class="col-lg-10 mx-auto">
-                    <div class="card ">
-                        <div class="card-header">
-                            <div class="shadow-sm pt-4 pl-2 pr-2 pb-2">
-                                <!-- Credit card form tabs -->
-                                <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-2" id="tab-list">
-                                    <li class="nav-item"> <a data-toggle="pill" href="#credit-card"
-                                            class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Thẻ
-                                            ATM</a> </li>
-                                    <li class="nav-item"> <a data-toggle="pill" href="#net-banking" class="nav-link ">
-                                            <i class="fas fa-mobile-alt mr-2"></i> Ví điện tử </a> </li>
-                                    <li class="nav-item"> <a data-toggle="pill" href="#direct-cash" class="nav-link ">
-                                            <i class="fas fa-dollar-sign mr-2"></i> Tiền mặt </a> </li>
-                                </ul>
-                            </div> <!-- End -->
-                            <!-- Credit card form content -->
-                            <div class="tab-content">
-                                <!-- credit card info-->
-                                <div id="credit-card" class="tab-pane fade show active pt-3">
-                                    <form role="form" onsubmit="event.preventDefault()">
-                                        <div class="form-group"> <label for="username">
-                                                <h6>Tên chủ thẻ</h6>
-                                            </label> <input type="text" name="username" placeholder="Họ và tên chủ thẻ"
-                                                required class="form-control "> </div>
-                                        <div class="form-group"> <label for="cardNumber">
-                                                <h6>Mã số thẻ</h6>
-                                            </label>
-                                            <div class="input-group"> <input type="text" name="cardNumber"
-                                                    placeholder="Mã số thẻ hợp lệ" class="form-control " required>
-                                                <div class="input-group-append"> <span
-                                                        class="input-group-text text-muted"> <i
-                                                            class="fab fa-cc-visa mx-1"></i> <i
-                                                            class="fab fa-cc-mastercard mx-1"></i> <i
-                                                            class="fab fa-cc-amex mx-1"></i> </span> </div>
-                                            </div>
+
+                    <div class="card-header">
+                        <div class="shadow-sm pt-4 pl-2 pr-2 pb-2">
+                            <!-- Credit card form tabs -->
+                            <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-2" id="tab-list">
+                                <li class="nav-item"> <a data-toggle="pill" href="#credit-card"
+                                        class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Thẻ
+                                        ATM</a> </li>
+                                <li class="nav-item"> <a data-toggle="pill" href="#net-banking" class="nav-link ">
+                                        <i class="fas fa-mobile-alt mr-2"></i> Ví điện tử </a> </li>
+                                <li class="nav-item"> <a data-toggle="pill" href="#direct-cash" class="nav-link ">
+                                        <i class="fas fa-dollar-sign mr-2"></i> Tiền mặt </a> </li>
+                            </ul>
+                        </div> <!-- End -->
+                        <!-- Credit card form content -->
+                        <div class="tab-content">
+                            <!-- credit card info-->
+                            <div id="credit-card" class="tab-pane fade show active pt-3">
+                                <form role="form" onsubmit="event.preventDefault()">
+                                    <div class="form-group"> <label for="username">
+                                            <h6>Tên chủ thẻ</h6>
+                                        </label> <input type="text" name="username" placeholder="Họ và tên chủ thẻ"
+                                            required class="form-control "> </div>
+                                    <div class="form-group"> <label for="cardNumber">
+                                            <h6>Mã số thẻ</h6>
+                                        </label>
+                                        <div class="input-group"> <input type="text" name="cardNumber"
+                                                placeholder="Mã số thẻ hợp lệ" class="form-control " required>
+                                            <div class="input-group-append"> <span class="input-group-text text-muted">
+                                                    <i class="fab fa-cc-visa mx-1"></i> <i
+                                                        class="fab fa-cc-mastercard mx-1"></i> <i
+                                                        class="fab fa-cc-amex mx-1"></i> </span> </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-sm-8">
-                                                <div class="form-group"> <label><span class="hidden-xs">
-                                                            <h6>Ngày hết hạn</h6>
-                                                        </span></label>
-                                                    <div class="input-group"> <input type="text" placeholder="MM"
-                                                            name="" class="form-control" required> <input type="text"
-                                                            placeholder="YY" name="" class="form-control" required>
-                                                    </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="form-group"> <label><span class="hidden-xs">
+                                                        <h6>Ngày hết hạn</h6>
+                                                    </span></label>
+                                                <div class="input-group"> <input type="text" placeholder="MM" name=""
+                                                        class="form-control" required> <input type="text"
+                                                        placeholder="YY" name="" class="form-control" required>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group mb-4"> <label data-toggle="tooltip"
-                                                        title="Three digit CV code on the back of your card">
-                                                        <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                                    </label> <input type="text" required class="form-control"> </div>
-                                            </div>
                                         </div>
-                                        <div class="form-group"> <label for="username">
-                                                <h6>Số bàn</h6>
-                                            </label> <input type="text" name="username"
-                                                placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'"
-                                                required class="form-control ">
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-4"> <label data-toggle="tooltip"
+                                                    title="Three digit CV code on the back of your card">
+                                                    <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                                </label> <input type="text" required class="form-control"> </div>
                                         </div>
-                                        <div class="sub_total_row">
-                                            <div class="sub_total">Số tiền</div>
-                                            <div class="sub_money">120.000 VNĐ</div>
-                                        </div>
-                                        <div class="sub_total_row">
-                                            <div class="sub_total">VAT (10%)</div>
-                                            <div class="sub_money">12.000 VNĐ</div>
-                                        </div>
+                                    </div>
+                                    <div class="form-group"> <label for="username">
+                                            <h6>Số bàn</h6>
+                                        </label> <input type="text" name="username"
+                                            placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'"
+                                            required class="form-control ">
+                                    </div>
+                                    <div class="sub_total_row">
+                                        <div class="sub_total">Số tiền</div>
+                                        <div class="sub_money">120.000 VNĐ</div>
+                                    </div>
+                                    <div class="sub_total_row">
+                                        <div class="sub_total">VAT (10%)</div>
+                                        <div class="sub_money">12.000 VNĐ</div>
+                                    </div>
 
-                                        <div class="total_row">
-                                            <div class="total_text">Tổng cộng</div>
-                                            <div class="total_money">132.000 VNĐ</div>
-                                        </div>
-                                        <div class="card-footer"> <button type="button"
-                                                class="subscribe btn btn-primary btn-block shadow-sm"
-                                                id="payment-button"> <i class="fas fa-credit-card mr-2"></i> Xác nhận
-                                            </button>
-                                    </form>
-                                </div>
-                            </div> <!-- End -->
-                            <!-- Cash -->
-                            <div id="direct-cash" class="tab-pane fade pt-3">
-                                <div class="form-group"> <label for="username">
-                                        <h6>Số bàn</h6>
-                                    </label> <input type="text" name="username"
-                                        placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
-                                        class="form-control ">
-                                </div>
-                                <div class="sub_total_row">
-                                    <div class="sub_total">Số tiền</div>
-                                    <div class="sub_money">120.000 VNĐ</div>
-                                </div>
-                                <div class="sub_total_row">
-                                    <div class="sub_total">VAT (10%)</div>
-                                    <div class="sub_money">12.000 VNĐ</div>
-                                </div>
-
-                                <div class="total_row">
-                                    <div class="total_text">Tổng cộng</div>
-                                    <div class="total_money">132.000 VNĐ</div>
-                                </div>
-                                <div class="form-group" id="cash_button">
-                                    <p> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm  "><i
-                                                class="fas fa-dollar-sign mr-2"></i> Xác nhận</button> </p>
-                                </div>
-                                <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", vui lòng đến quầy thanh
-                                    toán và thực hiện thanh toán với nhân viên. </p>
-
+                                    <div class="total_row">
+                                        <div class="total_text">Tổng cộng</div>
+                                        <div class="total_money">132.000 VNĐ</div>
+                                    </div>
+                                    <div class="card-footer"> <button type="button"
+                                            class="subscribe btn btn-primary btn-block shadow-sm" id="payment-button">
+                                            <i class="fas fa-credit-card mr-2"></i> Xác nhận
+                                        </button>
+                                </form>
                             </div>
-                            <!-- Internet Banking info -->
-                            <div id="net-banking" class="tab-pane fade pt-3">
-                                <div class="form-group"> <label for="username">
-                                        <h6>Số bàn</h6>
-                                    </label> <input type="text" name="username"
-                                        placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
-                                        class="form-control ">
-                                </div>
-                                <div class="form-group "> <label for="Select Your Bank">
-                                        <h6>Ví điện tử</h6>
-                                    </label> <select class="form-control" id="ccmonth">
-                                        <option value="" selected disabled>--Vui lòng chọn ví điện tử tương ứng--
-                                        </option>
-                                        <option>Momo</option>
-                                        <option>ViettelPay</option>
-                                        <option>ZaloPay</option>
-                                    </select> </div>
-                                <div class="sub_total_row">
-                                    <div class="sub_total">Số tiền</div>
-                                    <div class="sub_money">120.000 VNĐ</div>
-                                </div>
-                                <div class="sub_total_row">
-                                    <div class="sub_total">VAT (10%)</div>
-                                    <div class="sub_money">12.000 VNĐ</div>
-                                </div>
+                        </div> <!-- End -->
+                        <!-- Cash -->
+                        <div id="direct-cash" class="tab-pane fade pt-3">
+                            <div class="form-group"> <label for="username">
+                                    <h6>Số bàn</h6>
+                                </label> <input type="text" name="username"
+                                    placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
+                                    class="form-control ">
+                            </div>
+                            <div class="sub_total_row">
+                                <div class="sub_total">Số tiền</div>
+                                <div class="sub_money">120.000 VNĐ</div>
+                            </div>
+                            <div class="sub_total_row">
+                                <div class="sub_total">VAT (10%)</div>
+                                <div class="sub_money">12.000 VNĐ</div>
+                            </div>
 
-                                <div class="total_row">
-                                    <div class="total_text">Tổng cộng</div>
-                                    <div class="total_money">132.000 VNĐ</div>
-                                </div>
-                                <div class="form-group" id="cash_button">
-                                    <p> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm "><i
-                                                class="fas fa-mobile-alt mr-2"></i> Xác nhận</button> </p>
-                                </div>
-                                <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", bạn sẽ được chuyển đến một
-                                    trang an toàn để thanh toán. Sau khi hoàn tất quá trình thanh toán, bạn sẽ
-                                    được chuyển trở lại trang web để xem chi tiết đơn hàng của mình. </p>
-                            </div> <!-- End -->
-                            <!-- End -->
+                            <div class="total_row">
+                                <div class="total_text">Tổng cộng</div>
+                                <div class="total_money">132.000 VNĐ</div>
+                            </div>
+                            <div class="form-group" id="cash_button">
+                                <p> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm  "><i
+                                            class="fas fa-dollar-sign mr-2"></i> Xác nhận</button> </p>
+                            </div>
+                            <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", vui lòng đến quầy thanh
+                                toán và thực hiện thanh toán với nhân viên. </p>
+
                         </div>
+                        <!-- Internet Banking info -->
+                        <div id="net-banking" class="tab-pane fade pt-3">
+                            <div class="form-group"> <label for="username">
+                                    <h6>Số bàn</h6>
+                                </label> <input type="text" name="username"
+                                    placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
+                                    class="form-control ">
+                            </div>
+                            <div class="form-group "> <label for="Select Your Bank">
+                                    <h6>Ví điện tử</h6>
+                                </label> <select class="form-control" id="ccmonth">
+                                    <option value="" selected disabled>--Vui lòng chọn ví điện tử tương ứng--
+                                    </option>
+                                    <option>Momo</option>
+                                    <option>ViettelPay</option>
+                                    <option>ZaloPay</option>
+                                </select> </div>
+                            <div class="sub_total_row">
+                                <div class="sub_total">Số tiền</div>
+                                <div class="sub_money">120.000 VNĐ</div>
+                            </div>
+                            <div class="sub_total_row">
+                                <div class="sub_total">VAT (10%)</div>
+                                <div class="sub_money">12.000 VNĐ</div>
+                            </div>
+
+                            <div class="total_row">
+                                <div class="total_text">Tổng cộng</div>
+                                <div class="total_money">132.000 VNĐ</div>
+                            </div>
+                            <div class="form-group" id="cash_button">
+                                <p> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm "><i
+                                            class="fas fa-mobile-alt mr-2"></i> Xác nhận</button> </p>
+                            </div>
+                            <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", bạn sẽ được chuyển đến một
+                                trang an toàn để thanh toán. Sau khi hoàn tất quá trình thanh toán, bạn sẽ
+                                được chuyển trở lại trang web để xem chi tiết đơn hàng của mình. </p>
+                        </div> <!-- End -->
+                        <!-- End -->
                     </div>
+
                 </div>
             </div>
         </div>
@@ -269,7 +268,7 @@
                         <div class="total-amount">330.000 VNĐ
                         </div>
                     </div>
-                
+
                 </div>
 
             </div>
