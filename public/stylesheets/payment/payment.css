@@ -92,6 +92,13 @@
     line-height: 22px;
 }
 
+li.nav-item {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 0 0;
+}
+
 @media screen and (max-width: 1024px) {
     .cart-container-payment {
         margin-right: 5%;
@@ -111,7 +118,7 @@
 
 @media screen and (min-height: 1170px) {
     .payment-body {
-        margin-top: 180px;
+        margin-top: 160px;
     }
 }
 
