@@ -42,7 +42,7 @@
     position: absolute;
     margin: auto;
     width: 90%;
-    height: 80%;
+    height: 88%;
     border-radius: 15px;
     padding: 15px;
 }
@@ -143,4 +143,10 @@
     flex-wrap: wrap;
     justify-content: space-around;
     display: flex;
+}
+
+.remove-all-button__mobile {
+    font-size: 15px;
+    padding-top: 20px;
+    margin-left: 70px;
 }
