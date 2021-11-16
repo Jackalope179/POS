@@ -91,6 +91,12 @@
     --submenu-width: 0%;
     --mainmenu-width: calc(98% - var(--submenu-width));
   }
+
+  .search-bar {
+    margin: 20px 0px;
+    display: flex;
+    max-width: 90%;
+  }
   .cart-container {
     display: none;
   }

@@ -1,12 +1,20 @@
 .search-bar {
   margin: 20px 40px;
   display: flex;
+  max-width: 90%;
+}
+
+.search-food {
+  width: 100%;
+  display: flex;
+  padding: 5px 30px;
+  font-size: 20px;
 }
 
 .search-input {
   outline: none;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 6px 14px;
   border: 1px solid #333333;
   flex: 1;
   margin-right: 15px;
@@ -15,17 +23,18 @@
 .search-button {
   background-color: var(--primary-color);
   padding: 5px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   color: var(--white-color);
+  font-weight: 600;
 }
 
-.btn-search:hover {
+.search-button:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
-.btn-search:focus {
+.search-button:focus {
   outline: none;
 }
 
