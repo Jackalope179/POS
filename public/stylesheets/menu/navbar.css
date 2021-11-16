@@ -62,7 +62,7 @@
 @media (max-width: 992px) {
   .active {
     position: relative;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     color: #333333 !important;
     border-radius: 10px 10px;
   }
