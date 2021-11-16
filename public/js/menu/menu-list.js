@@ -481,3 +481,5 @@ function NumberWithCommas(x) {
 
 ShowMenu('menu');
 SetShowDetail();
+document.querySelectorAll('.header .nav-link')[0].classList.add('active');
+
