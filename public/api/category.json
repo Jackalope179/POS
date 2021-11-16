@@ -1,0 +1,34 @@
+[
+    {
+        "category": "nước uống",
+        "value": 0
+    },
+    {
+        "category": "cơm bún phở",
+        "value": 1
+    },
+    {
+        "category": "Thức ăn nhanh",
+        "value": 2
+    },
+    {
+        "category": "lẩu",
+        "value": 3
+    },
+    {
+        "category": "Menu",
+        "value": 4
+    },
+    {
+        "category": "Thức ăn chay",
+        "value": 5
+    },
+    {
+        "category": "Đồ ngọt",
+        "value": 6
+    },
+    {
+        "category": "Khác",
+        "value": 7
+    }
+]
