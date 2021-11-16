@@ -349,7 +349,7 @@ function GetTotalPrice() {
 function SetCartButton(item) {
     let subtractButton = item.querySelector('.counter .btn1');
     let addButton = item.querySelector('.counter .btn2');
-    let numCount = item.querySelector('.counter .count')
+    let removeButton = item.querySelector('.remove');
     let itemData = cartList.find((food) => {
         return food.name === item.innerText.split('\n')[0];
     })
@@ -365,6 +365,14 @@ function SetCartButton(item) {
         RenderCount();
         GetTotalPrice();
     };
+    removeButton.onclick = ()=>{
+        for (var i = 0;i<cartList.length;i++)
+            if (cartList[i] === itemData) {
+                cartList.splice(i,1);
+                RenderCart();
+                RenderCartMobile();
+            }
+    }
 
 }
 
@@ -405,7 +413,7 @@ function RenderCartMobile() {
 
 function SetCartButtonMobile(item) {
     let btn = item.getElementsByClassName('content-box__button');
-    let numCountMobile = item.querySelector('.content-box__count');
+    let removeBtn = item.querySelector('.remove-box__garbage');
     let itemData = cartList.find((food) => {
             return food.name === item.querySelector('.content-box__name').innerText;
         })
@@ -422,6 +430,14 @@ function SetCartButtonMobile(item) {
         RenderCount();
         GetTotalPrice();
     };
+    removeBtn.onclick = ()=>{
+        for (var i = 0;i<cartList.length;i++)
+            if (cartList[i] === itemData) {
+                cartList.splice(i,1);
+                RenderCart();
+                RenderCartMobile();
+            }
+    }
 
 }
 
