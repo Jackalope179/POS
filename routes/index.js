@@ -158,19 +158,19 @@ router.post("/forgotpassword/confirmotp", async function (req, res, next) {
 router.get("/menu-admin", async function (req, res, next) {
   res.render("admin/menu", {
     title: "Admin Menu",
-    MenuArray: foodapi,
+    array: [1, 2, 3],
   });
 });
 router.get("/ordered-admin", async function (req, res, next) {
   res.render("admin/ordered", {
     title: "Admin Ordered",
-    MenuArray: foodapi,
+    array: [1, 2, 3],
   });
 });
 router.get("/account-admin", async function (req, res, next) {
   res.render("admin/account", {
     title: "Admin Account",
-    MenuArray: foodapi,
+    array: [1, 2, 3],
   });
 });
 // router.post("/forgotpassword/confirmotp", async function(req, res, next) {
