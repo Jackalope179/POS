@@ -86,7 +86,7 @@ INSERT INTO `food` (`foodId`, `category`, `foodDescribe`, `price`, `name`, `imag
 (2, 'nước uống', 'Bia Tiger lạnh', 20000, 'Bia Tiger', './img/image-food6.jpg', 0),
 (3, 'nước uống', 'Coca cola không ga', 15000, 'Coca Cola', './img/image-food7.jpg', 1),
 (4, 'nước uống', 'Pepsi có ga', 35000, 'Pepsi', './img/image-food8.jpg', 0),
-(5, 'cơm bún phở', 'phở tái nạm', 25000, 'Bún bò Huế', './img/image-food9.jpg', 1),
+(5, 'cơm bún phở', 'Phở tái nạm', 25000, 'Bún bò Huế', './img/image-food9.jpg', 1),
 (6, 'cơm bún phở', 'Cơm tấm sườn chả', 20000, 'Cơm tấm', './img/image-food10.jpg', 1),
 (7, 'cơm bún phở', 'Phở gà Hà nội', 25000, 'Phở gà', './img/image-food11.jpg', 0),
 (8, 'thức ăn nhanh', 'Hamburger nhiều rau, không béo', 12000, 'Hamburger', './img/image-food1.jpg', 0),
