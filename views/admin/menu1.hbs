@@ -1,0 +1,444 @@
+<div class="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <span class="navbar-brand"> POS</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/menu-admin">Menu
+            <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ordered-admin">Đơn đặt
+            <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/account-admin">Tài khoản
+            <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <span class="nav-item nav-item--login" id="login-text">
+        <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt mr-2"></i> Đăng nhập
+          <span class="sr-only">(current)</span></a>
+      </span>
+    </div>
+  </nav>
+</div>
+
+
+<link rel="stylesheet" href="/stylesheets/footer-menu.css">
+<div class="body">
+    <div class="main-body">
+        {{!-------------------------- All food in menu ---------------------------------}}
+        {{#if search}}
+        <input type="hidden" id="search" value='1'>
+        {{#each foodListRender}}
+        <div class="foodList">
+            <input type="hidden" class="image" value='{{this.image}}'>
+            <input type="hidden" class="name" value='{{this.name}}'>
+            <input type="hidden" class="foodDescribe" value='{{this.foodDescribe}}'>
+            <input type="hidden" class="category" value='{{this.category}}'>
+            <input type="hidden" class="isRecommended" value='{{this.isRecommended}}'>
+            <input type="hidden" class="price" value='{{this.price}}'>
+            <input type="hidden" class="foodId" value='{{this.foodId}}'>
+        </div>
+
+        {{/each}}
+
+        {{#each foodSearched}}
+        <div class="foodSearch">
+            <input type="hidden" class="image" value='{{this.image}}'>
+            <input type="hidden" class="name" value='{{this.name}}'>
+            <input type="hidden" class="foodDescribe" value='{{this.foodDescribe}}'>
+            <input type="hidden" class="category" value='{{this.category}}'>
+            <input type="hidden" class="isRecommended" value='{{this.isRecommended}}'>
+            <input type="hidden" class="price" value='{{this.price}}'>
+            <input type="hidden" class="foodId" value='{{this.foodId}}'>
+        </div>
+        {{/each}}
+        {{else}}
+        <input type="hidden" id="search" value='0'>
+        <form class="form" id="allFood">
+            {{#each foodListRender}}
+            <div class="foodList">
+                <input type="hidden" class="image" value='{{this.image}}'>
+                <input type="hidden" class="name" value='{{this.name}}'>
+                <input type="hidden" class="foodDescribe" value='{{this.foodDescribe}}'>
+                <input type="hidden" class="category" value='{{this.category}}'>
+                <input type="hidden" class="isRecommended" value='{{this.isRecommended}}'>
+                <input type="hidden" class="price" value='{{this.price}}'>
+                <input type="hidden" class="foodId" value='{{this.foodId}}'>
+            </div>
+
+            {{/each}}
+        </form>
+        {{/if}}
+        {{!-------------------------------------- Search bar -------------------------------------}}
+
+        <div class="search-bar">
+            <form class="search-food" action="/search" method="post">
+                <input type="text" name="search" class="search-input" placeholder="Tìm kiếm món ăn">
+                <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+        </div>
+        {{!-------------------------------------- Category bar -------------------------------------}}
+        <div class="category-list">
+
+            <div class="container container-carousel-first">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+                            {{!-- <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            </ol> --}}
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-3 cart-category">
+                                            <div class="single-box category-active">
+                                                <div class="img-area">
+                                                    <img src="./img/allmenu.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>MENU</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 cart-category">
+                                            <div class="single-box ">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food4.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>Nước uống</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food10.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>Cơm bún phở</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food1.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>Thức ăn nhanh</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-3 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food14.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>Lẩu</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-text">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <p>khác</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food1.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>khác</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food1.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>khác</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{!-- --------------------- carousel-slide-second--}}
+            <div class="container container-carousel-second">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="carouselExampleIndicators1" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-6 cart-category">
+                                            <div class="single-box category-active">
+                                                <div class="img-area">
+                                                    <img src="./img/allmenu.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>MENU</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-6 cart-category">
+                                            <div class="single-box ">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food4.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>Nước uống</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-6 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food10.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>Cơm bún phở</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-6 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food1.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>Thức ăn nhanh</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-6 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food14.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>Lẩu</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-6 cart-category">
+                                            <div class="single-box">
+
+                                                <div class="img-text">
+                                                    <div class="img-area">
+                                                        <img src="./img/image-food1.jpg" alt="" />
+                                                    </div>
+                                                    <p>khác</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-sm-6 col-6 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food1.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>khác</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-6 cart-category">
+                                            <div class="single-box">
+                                                <div class="img-area">
+                                                    <img src="./img/image-food1.jpg" alt="" />
+                                                </div>
+                                                <div class="img-text">
+                                                    <p>khác</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- --------------------- --}}
+
+        </div>
+
+
+        {{!----------Show menu area ------------------}}
+        <div class="menu-list">
+            {{!------------ Food List name area ------------}}
+            {{#if search}}
+            <hr class="food-list-name-hr" />
+            <div class="food-list-name">
+                <h3 class="food-list-name-category food_list_name-js">{{searchName}}</h3>
+            </div>
+            {{else}}
+            <hr class="food-list-name-hr" />
+            <div class="food-list-name">
+                <h3 class="food-list-name-category food_list_name-js">MENU</h3>
+                {{!-- <button class="admin-add" style="margin:0px auto; margin-right: 0px">Thêm món ăn</button> --}}
+            </div>
+            {{/if}}
+
+            {{!-- Food List area --}}
+
+            <div class="mt-4">
+                <div class="row row-card food_list-js">
+                    {{!-- Render food list here --}}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    {{!
+    -------------------------------------------------ADD FOOD FORM------------------------------------------------------- }}
+
+    <div class="cart-container-admin">
+        <h3 style="margin-bottom: 20px;">Thêm món ăn</h3>
+        <form action="" class="modal__input">
+            
+            <label for="">ID món ăn</label>
+            <input type="number" id="foodID">
+
+            <label for="">Tên món ăn</label>
+            <input type="text" id="foodName">
+
+            <label for="">Giá tiền</label>
+            <input type="number" id="foodPrice">
+
+            <label for="">Loại</label>
+            <input type="text" id="foodType">
+
+            <label for="">Best seller</label>
+            <select name="" id="isBestSeller">
+                <option value=1>có</option>
+                <option value=0>không</option>
+            </select>
+
+            <label for="">Mô tả</label>
+            <input type="text" id="foodDescribe">
+
+            <label id='image_id'>Ảnh minh họa</label>
+            <input type="file">
+        </form>
+        <button class="admin-add" style="margin-top: 20px; float:right;" type="submit">Thêm món ăn</button>
+    </div>
+
+
+    {{!
+    -------------------------------------------------MODAL------------------------------------------------------- }}
+    <div class="modal-container admin-modal">
+        <div class="modal__box">
+            <div class="modal__header">
+                <div class="modal__header-name">THÔNG TIN </div>
+                <i class="fas fa-times close__modal-icon"></i>
+            </div>
+            <div class="modal__body">
+                <div class="modal__image">
+                    <label id='modal__image_id'>Ảnh minh họa</label>
+                    <input type="file">
+                </div>
+                <div class="modal__description">
+                    <form action="" class="modal__input">
+                        <label for="">ID món ăn</label>
+                        <input type="number" id="modal_foodID">
+                        <label for="">Tên món ăn</label>
+                        <input type="text" id="modal_foodName">
+                        <label for="">Giá tiền</label>
+                        <input type="number" id="modal_foodPrice">
+                        <label for="">Loại</label>
+                        <input type="text" id="modal_foodType">
+                        <label for="">Best seller</label>
+                        <select name="" id="modal_isBestSeller">
+                            <option value=1>có</option>
+                            <option value=0>không</option>
+                        </select>
+                        <label for="">Mô tả</label>
+                        <input type="text" id="modal_foodDescribe">
+                    </form>
+                    <button class="modal__button">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xác nhận thay đổi</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Xác nhận</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/admin/menu/menu-list1.js"></script>
+</div>

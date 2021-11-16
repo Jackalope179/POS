@@ -7,6 +7,10 @@ let categoryApi = require("../public/api/category.json");
 // Get model
 var foodModel = require("../models/food");
 
+
+//GET ADMIN_CONTROLLER
+const adminController = require("../controllers/adminController")
+
 // Menu home page
 router.get("/", async function (req, res, next) {
   // console.log(req.body);
@@ -155,12 +159,14 @@ router.post("/forgotpassword/confirmotp", async function (req, res, next) {
   res.render("forgotpassword/confirmotp");
 });
 
-router.get("/menu-admin", async function (req, res, next) {
-  res.render("admin/menu", {
-    title: "Admin Menu",
-    array: [1, 2, 3],
-  });
-});
+
+
+
+/////// ADMIN //////////////
+
+// Render menu page for admin
+router.get("/menu-admin", adminController.getAllFood);
+
 router.get("/ordered-admin", async function (req, res, next) {
   res.render("admin/ordered", {
     title: "Admin Ordered",
