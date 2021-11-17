@@ -251,9 +251,9 @@ router.post("/login/checkPhone", async (req, res) => {
   });
 });
 
-// router.get("/forgotpassword", async function (req, res, next) {
-//   res.render("forgotpassword/forgotpassword");
-// });
+router.get("/forgotpassword", async function (req, res, next) {
+  res.render("forgotpassword/forgotpassword");
+});
 
 router.post("/forgotpassword", async function (req, res, next) {
   res.render("forgotpassword/forgotpassword");
@@ -289,7 +289,6 @@ router.post("/forgotpassword/checkOTP", async (req, res) => {
   let phoneNum = req.body.phone;
   let password = req.body.new_pass;
   let otp = req.body.otp;
-  console.log(OTP);
   if (parseInt(otp)===OTP){
     await foodModel.UpdateCustomer(String(phoneNum),String(password));
     res.json({

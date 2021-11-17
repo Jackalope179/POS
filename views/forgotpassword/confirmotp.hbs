@@ -25,7 +25,7 @@
                                 <label for="otpcode" class="form-label">Mã OTP</label>
                                 <input id="otpcode" name="otpcode" type="text" placeholder="Nhập mã OTP của bạn"
                                     class="form-control">
-                                <input id="pass" name="new_pass" type="hidden" value = {{new_pass}} >
+                                <input id="pass" name="password" type="hidden" value = {{password}} >
                                 <input id="phone" name="phone" type="hidden" value = {{phone}} >
                                 <!-- <label for="inputEmail">Email address</label> -->
                                 <span class="form-message"></span>
@@ -62,14 +62,14 @@
             // Write code to check if student id is existed!
             // Camel case
             var phoneNum = $("input[name='phone']").val();
-            var new_pass = $("input[name='new_pass']").val();
-            vẻ otpcode = $("input[name='otpcode']").val();
+            var new_pass = $("input[name='password']").val();
+            var otpcode = $("input[name='otpcode']").val();
             var form = $(this);
 
             // AJAX
-            $.post("/forgotpassword/checkOTP", { phone: phoneNum,new_pass: new_pass,otp: otpcode}, function (data, status) {
+            $.post("/forgotpassword/checkOTP", { phone: phoneNum, new_pass: new_pass,otp: otpcode}, function (data, status) {
                 if (data.status == "FAIL") {
-                    alert("OTP không đúng!");
+                    alert("OTP không hợp lệ!");
                 }
                 else {
                     form.unbind("submit").submit();
