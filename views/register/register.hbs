@@ -89,25 +89,47 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Mong muốn của chúng ta
-            Validator({
-                form: '#form-1',
-                formGroupSelector: '.form-label-group',
-                errorSelector: '.form-message',
-                rules: [
-                    Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
-                    Validator.isRequired('#phone'),
-                    Validator.isPhone('#phone'),
-                    Validator.minLength('#password', 8),
-                    Validator.isRequired('#password_confirmation'),
-                    Validator.isConfirmed('#password_confirmation', function () {
-                        return document.querySelector('#form-1 #password').value;
-                    }, 'Mật khẩu nhập lại không chính xác')
-                ],
-                onSubmit: true,
+        //document.addEventListener('DOMContentLoaded', function () {
+        //    // Mong muốn của chúng ta
+        //    Validator({
+        //        form: '#form-1',
+        //        formGroupSelector: '.form-label-group',
+        //        errorSelector: '.form-message',
+        //        rules: [
+        //            Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+        //            Validator.isRequired('#phone'),
+        //            Validator.isPhone('#phone'),
+        //            Validator.minLength('#password', 8),
+        //            Validator.isRequired('#password_confirmation'),
+        //            Validator.isConfirmed('#password_confirmation', function () {
+        //                return document.querySelector('#form-1 #password').value;
+        //            }, 'Mật khẩu nhập lại không chính xác')
+        //        ],
+        //        onSubmit: true,
+//
+        //    });
+        //});
 
+        $(".form-signin").submit(function (e) {
+            e.preventDefault();
+
+            // Write code to check if student id is existed!
+            // Camel case
+            var phoneNum = $("input[name='phone']").val();
+            var name = $("input[name='name']").val();
+            var password = $("input[name='password']").val();
+            var form = $(this);
+
+            // AJAX
+            $.post("/register/checkPhone", { phone: phoneNum}, function (data, status) {
+                if (data.status == "FOUND") {
+                    alert("Số điện thoại đã tồn tại!");
+                }
+                else {
+                    form.unbind("submit").submit();
+                }
             });
         });
+        
     </script>
 </body>
