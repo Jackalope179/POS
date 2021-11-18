@@ -56,212 +56,6 @@
         </div>
         {{!-------------------------------------- Category bar -------------------------------------}}
          <div class="category-list">
-           {{!-- <div class="container container-carousel-first">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    
-                                    <div class="row">
-
-                                        <div class="col-sm-3 cart-category">
-                                            <div class="single-box category-active categoryList">
-                                                <div class="img-area">
-                                                    <img src="./img/allmenu.jpg" alt="" />
-                                                </div>
-                                                <div class="img-text">
-                                                    <p>
-                                                        MENU
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        {{#each numberofActiveRender}}
-                                            <div class="col-sm-3 cart-category categoryList">
-                                            <div class="single-box">
-                                                <div class="img-area">
-                                                    <img src="./img/image-food-category-{{this.number}}.jpg" alt="" />
-                                                </div>
-                                                <div class="img-text">
-                                                    <p>{{#categoryList}}
-                                                           {{category}}                  
-                                                        {{/categoryList}}
-                                                    </p>
-                                                     <input type="hidden" value = {{#categoryList}}
-                                                           {{value}}                  
-                                                        {{/categoryList}}>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{/each}}
-                                    
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        {{#each numberofInactiveRender}}
-                                            <div class="col-sm-3 cart-category">
-                                            <div class="single-box categoryList">
-                                                <div class="img-area">
-                                                    <img src="./img/image-food-category-{{this.number}}.jpg" alt="" />
-                                                </div>
-                                                <div class="img-text">
-                                                    <p>{{#categoryList}}
-                                                           {{category}}                  
-                                                        {{/categoryList}}
-                                                    </p>
-                                                    <input type="hidden" value = {{#categoryList}}
-                                                           {{value}}                  
-                                                        {{/categoryList}}>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{/each}}
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container container-carousel-second">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="carouselExampleIndicators1" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    
-                                    <div class="row">
-
-                                        <div class="col-sm-6 col-6 cart-category">
-                                            <div class="single-box category-active categoryList">
-                                                <div class="img-area">
-                                                    <img src="./img/allmenu.jpg" alt="" />
-                                                </div>
-                                                <div class="img-text">
-                                                    <p>
-                                                        MENU
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        {{#each numberofActiveRender}}
-                                            <div class="col-sm-6 col-6 cart-category categoryList">
-                                            <div class="single-box">
-                                                <div class="img-area">
-                                                    <img src="./img/image-food-category-{{this.number}}.jpg" alt="" />
-                                                </div>
-                                                <div class="img-text">
-                                                    <p>{{#categoryList}}
-                                                           {{category}}                  
-                                                        {{/categoryList}}
-                                                    </p>
-                                                     <input type="hidden" value = {{#categoryList}}
-                                                           {{value}}                  
-                                                        {{/categoryList}}>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{/each}}
-                                    
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        {{#each numberofInactiveRender}}
-                                            <div class="col-sm-6 col-6 cart-category">
-                                            <div class="single-box categoryList">
-                                                <div class="img-area">
-                                                    <img src="./img/image-food-category-{{this.number}}.jpg" alt="" />
-                                                </div>
-                                                <div class="img-text">
-                                                    <p>{{#categoryList}}
-                                                           {{category}}                  
-                                                        {{/categoryList}}
-                                                    </p>
-                                                    <input type="hidden" value = {{#categoryList}}
-                                                           {{value}}                  
-                                                        {{/categoryList}}>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{/each}}
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        {{#each numberofInactiveRender}}
-                                            <div class="col-sm-6 col-6 cart-category">
-                                            <div class="single-box categoryList">
-                                                <div class="img-area">
-                                                    <img src="./img/image-food-category-{{this.number}}.jpg" alt="" />
-                                                </div>
-                                                <div class="img-text">
-                                                    <p>{{#categoryList}}
-                                                           {{category}}                  
-                                                        {{/categoryList}}
-                                                    </p>
-                                                    <input type="hidden" value = {{#categoryList}}
-                                                           {{value}}                  
-                                                        {{/categoryList}}>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{/each}}
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        {{#each numberofInactiveRender}}
-                                            <div class="col-sm-6 col-6 cart-category">
-                                            <div class="single-box categoryList">
-                                                <div class="img-area">
-                                                    <img src="./img/image-food-category-{{this.number}}.jpg" alt="" />
-                                                </div>
-                                                <div class="img-text">
-                                                    <p>{{#categoryList}}
-                                                           {{category}}                  
-                                                        {{/categoryList}}
-                                                    </p>
-                                                    <input type="hidden" value = {{#categoryList}}
-                                                           {{value}}                  
-                                                        {{/categoryList}}>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{/each}}
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
             <div class="container container-carousel-first">
                 <div class="row">
                     <div class="col-md-12">
@@ -540,8 +334,45 @@
         </div>
 
         <hr id="hr-main" />
-        <div class="cart">
+        <div class="cart" >
                 {{!-- cart here --}}
+            {{#if login}}
+            {{#each CartArray}}
+                    <div class="row cart__item" id="cart-row">
+            <div class="col-sm-3" id="img-row">
+                <div class="image-box">
+                    <img class= "imageList" src={{this.image}} style="{" height="80px" , width="100%" } id="img-food"/>
+                </div>
+            </div>
+            <div class="col-sm-6" id="name-button-row">
+                <div class="row">
+                    <div class="col" id="title-row">
+                        <p class="title col-name">{{this.name}}</p>
+                    </div>
+                </div>
+                <div class="row num-change">
+                    <div class="col" id="button-row">
+                        <div class="counter">
+                            <div class="btn1">-</div>
+                            <div class="count col-quantity">{{this.quantity}}</div>
+                            <div class="btn2">+</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-3" id="remove-price">
+                <div class="prices">
+                    <div class="remove"><img src="./img/garbage1.png" style="{" height="27px" , width="27px" } />
+                    </div>
+                    <div class="amount">{{this.price}}</div>
+                </div>
+
+            </div>
+        </div>
+        <hr />
+        {{/each}}
+            {{/if}}
         </div>
         <hr id="hr-main" />
         <div class="checkout">
@@ -549,7 +380,11 @@
                 <div>
                     <div class="Subtotal">Tổng:</div>
                 </div>
+                {{#if login }}
+                <div class="total-amount">{{totalAmount}} VNĐ
+                    {{else}}
                 <div class="total-amount">0 VNĐ
+                {{/if}}
                 </div>
             </div>
             <div class="button-border">
