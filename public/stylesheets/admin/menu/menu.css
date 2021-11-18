@@ -103,6 +103,44 @@
   padding: 3px 6px;
 }
 
+
+.form_input {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-backdrop + .modal-backdrop {
+  z-index: 1040;
+}
+.modal + .modal {
+  z-index: 1050;
+}
+
+.modal-second {
+  z-index: 1052;
+}
+
+.modal-backdrop.fade 
+  {
+    z-index: 1051;
+  }
+
+
+.form_input label {
+  margin-bottom: 2px;
+}
+
+.form_input input,
+.form_input select {
+  margin-bottom: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--text-color);
+  padding: 3px 6px;
+}
+
+
+
 .btn-primary {
   background-color: #ee4d2d !important;
 }

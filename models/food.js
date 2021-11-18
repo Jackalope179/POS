@@ -17,3 +17,20 @@ exports.getFoodBySearch = async function (searchName) {
     `SELECT * FROM food where UPPER(trim(name)) like N'%${searchName}%'`
   );
 };
+
+exports.createOneFood = async function (values) {
+  return await connection.awaitQuery(
+    'INSERT INTO food SET ?', values
+  )};
+
+exports.deleteOneFood = async function (id) {
+  return await connection.awaitQuery(
+    `DELETE FROM food WHERE foodId = ?`, id
+  );
+};
+
+exports.updateOneFood = async function (values) {
+  return await connection.awaitQuery(
+    'UPDATE food SET ? WHERE foodId = ?', [values, values.foodId]
+  );
+};

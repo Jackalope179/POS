@@ -142,7 +142,14 @@
 /* .col-md-4:nth-child(1) {
     margin-left: 8px;
 } */
+.modal-backdrop {
+  z-index: 1040;
+}
 
+.modal {
+  z-index: 9999;
+  background-color:transparent!important;
+}
 .card {
   flex-basis: 30%;
   border-radius: 15px;

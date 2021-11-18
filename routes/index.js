@@ -167,18 +167,18 @@ router.post("/forgotpassword/confirmotp", async function (req, res, next) {
 // Render menu page for admin
 router.get("/menu-admin", adminController.getAllFood);
 
-router.get("/ordered-admin", async function (req, res, next) {
-  res.render("admin/ordered", {
-    title: "Admin Ordered",
-    array: [1, 2, 3],
-  });
-});
-router.get("/account-admin", async function (req, res, next) {
-  res.render("admin/account", {
-    title: "Admin Account",
-    array: [1, 2, 3],
-  });
-});
+// Render order history for admin
+router.get("/ordered-admin", adminController.getAllOrder);
+
+// Render account info for admin
+router.get("/account-admin", adminController.getAllAccount);
+
+router.post("/menu-admin/updateFood", adminController.updateFood);
+
+router.post("/menu-admin/addFood", adminController.addFood);
+
+router.post("/menu-admin/deleteFood", adminController.deleteFood);
+
 // router.post("/forgotpassword/confirmotp", async function(req, res, next) {
 //     res.render("forgotpassword/confirmotp");
 // });

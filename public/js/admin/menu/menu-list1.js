@@ -175,7 +175,6 @@ function SetShowEdit(){
             var tem = document.querySelector('.modal-container');
             tem.classList.add('modal--active');
             var info = food.innerText.split("\n");
-            console.log("inf:    ", info[0])
             SetDetail(info[0]);
         } 
         return food;
@@ -202,23 +201,52 @@ function SetShowEdit(){
 //     })
 // }
 
-function SetShowConfirm(){
-    var foodsSelected = document.querySelectorAll('.admin__remove');
-    foodsSelected.forEach(food=>{
-        food.onclick = function(e) {
-            var tem = document.querySelector('.modal');
-            tem.classList.add('modal--active');
-        } 
-        return food;
-    })
-}
+// function SetShowConfirm(){
+//     var foodsSelected = document.querySelectorAll('.admin__remove');
+//     foodsSelected.forEach(food=>{
+//         food.onclick = function(e) {
+//             var tem = document.querySelector('.modal');
+//             tem.classList.add('modal--active');
+//         } 
+//         return food;
+//     })
+// }
 
 // close confirm
-var confirms = document.querySelector('.btn-secondary');
+
+var confirms = document.querySelector('.btn-danger');
 confirms.onclick = function(e) {
-    var tem = document.querySelector('.modal');
-    tem.classList.remove('modal--active');
+    // var tem = document.querySelector('.admin-modal');
+    // tem.classList.remove('modal--active');
+    // var tem1 = document.querySelector('.delete-food-modal');
+    // tem1.classList.add('modal--active')
+    // var tem2 = document.querySelector('.modal-dialog');
+    // console.log(tem2)
+    // tem2.classList.add('modal--active')
+  //   var actualModal = $(this).attr('data-actual');
+  //   var newModal = $(this).attr('data-target');
+
+  //   $(actualModal).modal('hide');
+  //   $(newModal).modal('show');
+
+  //   $( '.admin-modal' ).on( 'shown.bs.modal', function(){
+  //     document.body.classList.add( 'modal-open' );
+  // });
+  // $( '.delete-food-modal' ).on( 'shown.bs.modal', function(){
+  //     document.body.classList.add( 'modal-open' );
+  // });
 }
+
+$(document).on('hidden.bs.modal', function () {
+  if ($('.modal:visible').length) {
+    $('body').addClass('modal-open');
+  }
+});
+
+
+$(document).off('focusin.modal');
+$('#delete-food-modal').appendTo("body");
+
 
 
 // set info for modal food detail
@@ -232,25 +260,24 @@ function SetDetail(name){
     document.getElementById('modal__image_id').innerHTML=`<img src=${foodSelected.image} alt="" /> `;
     document.getElementById('modal_foodID').value=foodSelected.foodId;
     document.getElementById('modal_foodName').value=foodSelected.name;
-    document.getElementById('modal_foodPrice').value=NumberWithCommas(foodSelected.price);
+    document.getElementById('modal_foodPrice').value=foodSelected.price;
     document.getElementById('modal_foodType').value=foodSelected.category;
     document.getElementById('modal_isBestSeller').value=foodSelected.isRecommended;
     document.getElementById('modal_foodDescribe').value=foodSelected.foodDescribe;
-    // set image
-    // modalImage.innerHTML= `<img src=${foodSelected.image} alt="" /> `
-    // set name
+    document.getElementById('modal_image').value=foodSelected.image;
+    console.log(foodsSelected)
 }
 
-var adminAdd = document.querySelector('.admin-add');
-adminAdd.onclick = ()=>{
-    var tem = document.querySelector('.modal-container');
-    tem.classList.add('modal--active');
-}
+// var adminAdd = document.querySelector('.admin-add');
+// adminAdd.onclick = ()=>{
+//     var tem = document.querySelector('.modal-container');
+//     tem.classList.add('modal--active');
+// }
 
 
 // // close food detail
 var outcarts = document.querySelector('.close__modal-icon');
-// console.log(outcarts);
+console.log(outcarts);
 outcarts.onclick = function(e) {
     var tem = document.querySelector('.modal-container');
     tem.classList.remove('modal--active');
@@ -288,6 +315,16 @@ function NumberWithCommas(x) {
     return x;
   }
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var btnDeleteFood = document.getElementById('btn-delete-food');
+    foodForm = document.forms['food-form'];
+    btnDeleteFood.onclick = function () {
+      console.log('herrrrrrrrrrrrrrrrrrrrrrrrrr')
+      foodForm.action = '/menu-admin/' + 'deleteFood';
+      // foodForm.method = 'delete'
+      foodForm.submit(); 
+  }
+  });
 
   
 // ----------------------FIRST RUN ------------------------------------------------
@@ -297,5 +334,6 @@ if (search != 1) {
 SetShowEdit();
 // SetShowEdit1();
 // SetShowEdit2();
-SetShowConfirm();
+// SetShowConfirm();
+
 document.querySelectorAll(".header .nav-link")[0].classList.add("active");

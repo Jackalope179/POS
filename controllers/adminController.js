@@ -2,7 +2,7 @@ const foodModel = require("../models/food")
 
 class adminController {
 
-    async getAllFood(req, res, next) {
+    async getAllFood(req, res) {
         let categoryApi = require("../public/api/category.json");
         // console.log(req.body);
         let foodList = await foodModel.getAllFood();
@@ -40,6 +40,34 @@ class adminController {
           numberofInactiveRender: numberofInactiveRender,
         });
       };
+
+
+      async getAllOrder(req, res) {
+        res.render("admin/ordered", {
+          title: "Admin Ordered",
+          array: [1, 2, 3],
+        });
+      };
+
+      async getAllAccount(req, res) {
+        res.render("admin/account", {
+          title: "Admin Account",
+          array: [1, 2, 3],
+        });
+      };
+
+      async updateFood(req, res, next) {
+        foodModel.updateOneFood(req.body).then(() => res.redirect('/menu-admin')).catch(error => next(error));
+      };
+
+      async addFood(req, res, next) {
+        foodModel.createOneFood(req.body).then(() => res.redirect('/menu-admin')).catch(error => next(error));
+      };
+
+      async deleteFood(req, res, next) {
+        foodModel.deleteOneFood(req.body.foodId).then(() => res.redirect('/menu-admin')).catch(error => next(error));
+      };
+
 };
 
 module.exports = new adminController();
