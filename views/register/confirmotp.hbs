@@ -2,6 +2,7 @@
 
 
 <body>
+    <div id="toast"></div>
     <div class="bubbles">
         <div class="circle"></div>
         <div class="circle"></div>
@@ -29,12 +30,15 @@
                     <div class="card-login-body">
                         <h5 class="card-title text-center">XÁC NHẬN MÃ OTP</h5>
                         <form class="form-signin" id="form-4" method="POST" action="/login">
-                            <div class="form-label-group">
+                            <div class="form-label-group form-label-group-otp">
                                 <label for="otpcode" class="form-label">Mã OTP</label>
                                 <input id="otpcode" name="otpcode" type="text" placeholder="Nhập mã OTP của bạn"
-                                    class="form-control">
+                                    pattern=".{6}" class="form-control" required>
+                                <input id="name" name="name" type="hidden" value = "{{name}}">
+                                <input id="pass" name="password" type="hidden" value = {{password}} >
+                                <input id="phone" name="phone" type="hidden" value = {{phone}} >
                                 <!-- <label for="inputEmail">Email address</label> -->
-                                <span class="form-message"></span>
+                                <span class="form-message"  id="form-message-otp"></span>
                             </div>
                             <button class="form-submit btn btn-lg btn-primary btn-block text-uppercase"
                                 type="submit">XÁC NHẬN</button>
@@ -45,21 +49,68 @@
             </div>
         </div>
     </div>
-
+    <script type='text/javascript' src="/js/login.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Mong muốn của chúng ta
-            Validator({
-                form: '#form-4',
-                formGroupSelector: '.form-label-group',
-                errorSelector: '.form-message',
-                rules: [
-                    Validator.isRequired('#otpcode'),
-                    Validator.isOtp('#otpcode', 6),
-                ],
-                onSubmit: true,
-
-            });
+        var myInputOtp = document.getElementById("otpcode");
+        var checkform = true;
+        var otpRequired = document.getElementById("form-message-otp");
+        var otpValid = document.querySelector('.form-label-group-otp');
+        //console.log(otpRequired);
+        // When the user clicks outside of the password field, hide the message box
+        myInputOtp.oninput = function() {
+            var isnumbers = /[0-9]/g;
+            otpRequired.innerText = "";
+            otpValid.classList.remove('invalid');
+            if((myInputOtp.value.length == 6) && myInputOtp.value.match(isnumbers)) {
+                checkform = true;
+            }else {
+                checkform = false;
+            }
+        }
+        // When the user clicks outside of the password field, hide the message box
+        myInputOtp.onblur = function() {
+            if(myInputOtp.value.length > 0){
+                if(checkform){
+                    otpRequired.innerText = "";
+                    otpValid.classList.remove('invalid');
+                }
+                else {
+                    otpRequired.innerText = "Mã OTP bao gồm 6 chữ số";
+                    otpValid.classList.add('invalid');
+                }
+            }
+            else {
+                otpRequired.innerText = "Vui lòng nhập mã OTP";
+                otpValid.classList.add('invalid');
+            }
+        }
+        $(".form-signin").submit(function (e) {
+            e.preventDefault();
+            // Write code to check if student id is existed!
+            // Camel case
+            var phoneNum = $("input[name='phone']").val();
+            var name = $("input[name='name']").val();
+            var password = $("input[name='password']").val();
+            var otp = $("input[name='otpcode']").val();
+            var form = $(this);
+            if(checkform){
+                // AJAX
+                $.post("/register/checkOTP", { phone: phoneNum, password:password, name: name, otp: otp}, function (data, status) {
+                    if (data.status == "FAIL") {
+                        //alert("OTP không đúng!");
+                        showOtpErrorToast();
+                    }
+                    else {
+                        setTimeout(function(){
+                            form.unbind("submit").submit();
+                        }, 500);
+                        showRegisterSuccessToast();
+                    }
+                });
+            }else{
+                otpRequired.innerText = "Mã OTP bao gồm 6 chữ số";
+                otpValid.classList.add('invalid');
+            }
         });
     </script>
 
