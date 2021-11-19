@@ -26,8 +26,13 @@
                 </li>
             </ul>
             <span class="nav-item nav-item--login" id="login-text">
+                {{#if login}}
+                <a class="nav-link" href="/login" ><i class="fas fa-sign-in-alt mr-2"></i> Đăng xuất
+                    <span class="sr-only">(current)</span></a>
+                {{else}}
                 <a class="nav-link" href="/login" ><i class="fas fa-sign-in-alt mr-2"></i> Đăng nhập
                     <span class="sr-only">(current)</span></a>
+                {{/if}}
             </span>
         </div>
     </nav>

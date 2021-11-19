@@ -297,7 +297,7 @@ getCurrentCartList()
 
 function AddToCart(food, foodNum) {
     var check = cartList.find((item) => {
-        return item.foodId === food.foodId;
+        return item.name === food.name;
     });
     if (check) check.number += foodNum;
     else cartList.push({...food, number: foodNum });
@@ -315,8 +315,7 @@ removeAllButton[0].onclick = removeAllButton[1].onclick = () => {
 
 function RenderCart() {
     let cart = document.querySelector(".cart");
-    let total = document.querySelector(".total-amount");
-    // let cartInnerHTML = $('.cart').html()
+
     cart.innerHTML = cartList.reduce((temp, item) => {
         return (temp += `
         <div class="row cart__item" id="cart-row">
@@ -532,4 +531,16 @@ if (search != 1) {
     ShowMenu("menu");
 }
 SetShowDetail();
-document.querySelectorAll(".header .nav-link")[0].classList.add("active");
+
+
+
+/*=====================================
+	  Preloader JS
+======================================*/
+
+//After 2s preloader is fadeOut
+$('.preloader').delay(500).fadeOut('slow');
+setTimeout(function() {
+    //After 2s, the no-scroll class of the body will be removed
+    $('body').removeClass('no-scroll');
+}, 2000); //Here you can change preloader time
