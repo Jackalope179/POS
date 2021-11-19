@@ -52,7 +52,7 @@ router.post("/payment", async function(req, res, next) {
 
 router.get("/payment", async function(req, res, next) {
     let login = 0
-    if (req.session.login == 1){
+    if (req.session.login == 1) {
         login = req.session.login;
     }
 
@@ -116,7 +116,7 @@ router.post("/thanhtoan", async function(req, res, next) {
     req.session.totalAmount = NumberWithCommas(foodapi.totalPrice)
 
     let login = 0;
-    if (req.session.login == 1){
+    if (req.session.login == 1) {
         login = 1;
     }
     return res.render("payment", {
@@ -128,7 +128,7 @@ router.post("/thanhtoan", async function(req, res, next) {
 
 router.get("/thanhtoan", async function(req, res, next) {
     let login = 0;
-    if (req.session.login == 1){
+    if (req.session.login == 1) {
         login = 1;
     }
     return res.render("payment", {
@@ -170,17 +170,23 @@ router.get("/login", async function(req, res, next) {
     res.render("login/login");
 });
 
-router.post("/savebooking", async function(req, res, next) {
-    // console.log(req.body);
+router.post("/deleteBooking", async function(req, res, next) {
+    await bookingModel.deleteBooking(Number(req.body.bookingid));
+    res.redirect("/datban");
+})
 
+
+router.post("/savebooking", async function(req, res, next) {
+    let phone = req.session.phone;
     let customerSeat = req.body.customerSeat;
     let startTime = req.body.startTime;
     let endTime = req.body.endTime;
     let note = req.body.note;
     let date = req.body.date;
 
-    await this.bookingModel.saveBooking(customerSeat, startTime, endTime, date, accountID, note);
+    await bookingModel.saveBooking(customerSeat, startTime, endTime, date, note, phone);
     res.redirect("/datban");
+
 })
 
 
@@ -195,7 +201,7 @@ router.post("/register", async function(req, res, next) {
 router.post("/register/checkPhone", loginController.checkPhone);
 
 
-router.post("/register/confirmotp",loginController.registerOTP);
+router.post("/register/confirmotp", loginController.registerOTP);
 
 
 

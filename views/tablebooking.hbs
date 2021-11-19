@@ -71,7 +71,10 @@
                                 <div class="col-md-12" id="time_disp">{{this.startTime}} - {{this.endTime}}</div>
                             </div>
                             <div class="col-md-4 col-4" id="person">{{this.customerSeat}} người</div>
-                            <div class="col-md-2 col-2 " id="icon"><i class="fas fa-times fa-lg mt-1"></i></div>
+                            <div class="col-md-2 col-2 table-close" id="icon">
+                                <i class="fas fa-times fa-lg mt-1"></i>
+                                <input id="id" type="hidden" name="id" value="{{this.BookingId}}">
+                            </div>
                         </div>
                         {{/each}}
                                                 
@@ -86,11 +89,14 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="modal__description">
-                        <p>Bạn chắc chắn muốn xóa?</p>
+                        <p>Bạn có chắc chắn muốn xóa đặt bàn ?</p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="delete-clerk-btn">Xác nhận</button>
+                    <form action ="/deleteBooking" method ="post" id ="submit-id">
+                        <input type ="hidden" id ="bookingid" name="bookingid" value ="">                
+                    <button type="submit" class="btn btn-primary" id="delete-clerk-btn">Xác nhận</button>
+                    </form>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                 </div>
             </div>
