@@ -22,8 +22,8 @@ const options = { // setting connection options
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'POS',
-    port: 3310
+    database: 'pos',
+    // port: 3310
 };
 
 // let options = connection.connection;
