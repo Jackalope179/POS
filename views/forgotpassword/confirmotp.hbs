@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/login/style-login.css">
 
 <body id="forgot-confirm-body">
+    <div id="toast"></div>
     <div class="bubbles">
         <div class="circle"></div>
         <div class="circle"></div>
@@ -20,15 +21,15 @@
                     </div>
                     <div class="card-login-body">
                         <div class="card-title text-center">Xác nhận mã OTP</div>
-                        <form class="form-signin" id="form-4" method="GET" action="/login">
-                            <div class="form-label-group">
+                        <form class="form-signin" id="form-4" method="POST" action="/login">
+                            <div class="form-label-group form-label-group-otp">
                                 <label for="otpcode" class="form-label">Mã OTP</label>
                                 <input id="otpcode" name="otpcode" type="text" placeholder="Nhập mã OTP của bạn"
-                                    class="form-control">
+                                    pattern=".{6}" class="form-control" required>
                                 <input id="pass" name="password" type="hidden" value = {{password}} >
                                 <input id="phone" name="phone" type="hidden" value = {{phone}} >
                                 <!-- <label for="inputEmail">Email address</label> -->
-                                <span class="form-message"></span>
+                                <span class="form-message"  id="form-message-otp"></span>
                             </div>
                             <button class="form-submit btn btn-lg btn-primary btn-block text-uppercase"
                                 type="submit">XÁC NHẬN</button>
@@ -39,22 +40,45 @@
             </div>
         </div>
     </div>
-
+    <script type='text/javascript' src="/js/login.js"></script>
     <script>
-        //document.addEventListener('DOMContentLoaded', function () {
-        //    // Mong muốn của chúng ta
-        //    Validator({
-        //        form: '#form-4',
-        //        formGroupSelector: '.form-label-group',
-        //        errorSelector: '.form-message',
-        //        rules: [
-        //            Validator.isRequired('#otpcode'),
-        //            Validator.isOtp('#otpcode', 6),
-        //        ],
-        //        onSubmit: true,
-//
-        //    });
-        //});
+        
+        var myInputOtp = document.getElementById("otpcode");
+        var checkform = true;
+
+        var otpRequired = document.getElementById("form-message-otp");
+        var otpValid = document.querySelector('.form-label-group-otp');
+        //console.log(otpRequired);
+
+        // When the user clicks outside of the password field, hide the message box
+        myInputOtp.oninput = function() {
+            var isnumbers = /[0-9]/g;
+            otpRequired.innerText = "";
+            otpValid.classList.remove('invalid');
+            if((myInputOtp.value.length == 6) && myInputOtp.value.match(isnumbers)) {
+                checkform = true;
+            }else {
+                checkform = false;
+            }
+        }
+
+        // When the user clicks outside of the password field, hide the message box
+        myInputOtp.onblur = function() {
+            if(myInputOtp.value.length > 0){
+                if(checkform){
+                    otpRequired.innerText = "";
+                    otpValid.classList.remove('invalid');
+                }
+                else {
+                    otpRequired.innerText = "Mã OTP bao gồm 6 chữ số";
+                    otpValid.classList.add('invalid');
+                }
+            }
+            else {
+                otpRequired.innerText = "Vui lòng nhập mã OTP";
+                otpValid.classList.add('invalid');
+            }
+        }
 
         $(".form-signin").submit(function (e) {
             e.preventDefault();
@@ -66,17 +90,24 @@
             var otpcode = $("input[name='otpcode']").val();
             var form = $(this);
 
-            // AJAX
-            $.post("/forgotpassword/checkOTP", { phone: phoneNum, new_pass: new_pass,otp: otpcode}, function (data, status) {
-                if (data.status == "FAIL") {
-                    alert("OTP không hợp lệ!");
-                }
-                else {
-                    form.unbind("submit").submit();
-                }
-            });
+            if(checkform){
+                // AJAX
+                $.post("/forgotpassword/checkOTP", { phone: phoneNum, new_pass: new_pass,otp: otpcode}, function (data, status) {
+                    if (data.status == "FAIL") {
+                        //alert("OTP không hợp lệ!");
+                        showOtpErrorToast();
+                    }
+                    else {
+                        setTimeout(function(){
+                            form.unbind("submit").submit();
+                        }, 500);
+                        showResetPassSuccessToast();
+                    }
+                });
+            }else{
+                otpRequired.innerText = "Mã OTP bao gồm 6 chữ số";
+                otpValid.classList.add('invalid');
+            }
         });
     </script>
-
-
 </body>

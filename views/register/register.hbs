@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/login/style-login.css">
 
 <body>
+    <div id="toast"></div>
     <div class="bubbles">
         <div class="circle"></div>
         <div class="circle"></div>
@@ -28,52 +29,53 @@
                     <div class="card-login-body">
                         <h5 class="card-title text-center">Đăng ký</h5>
                         <form class="form-signin" id="form-1" method="POST" action="/register/confirmotp">
-                            <div class="form-label-group">
+                            <div class="form-label-group form-label-group-name">
                                 <label for="fullname" class="form-label">Tên người dùng</label>
                                 <input type="text" id="fullname" name="fullname" class="form-control"
-                                    placeholder="Tên đầy đủ của người dùng">
+                                    pattern=".{1,}" placeholder="Tên đầy đủ của người dùng" 
+                                    title="Vui lòng điền vào trường này" required>
                                 <!-- <label for="fullname">Username</label> -->
-                                <span class="form-message"></span>
+                                <span class="form-message" id="form-message-name"></span>
                             </div>
 
-                            <div class="form-label-group">
+                            <div class="form-label-group form-label-group-phone">
                                 <label for="phone" class="form-label">Số điện thoại</label>
                                 <input id="phone" name="phone" type="text" placeholder="Số điện thoại của bạn"
-                                    class="form-control">
+                                    pattern="(?=.*((09|03|07|08|05)+([0-9]{8})\b)).{10,}" class="form-control" required>
                                 <!-- <label for="inputEmail">Email address</label> -->
-                                <span class="form-message"></span>
+                                <span class="form-message" id="form-message-phone"></span>
                             </div>
 
                             <!-- <hr> -->
 
-                            <div class="form-label-group">
+                            <div class="form-label-group form-label-group-password">
                                 <label for="password" class="form-label">Mật khẩu</label>
                                 <!-- <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu của bạn" required> -->
                                 <div class="input-pass">
                                     <input type="password" id="password" name="password" class="form-control"
-                                        placeholder="Mật khẩu của bạn">
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Mật khẩu của bạn" required>
                                     <span class="show-btn-eye">
                                         <i class="fas fa-eye"></i>
                                     </span>
                                 </div>
                                 <!-- <label for="inputPassword">Password</label> -->
-                                <span class="form-message"></span>
+                                <span class="form-message" id="form-message-password"></span>
                             </div>
 
-                            <div class="form-label-group">
+                            <div class="form-label-group form-label-group-password_confirmation">
                                 <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
                                 <!-- <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Nhập lại mật khẩu" required> -->
 
                                 <div class="input-pass">
-                                    <input type="password" id="password_confirmation" name="password_confirmation"
-                                        class="form-control" placeholder="Nhập lại mật khẩu">
+                                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control"
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Nhập lại mật khẩu" required>
                                     <span class="show-btn-eye">
                                         <i class="fas fa-eye  eye-confirm"></i>
                                     </span>
                                 </div>
 
                                 <!-- <label for="inputConfirmPassword">Confirm password</label> -->
-                                <span class="form-message"></span>
+                                <span class="form-message" id="form-message-password_confirmation"></span>
                             </div>
 
                             <button class="form-submit btn btn-lg btn-primary btn-block text-uppercase"
@@ -88,31 +90,147 @@
         </div>
     </div>
 
+    <script type='text/javascript' src="./js/login.js"></script>
     <script>
-        //document.addEventListener('DOMContentLoaded', function () {
-        //    // Mong muốn của chúng ta
-        //    Validator({
-        //        form: '#form-1',
-        //        formGroupSelector: '.form-label-group',
-        //        errorSelector: '.form-message',
-        //        rules: [
-        //            Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
-        //            Validator.isRequired('#phone'),
-        //            Validator.isPhone('#phone'),
-        //            Validator.minLength('#password', 8),
-        //            Validator.isRequired('#password_confirmation'),
-        //            Validator.isConfirmed('#password_confirmation', function () {
-        //                return document.querySelector('#form-1 #password').value;
-        //            }, 'Mật khẩu nhập lại không chính xác')
-        //        ],
-        //        onSubmit: true,
-//
-        //    });
-        //});
+        var myInputName = document.getElementById("fullname");
+        var myInputPhone = document.getElementById("phone");
+        var myInputPassword = document.getElementById("password");
+        var myInputPasswordConfirm = document.getElementById("password_confirmation");
+        var checkform = true;
+        
+        var nameRequired = document.getElementById("form-message-name");
+        var nameValid = document.querySelector('.form-label-group-name');
+        //console.log(nameRequired);
+
+        // When the user clicks outside of the password field, hide the message box
+        myInputName.oninput = function() {
+            nameRequired.innerText = "";
+            nameValid.classList.remove('invalid');
+        }
+
+        // When the user clicks outside of the password field, hide the message box
+        myInputName.onblur = function() {
+            if(myInputName.value.length > 0){
+                nameRequired.innerText = "";
+            }
+            else {
+                nameRequired.innerText = "Vui lòng nhập tên đẩy đủ của bạn";
+                nameValid.classList.add('invalid');
+            }
+        }
+
+        
+        var phoneRequired = document.getElementById("form-message-phone");
+        var phoneValid = document.querySelector('.form-label-group-phone');
+        //console.log(phoneRequired);
+
+        // When the user clicks outside of the password field, hide the message box
+        myInputPhone.oninput = function() {
+            phoneRequired.innerText = "";
+            phoneValid.classList.remove('invalid');
+        }
+
+        // When the user clicks outside of the password field, hide the message box
+        myInputPhone.onblur = function() {
+            var regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+            if(myInputPhone.value.length > 0) {
+                if(myInputPhone.value.match(regex)) {
+                    phoneRequired.innerText = "";
+                }
+                else {
+                    phoneRequired.innerText = "Trường này phải là số điện thoại của bạn";
+                    phoneValid.classList.add('invalid');
+                }
+            }
+            else {
+                phoneRequired.innerText = "Vui lòng nhập số điện thoại của bạn";
+                phoneValid.classList.add('invalid');
+            }
+        }
+        
+        var passwordRequired = document.getElementById("form-message-password");
+        var passwordValid = document.querySelector('.form-label-group-password');
+        //console.log(passwordRequired);
+
+        // When the user clicks outside of the password field, hide the message box
+        myInputPassword.oninput = function() {
+            passwordRequired.innerText = "";
+            passwordValid.classList.remove('invalid');
+            if( myInputPasswordConfirm.value == myInputPassword.value ) {
+                if(myInputPassword.value == myInputPasswordConfirm.value){
+                    checkform = true;
+                    passwordConfirmRequired.innerText = "";
+                    passwordConfirmValid.classList.remove('invalid');
+                }
+            }
+            else {
+                checkform = false;
+            }
+        }
+
+        // When the user clicks outside of the password field, hide the message box
+        myInputPassword.onblur = function() {
+            var lowerCaseLetters = /[a-z]/g;
+            var upperCaseLetters = /[A-Z]/g;
+            var isnumbers = /[0-9]/g;
+            
+            if(myInputPassword.value.length > 0) {
+                if(myInputPassword.value.match(lowerCaseLetters) && myInputPassword.value.match(isnumbers) 
+                && myInputPassword.value.match(upperCaseLetters) && (myInputPassword.value.length > 7) ) {
+                    passwordRequired.innerText = "";
+                }
+                else {
+                    passwordRequired.innerText = "Mật khẩu phải tối thiểu 8 kí tự gồm chữ hoa, chữ thường và số";
+                    passwordValid.classList.add('invalid');
+                    checkform = false;
+                }
+            }
+            else {
+                passwordRequired.innerText = "Vui lòng nhập mật khẩu của bạn";
+                return passwordValid.classList.add('invalid');
+                ;
+            }
+        }
+        
+        var passwordConfirmRequired = document.getElementById("form-message-password_confirmation");
+        var passwordConfirmValid = document.querySelector('.form-label-group-password_confirmation');
+        //console.log(passwordConfirmRequired);
+
+        // When the user clicks outside of the passwordConfirm field, hide the message box
+        myInputPasswordConfirm.oninput = function() {
+            passwordConfirmRequired.innerText = "";
+            passwordConfirmValid.classList.remove('invalid');
+            if( myInputPasswordConfirm.value == myInputPassword.value ) {
+                checkform = true;
+            }
+            else {
+                checkform = false;
+            }
+        }
+
+        // When the user clicks outside of the passwordConfirm field, hide the message box
+        myInputPasswordConfirm.onblur = function() {
+            
+            if(myInputPasswordConfirm.value.length > 0) {
+                if(checkform) {
+                    passwordConfirmRequired.innerText = "";
+                }
+                else {
+                    passwordConfirmRequired.innerText = "Mật khẩu nhập lại không chính xác";
+                    passwordConfirmValid.classList.add('invalid');
+                    checkform = false;
+                }
+            }
+            else {
+                passwordConfirmRequired.innerText = "Vui lòng nhập lại mật khẩu của bạn";
+                passwordConfirmValid.classList.add('invalid');
+            }
+        }
+        
 
         $(".form-signin").submit(function (e) {
             e.preventDefault();
-
+            
             // Write code to check if student id is existed!
             // Camel case
             var phoneNum = $("input[name='phone']").val();
@@ -121,14 +239,20 @@
             var form = $(this);
 
             // AJAX
-            $.post("/register/checkPhone", { phone: phoneNum}, function (data, status) {
-                if (data.status == "FOUND") {
-                    alert("Số điện thoại đã tồn tại!");
-                }
-                else {
-                    form.unbind("submit").submit();
-                }
-            });
+            if(checkform){
+                $.post("/register/checkPhone", { phone: phoneNum}, function (data, status) {
+                    if (data.status == "FOUND") {
+                        //alert("Số điện thoại đã tồn tại!");
+                        showRegisterErrorToast();
+                    }
+                    else {
+                        form.unbind("submit").submit();
+                    }
+                });
+            } else{
+                passwordConfirmRequired.innerText = "Mật khẩu nhập lại không chính xác";
+                passwordConfirmValid.classList.add('invalid');
+            }
         });
         
     </script>
