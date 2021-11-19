@@ -18,15 +18,18 @@ var app = express();
 // const connection = require("./models/food")
 
 
-const options = { // setting connection options
+const options = {
     host: 'localhost',
     user: 'root',
     password: '',
     database: 'pos',
+<<<<<<< HEAD
     port: 3310
+=======
+    // port: 3310
+>>>>>>> 0df03f126c541b56747d9fa2bfaf615aa1941724
 };
 
-// let options = connection.connection;
 const sessionStore = new MySQLStore(options);
 
 
@@ -40,7 +43,7 @@ app.use(
         },
         resave: false,
         saveUninitialized: false,
-        store: sessionStore, // assigning sessionStore to the session
+        store: sessionStore,
     })
 );
 
