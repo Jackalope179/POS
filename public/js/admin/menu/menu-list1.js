@@ -247,7 +247,14 @@ $(document).on('hidden.bs.modal', function () {
 $(document).off('focusin.modal');
 $('#delete-food-modal').appendTo("body");
 
+$('#modal_image_file').change(function(e) {
+  document.getElementById('modal_image').value='./img/' + document.getElementById('modal_image_file').value.replace(/C:\\fakepath\\/, '');
+  document.getElementById('modal__image_id').innerHTML=`<img src=${document.getElementById('modal_image').value} alt="" /> `;
+});
 
+$('#image_file_add').change(function(e) {
+  document.getElementById('image').value='./img/' + document.getElementById('image_file_add').value.replace(/C:\\fakepath\\/, '');
+});
 
 // set info for modal food detail
 function SetDetail(name){
@@ -265,7 +272,6 @@ function SetDetail(name){
     document.getElementById('modal_isBestSeller').value=foodSelected.isRecommended;
     document.getElementById('modal_foodDescribe').value=foodSelected.foodDescribe;
     document.getElementById('modal_image').value=foodSelected.image;
-    console.log(foodsSelected)
 }
 
 // var adminAdd = document.querySelector('.admin-add');
@@ -319,7 +325,6 @@ function NumberWithCommas(x) {
     var btnDeleteFood = document.getElementById('btn-delete-food');
     foodForm = document.forms['food-form'];
     btnDeleteFood.onclick = function () {
-      console.log('herrrrrrrrrrrrrrrrrrrrrrrrrr')
       foodForm.action = '/menu-admin/' + 'deleteFood';
       // foodForm.method = 'delete'
       foodForm.submit(); 
