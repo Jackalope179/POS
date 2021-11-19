@@ -12,6 +12,8 @@ let bookingModel = require("../models/booking")
 //GET ADMIN_CONTROLLER
 const adminController = require("../controllers/adminController")
 
+const loginController = require("../controllers/loginController")
+
 // Menu home page
 router.get("/", async function(req, res, next) {
     let foodList = await foodModel.getAllFood();
@@ -41,7 +43,7 @@ router.post("/payment", async function(req, res, next) {
     req.session.password = req.body.password;
     req.session.login = 1;
 
-    res.render("payment", {
+    return res.render("payment", {
         login: 1,
         CartArray: req.session.food,
         totalAmount: req.session.totalAmount,
@@ -50,9 +52,11 @@ router.post("/payment", async function(req, res, next) {
 
 router.get("/payment", async function(req, res, next) {
     let login = 0
-    if (req.session.login == 1)
+    if (req.session.login == 1){
         login = req.session.login;
-    res.render("payment", {
+    }
+
+    return res.render("payment", {
         login: login,
         CartArray: req.session.food,
         totalAmount: req.session.totalAmount,
@@ -112,9 +116,10 @@ router.post("/thanhtoan", async function(req, res, next) {
     req.session.totalAmount = NumberWithCommas(foodapi.totalPrice)
 
     let login = 0;
-    if (req.session.login == 1)
-        login = 1
-    res.render("payment", {
+    if (req.session.login == 1){
+        login = 1;
+    }
+    return res.render("payment", {
         login: login,
         CartArray: req.session.food,
         totalAmount: req.session.totalAmount,
@@ -123,9 +128,10 @@ router.post("/thanhtoan", async function(req, res, next) {
 
 router.get("/thanhtoan", async function(req, res, next) {
     let login = 0;
-    if (req.session.login == 1)
-        login = 1
-    res.render("payment", {
+    if (req.session.login == 1){
+        login = 1;
+    }
+    return res.render("payment", {
         login: login,
         CartArray: req.session.food,
         totalAmount: req.session.totalAmount,
@@ -186,79 +192,21 @@ router.post("/register", async function(req, res, next) {
     res.render("register/register");
 });
 
-router.post("/register/checkPhone", async(req, res) => {
-    let phoneNum = req.body.phone;
-    await foodModel.CheckPhone(String(phoneNum)).then(function(result) {
-        // console.log(result);
-        if (result.length > 0) {
-            res.json({
-                status: "FOUND",
-                data: result[0],
-            });
-        } else {
-            res.json({
-                status: "NOT_FOUND",
-            });
-        }
-    });
-});
+router.post("/register/checkPhone", loginController.checkPhone);
 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
-var OTP = 0;
-
-router.post("/register/confirmotp", async function(req, res, next) {
-    let phoneNum = req.body.phone;
-    let pass = req.body.password;
-    let name = req.body.fullname;
-    OTP = getRndInteger(100000, 999999);
-    console.log(OTP);
-    res.render("register/confirmotp", { phone: phoneNum, password: pass, name: String(name) });
-});
+router.post("/register/confirmotp",loginController.registerOTP);
 
 
 
-router.post("/register/checkOTP", async(req, res) => {
-    let phoneNum = req.body.phone;
-    let password = req.body.password;
-    let name = req.body.name;
-    let otp = req.body.otp;
-    console.log(OTP);
-    if (parseInt(otp) === OTP) {
-        await foodModel.InsertCustomer(String(phoneNum), String(password), String(name));
-        res.json({
-            status: "TRUE",
-        });
-    } else {
-        res.json({
-            status: "FAIL",
-        });
-    }
-});
+router.post("/register/checkOTP", loginController.registerCheckOTP);
 
 
 router.post("/login", async function(req, res, next) {
     res.render("login/login");
 });
 
-router.post("/login/checkPhone", async(req, res) => {
-    let phoneNum = req.body.phone;
-    let pass = req.body.password;
-    await foodModel.CheckAccount(String(phoneNum), String(pass)).then(function(result) {
-        if (result.length > 0) {
-            res.json({
-                status: "FOUND",
-                data: result[0],
-            });
-        } else {
-            res.json({
-                status: "NOT_FOUND",
-            });
-        }
-    });
-});
+router.post("/login/checkPhone", loginController.checkAccount);
 
 router.get("/forgotpassword", async function(req, res, next) {
     res.render("forgotpassword/forgotpassword");
@@ -268,47 +216,12 @@ router.post("/forgotpassword", async function(req, res, next) {
     res.render("forgotpassword/forgotpassword");
 });
 
-router.post("/forgotpassword/checkPhone", async(req, res) => {
-    let phoneNum = req.body.phone;
-    await foodModel.CheckPhone(String(phoneNum)).then(function(result) {
-        console.log(result);
-        if (result.length > 0) {
-            res.json({
-                status: "FOUND",
-                data: result[0],
-            });
-        } else {
-            res.json({
-                status: "NOT_FOUND",
-            });
-        }
-    });
-});
+router.post("/forgotpassword/checkPhone", loginController.forgotpasswordCheckAccount);
 
 
-router.post("/forgotpassword/confirmotp", async function(req, res, next) {
-    let phoneNum = req.body.phone;
-    let new_pass = req.body.password;
-    OTP = getRndInteger(100000, 999999);
-    console.log(OTP);
-    res.render("forgotpassword/confirmotp", { phone: phoneNum, password: new_pass });
-});
+router.post("/forgotpassword/confirmotp", loginController.forgotpasswordOTP);
 
-router.post("/forgotpassword/checkOTP", async(req, res) => {
-    let phoneNum = req.body.phone;
-    let password = req.body.new_pass;
-    let otp = req.body.otp;
-    if (parseInt(otp) === OTP) {
-        await foodModel.UpdateCustomer(String(phoneNum), String(password));
-        res.json({
-            status: "TRUE",
-        });
-    } else {
-        res.json({
-            status: "FAIL",
-        });
-    }
-});
+router.post("/forgotpassword/checkOTP", loginController.forgotpasswordCheckOTP);
 
 router.post("/login", async function(req, res, next) {
     res.render("login/login");
