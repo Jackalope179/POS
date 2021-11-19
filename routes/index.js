@@ -14,6 +14,9 @@ const adminController = require("../controllers/adminController")
 
 const loginController = require("../controllers/loginController")
 
+const paymentController = require("../controllers/paymentController")
+
+
 // Menu home page
 router.get("/", async function(req, res, next) {
     let foodList = await foodModel.getAllFood();
@@ -42,6 +45,7 @@ router.post("/payment", async function(req, res, next) {
     req.session.phone = req.body.phone;
     req.session.password = req.body.password;
     req.session.login = 1;
+
 
     return res.render("payment", {
         login: 1,
@@ -114,7 +118,6 @@ router.post("/thanhtoan", async function(req, res, next) {
     });
     req.session.food = foodjson;
     req.session.totalAmount = NumberWithCommas(foodapi.totalPrice)
-
     let login = 0;
     if (req.session.login == 1){
         login = 1;
@@ -166,9 +169,7 @@ router.get("/datban", async function(req, res, next) {
 });
 
 
-router.get("/login", async function(req, res, next) {
-    res.render("login/login");
-});
+
 
 router.post("/savebooking", async function(req, res, next) {
     // console.log(req.body);
@@ -183,6 +184,9 @@ router.post("/savebooking", async function(req, res, next) {
     res.redirect("/datban");
 })
 
+router.get("/login", async function(req, res, next) {
+    res.render("login/login");
+});
 
 router.get("/register", async function(req, res, next) {
     res.render("register/register");
@@ -194,13 +198,9 @@ router.post("/register", async function(req, res, next) {
 
 router.post("/register/checkPhone", loginController.checkPhone);
 
-
 router.post("/register/confirmotp",loginController.registerOTP);
 
-
-
 router.post("/register/checkOTP", loginController.registerCheckOTP);
-
 
 router.post("/login", async function(req, res, next) {
     res.render("login/login");
@@ -218,7 +218,6 @@ router.post("/forgotpassword", async function(req, res, next) {
 
 router.post("/forgotpassword/checkPhone", loginController.forgotpasswordCheckAccount);
 
-
 router.post("/forgotpassword/confirmotp", loginController.forgotpasswordOTP);
 
 router.post("/forgotpassword/checkOTP", loginController.forgotpasswordCheckOTP);
@@ -234,6 +233,9 @@ router.get("/forgotpassword", async function(req, res, next) {
 router.post("/forgotpassword/confirmotp", async function(req, res, next) {
     res.render("forgotpassword/confirmotp");
 });
+
+
+router.post('/processPayment' , paymentController.processPayment);
 
 
 
