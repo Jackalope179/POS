@@ -22,7 +22,7 @@
                 </li>
             </ul>
             <span class="nav-item nav-item--login" id="login-text">
-                <a class="nav-link" href="/login" ><i class="fas fa-sign-in-alt mr-2"></i> Đăng nhập
+                <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt mr-2"></i> Đăng nhập
                     <span class="sr-only">(current)</span></a>
             </span>
         </div>
@@ -36,60 +36,100 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th scope="col">Tên</th>
-                    <th scope="col">Tên tài khoản</th>
-                    <th scope="col">Số điện thoại</th>
-                    <th scope="col">Ngày tạo tài khoản</th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>hien.minh</td>
-                    <td>0123456789</td>
-                    <td>15/11/2021</td>
-                    <td>
-                    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                </tr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Tên</th>
+                            <th scope="col">Số điện thoại</th>
+                            <th scope="col">Ngày tạo tài khoản</th>
+                            <th scope="col">Hệ số lương</th>
+                            <th scope="col">Địa chỉ</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </tbody>
-            </table>
+                        {{#each clerks}}
+                        <tr>
+                            <td>{{@index}}</td>
+                            <td>{{this.fullname}}</td>
+                            <td>{{this.phone}}</td>
+                            <td>{{this.created_time}}</td>
+                            <td>{{this.coeff_salary}}</td>
+                            <td>{{this.address}}</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-delete-clerk" data-toggle="modal" data-target="#delete-clerk-modal" data-id="{{this.phone}}"><i class="far fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
-  <div class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Thêm tài khoản cho nhân viên</h5>
-        </div>
-        <div class="modal-body">
-            <div class="modal__description">
-                <form action="" class="modal__input">
-                <label for="">Tên</label>
-                <input type="text">
-                <label for="">Tên tài khoản</label>
-                <input type="text">
-                <label for="">Mật khẩu</label>
-                <input type="password">
-                <label for="">Số điện thoại</label>
-                <input type="tel">
+    <div class="modal add-clerk" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thêm tài khoản cho nhân viên</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__description">
+                        <form action="/account-admin/addClerk" class="modal__input" method="post">
+                            {{!-- <input type="number" name="ID" hidden>
+                            <input type="datetime-local" name="created_time" hidden> --}}
+
+                            <label for="">Tên</label>
+                            <input type="text" name="fullname">
+
+                            <label for="">Địa chỉ</label>
+                            <input type="text" name="address">
+
+                            <label for="">Mật khẩu</label>
+                            <input type="password" name="password">
+
+                            <label for="">Số điện thoại</label>
+                            <input type="tel" name="phone">
+
+                            <label for="">Hệ số lương</label>
+                            <input type="number" step="any"  name="coeff_salary">
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary add-clerk-btn">Xác nhận</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                </div>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Xác nhận</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-        </div>
-      </div>
     </div>
-  </div>
 
+
+
+
+<form name="delete-clerk-form" id="delete-clerk-form" method="post">
+    <input type="text" hidden name="phone" id="phone-input">
+</form>
+
+    <div class="modal modal-second" tabindex="-1" role="dialog" id="delete-clerk-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal__description">
+                        <p>Bạn chắc chắn muốn xóa thông tin nhân viên này?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="delete-clerk-btn">Xác nhận</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
     <script src="./js/admin/account/account.js"></script>
 </div>
-

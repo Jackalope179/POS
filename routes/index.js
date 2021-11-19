@@ -179,6 +179,10 @@ router.post("/menu-admin/addFood", adminController.addFood);
 
 router.post("/menu-admin/deleteFood", adminController.deleteFood);
 
+router.post("/account-admin/deleteClerk", adminController.deleteClerk);
+
+router.post("/account-admin/addClerk", adminController.addClerk);
+
 // router.post("/forgotpassword/confirmotp", async function(req, res, next) {
 //     res.render("forgotpassword/confirmotp");
 // });

@@ -1,5 +1,5 @@
 const foodModel = require("../models/food")
-
+const clerkModel = require("../models/clerk")
 class adminController {
 
     async getAllFood(req, res) {
@@ -50,22 +50,33 @@ class adminController {
       };
 
       async getAllAccount(req, res) {
+        let clerks = await clerkModel.getAllClerk();
+        console.log(clerks);
         res.render("admin/account", {
           title: "Admin Account",
-          array: [1, 2, 3],
+          clerks: clerks
         });
       };
 
       async updateFood(req, res, next) {
-        foodModel.updateOneFood(req.body).then(() => res.redirect('/menu-admin')).catch(error => next(error));
+        foodModel.updateOneFood(req.body).then(() => res.redirect('/menu-admin')).catch(error => {next(error)});
       };
 
       async addFood(req, res, next) {
+        delete req.body.image_file_add;
         foodModel.createOneFood(req.body).then(() => res.redirect('/menu-admin')).catch(error => next(error));
       };
 
       async deleteFood(req, res, next) {
         foodModel.deleteOneFood(req.body.foodId).then(() => res.redirect('/menu-admin')).catch(error => next(error));
+      };
+
+      async deleteClerk(req, res, next) {
+        clerkModel.deleteOneClerk(req.body.phone).then(() => res.redirect('/account-admin')).catch(error => next(error));
+      };
+
+      async addClerk(req, res, next) {
+        clerkModel.createOneClerk(req.body).then(() => res.redirect('/account-admin')).catch(error => next(error));
       };
 
 };
