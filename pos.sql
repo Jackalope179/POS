@@ -170,8 +170,8 @@ CREATE TABLE `foodpayment` (
 CREATE TABLE `payment` (
   `paymetid` int(11) NOT NULL,
   `totalPrice` int(11) NOT NULL,
-  `time` time DEFAULT NULL,
-  `date` date DEFAULT NULL,
+  `time` time DEFAULT current_timestamp(),
+  `date` date DEFAULT current_timestamp(),
   `accoutID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -202,31 +202,6 @@ CREATE TABLE `sessions` (
 --
 -- Dumping data for table `sessions`
 --
-
-INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('0hBcXN0uUmsX077CD5B6F-FVi01EGnHg', 1637337410, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T15:56:47.830Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('1_QHQzbb8Zjw7WblKDyh2VPtmNXekNYT', 1637463856, '{\"cookie\":{\"originalMaxAge\":3600000,\"expires\":\"2021-11-21T03:04:15.504Z\",\"httpOnly\":true,\"path\":\"/\"},\"url\":\"/datban\",\"food\":[{\"name\":\"Coca Cola\",\"image\":\"./img/image-food7.jpg\",\"quantity\":\"1\",\"price\":\"15.000\"},{\"name\":\"Bia Tiger\",\"image\":\"./img/image-food6.jpg\",\"quantity\":\"1\",\"price\":\"20.000\"}],\"totalAmount\":\"35.000\",\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('4asfIjBhYTKgPmukTiM5uM2uP8UJ9v_s', 1637337879, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T16:04:37.776Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('5HcpcLFjF7meCGAHx-44X1u3phsfgkcr', 1637337186, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T15:52:28.090Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('5zfy7C-HwwQgoGe7M7Nm8jXhAjgwFpxy', 1637464502, '{\"cookie\":{\"originalMaxAge\":3600000,\"expires\":\"2021-11-21T03:14:09.903Z\",\"httpOnly\":true,\"path\":\"/\"},\"url\":\"/datban\",\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('BlYpl8J-bB0wnZPMSsTA2B4SzzH-2Eqb', 1637463822, '{\"cookie\":{\"originalMaxAge\":3600000,\"expires\":\"2021-11-21T03:03:42.169Z\",\"httpOnly\":true,\"path\":\"/\"},\"url\":\"/datban\",\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('EWMFJohK58jCh9Sls_opeB5n7AlHMmvN', 1637337331, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T15:55:04.258Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('Ebem-BtdEPvYjH-0eDKTsIYoksFZn0ry', 1637463928, '{\"cookie\":{\"originalMaxAge\":3600000,\"expires\":\"2021-11-21T03:05:27.780Z\",\"httpOnly\":true,\"path\":\"/\"},\"url\":\"/\",\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('NxUtaKc00RyR-uqcbWoYrFbUtbztMWbZ', 1637459422, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-21T01:50:19.651Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('QV0Jt7IhSt2jv2JN7_WJKxAtpz8OjsZu', 1637338757, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T16:18:54.892Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1,\"food\":[{\"name\":\"Coca Cola\",\"image\":\"./img/image-food7.jpg\",\"quantity\":\"5\",\"price\":\"75.000\"},{\"name\":\"Bia Tiger\",\"image\":\"./img/image-food6.jpg\",\"quantity\":\"3\",\"price\":\"60.000\"}],\"totalAmount\":\"135.000\"}'),
-('T8oB479p1K3JJgWLBtI5Fz3esHUZB9kQ', 1637328316, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T13:24:43.151Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('bfoTGvWmH6Y5yZjZ3jtn94wS8u7GIQpL', 1637335742, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T15:29:01.599Z\",\"httpOnly\":true,\"path\":\"/\"},\"food\":[],\"totalAmount\":\"0\",\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('dZVetHxUxYt2Vx26lyiclyODLH1GFJ4k', 1637464724, '{\"cookie\":{\"originalMaxAge\":3600000,\"expires\":\"2021-11-21T03:18:20.842Z\",\"httpOnly\":true,\"path\":\"/\"},\"url\":\"/datban\",\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('dgYSUR_Nyozk3ZkAwlaOrEtfIvNgzTHI', 1637337141, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T15:51:20.564Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('fHY--htSO1yt-OTT78lNUHvK2p8pzkDu', 1637328469, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T13:27:07.585Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('h7EdIY9T2BLVDi-T1363CdS5YNq-b2op', 1637335688, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T15:27:21.746Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('j410I_-SWjKR-otvj0F0Lwsnh9-QCG4W', 1637335948, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T15:31:45.718Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('jxDjCAEWdr0kcaPo_iVflgdzFfC3nylV', 1637337987, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T16:06:24.442Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('mr_FVJdTcKxUworIaPwS63S1696p2Qk0', 1637338126, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T16:08:00.090Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('rTTClcx9QAIT8Gfn4tS6UICFuOmzkzHI', 1637328414, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T13:25:55.202Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('sLdlXoYO7k6OaSeo7NnsoWyV0N2mNs9l', 1637336045, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T15:33:47.015Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('u2m_JXAa7AbZjRUlTzupkIq9ofogeSvE', 1637338223, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T16:09:40.545Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}'),
-('ya8W6e1QKnaXkmukqgygtPkSGQYOPDBw', 1637328266, '{\"cookie\":{\"originalMaxAge\":60000,\"expires\":\"2021-11-19T13:23:31.180Z\",\"httpOnly\":true,\"path\":\"/\"},\"phone\":\"0765312842\",\"password\":\"Hoang12345\",\"login\":1}');
 
 --
 -- Indexes for dumped tables
