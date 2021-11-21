@@ -24,7 +24,7 @@ class loginController {
             }
         });
     };
-    
+
     async registerOTP(req, res, next) {
         let phoneNum = req.body.phone;
         let pass = req.body.password;
@@ -52,7 +52,7 @@ class loginController {
         }
     };
 
-    async checkAccount(req, res)  {
+    async checkAccount(req, res) {
         let phoneNum = req.body.phone;
         let pass = req.body.password;
         await foodModel.CheckAccount(String(phoneNum), String(pass)).then(function(result) {
@@ -69,7 +69,7 @@ class loginController {
         });
     };
 
-    async forgotpasswordCheckAccount(req, res)  {
+    async forgotpasswordCheckAccount(req, res) {
         let phoneNum = req.body.phone;
         await foodModel.CheckPhone(String(phoneNum)).then(function(result) {
             console.log(result);
