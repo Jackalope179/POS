@@ -4,6 +4,7 @@
   max-width: 90%;
 }
 
+
 .search-food {
   width: 100%;
   display: flex;
@@ -54,6 +55,23 @@
   to {
     transform: scale(var(--growth-to));
   }
+}
+
+.carousel-control-prev-icon {
+  background-image: url("/img/left.png") !important;
+  background-size: 60px 45px;
+  width: 100px !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("/img/right.png") !important;
+  background-size: 60px 45px;
+  width: 100px !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  background-color: #fff !important;
 }
 
 .col-8 {
@@ -148,7 +166,7 @@
 
 .modal {
   z-index: 9999;
-  background-color:transparent!important;
+  background-color: transparent !important;
 }
 .card {
   flex-basis: 30%;
