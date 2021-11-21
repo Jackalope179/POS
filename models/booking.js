@@ -4,7 +4,7 @@ let connection = mysql.createConnection({
     user: "root",
     password: "",
     database: "pos",
-    port: 3310
+    port: 3306
 });
 
 exports.getBooking = async function(phone) {
