@@ -38,6 +38,7 @@ class adminController {
           foodListRender: foodListRender,
           numberofActiveRender: numberofActiveRender,
           numberofInactiveRender: numberofInactiveRender,
+          layout: "layoutAdmin"
         });
       };
 
@@ -46,6 +47,7 @@ class adminController {
         res.render("admin/ordered", {
           title: "Admin Ordered",
           array: [1, 2, 3],
+          layout: "layoutAdmin"
         });
       };
 
@@ -54,6 +56,7 @@ class adminController {
         console.log(clerks);
         res.render("admin/account", {
           title: "Admin Account",
+          layout: "layoutAdmin",
           clerks: clerks
         });
       };

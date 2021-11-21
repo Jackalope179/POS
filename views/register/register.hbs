@@ -31,7 +31,7 @@
                         <form class="form-signin" id="form-1" method="POST" action="/register/confirmotp">
                             <div class="form-label-group form-label-group-name">
                                 <label for="fullname" class="form-label">Tên người dùng</label>
-                                <input type="text" id="fullname" name="fullname" class="form-control"
+                                <input type="text" id="fullname" name="fullname" class="form-control input-phone"
                                     pattern=".{1,}" placeholder="Tên đầy đủ của người dùng" 
                                     title="Vui lòng điền vào trường này" required>
                                 <!-- <label for="fullname">Username</label> -->
@@ -41,7 +41,7 @@
                             <div class="form-label-group form-label-group-phone">
                                 <label for="phone" class="form-label">Số điện thoại</label>
                                 <input id="phone" name="phone" type="text" placeholder="Số điện thoại của bạn"
-                                    pattern="(?=.*((09|03|07|08|05)+([0-9]{8})\b)).{10,}" class="form-control" required>
+                                    pattern="(?=.*((09|03|07|08|05)+([0-9]{8})\b)).{10,}" class="form-control input-phone" required>
                                 <!-- <label for="inputEmail">Email address</label> -->
                                 <span class="form-message" id="form-message-phone"></span>
                             </div>

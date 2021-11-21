@@ -1,10 +1,18 @@
 let mysql = require("mysql-await");
 let connection = mysql.createConnection({
+<<<<<<< HEAD
     host: "localhost",
     user: "root",
     password: "",
     database: "pos",
     port: 3306
+=======
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "pos"
+  // port: 3310
+>>>>>>> 0125b96bdf0c54bcf60a075043554e43c6f14734
 });
 
 exports.CheckAccount = async function(Numphone, password) {

@@ -46,12 +46,9 @@ function RenderSearch() {
                                   searchfoods[i].name
                                 }</h5>
                                 <div class="label-control">
-                                    <p class="card-text">GIÁ: ${Number(
+                                    <p class="card-text">GIÁ: ${NumberWithCommas(Number(
                                       searchfoods[i].price
-                                    ).toLocaleString("vi-VN", {
-                                      style: "currency",
-                                      currency: "VND",
-                                    })}</p>
+                                    ))}</p>
                                 </div>
                             </div>
                         </div>
@@ -69,12 +66,9 @@ function RenderSearch() {
                                   searchfoods[i].name
                                 }</h5>
                                 <div class="label-control">
-                                    <p class="card-text">GIÁ: ${Number(
+                                    <p class="card-text">GIÁ: ${NumberWithCommas(Number(
                                       searchfoods[i].price
-                                    ).toLocaleString("vi-VN", {
-                                      style: "currency",
-                                      currency: "VND",
-                                    })}</p>
+                                    ))}</p>
                                 </div>
                             </div>
                         </div>
@@ -127,12 +121,9 @@ function ShowMenu(category) {
                             <div class="card-body">
                                 <h5 class="card-title">${foods[i].name}</h5>
                                 <div class="label-control">
-                                    <p class="card-text">GIÁ: ${Number(
-                                      foods[i].price
-                                    ).toLocaleString("vi-VN", {
-                                      style: "currency",
-                                      currency: "VND",
-                                    })}</p>
+                                    <p class="card-text">GIÁ: ${NumberWithCommas( Number(
+                                     foods[i].price
+                                    ))}</p>
                                 </div>
                             </div>
                         </div>
@@ -148,12 +139,9 @@ function ShowMenu(category) {
                             <div class="card-body">
                                 <h5 class="card-title">${foods[i].name}</h5>
                                 <div class="label-control">
-                                    <p class="card-text">GIÁ: ${Number(
-                                      foods[i].price
-                                    ).toLocaleString("vi-VN", {
-                                      style: "currency",
-                                      currency: "VND",
-                                    })}</p>
+                                    <p class="card-text">GIÁ: ${ NumberWithCommas( Number(
+                                     foods[i].price
+                                    ))}</p>
                                 </div>
                             </div>
                         </div>
