@@ -28,7 +28,7 @@
                         <div class="tab-content">
                             <!-- credit card info-->
                             <div id="credit-card" class="tab-pane fade show active pt-3">
-                                <form role="form" onsubmit="event.preventDefault()">
+                                <form role="form"  method = 'POST' action = '/processPayment'>
                                     <div class="form-group"> <label for="username">
                                             <h6>Tên chủ thẻ</h6>
                                         </label> <input type="text" name="username" placeholder="Họ và tên chủ thẻ"
@@ -68,20 +68,25 @@
                                             placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'"
                                             required class="form-control ">
                                     </div>
+
+                                    <input class = 'credit-total' name="total" type="hidden" value = "" >
+                                    {{#each CartArray}}
+                                    <input name="food" type="hidden" value ='{{this.name}} {{this.price}} {{this.quantity}}'>
+                                    {{/each}}
                                     <div class="sub_total_row">
                                         <div class="sub_total">Số tiền</div>
                                         <div class="sub_money">120.000 VNĐ</div>
                                     </div>
                                     <div class="sub_total_row">
                                         <div class="sub_total">VAT (10%)</div>
-                                        <div class="sub_money">12.000 VNĐ</div>
+                                        <div class="vat_money">12.000 VNĐ</div>
                                     </div>
 
                                     <div class="total_row">
                                         <div class="total_text">Tổng cộng</div>
                                         <div class="total_money">132.000 VNĐ</div>
                                     </div>
-                                    <div class="card-footer"> <button type="button"
+                                    <div class="card-footer"> <button type="submit"
                                             class="subscribe btn btn-primary btn-block shadow-sm" id="payment-button">
                                             <i class="fas fa-credit-card mr-2"></i> Xác nhận
                                         </button>
@@ -90,70 +95,81 @@
                         </div> <!-- End -->
                         <!-- Cash -->
                         <div id="direct-cash" class="tab-pane fade pt-3">
-                            <div class="form-group"> <label for="username">
-                                    <h6>Số bàn</h6>
-                                </label> <input type="text" name="username"
-                                    placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
-                                    class="form-control ">
-                            </div>
-                            <div class="sub_total_row">
-                                <div class="sub_total">Số tiền</div>
-                                <div class="sub_money">120.000 VNĐ</div>
-                            </div>
-                            <div class="sub_total_row">
-                                <div class="sub_total">VAT (10%)</div>
-                                <div class="sub_money">12.000 VNĐ</div>
-                            </div>
+                            <form role="form" method = 'POST' action = '/processPayment'>
+                                <div class="form-group"> <label for="username">
+                                        <h6>Số bàn</h6>
+                                    </label> <input type="text" name="username"
+                                        placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
+                                        class="form-control ">
+                                </div>
+                                <input class = 'direct-total'name="total" type="hidden" value = "" >
+                                {{#each CartArray}}
+                                <input name="food" type="hidden" value ='{{this.name}} {{this.price}} {{this.quantity}}'>
+                                {{/each}}
+                                <div class="sub_total_row">
+                                    <div class="sub_total">Số tiền</div>
+                                    <div class="sub_money">120.000 VNĐ</div>
+                                </div>
+                                <div class="sub_total_row">
+                                    <div class="sub_total">VAT (10%)</div>
+                                    <div class="vat_money">12.000 VNĐ</div>
+                                </div>
 
-                            <div class="total_row">
-                                <div class="total_text">Tổng cộng</div>
-                                <div class="total_money">132.000 VNĐ</div>
-                            </div>
-                            <div class="form-group" id="cash_button">
-                                <p> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm  "><i
-                                            class="fas fa-dollar-sign mr-2"></i> Xác nhận</button> </p>
-                            </div>
-                            <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", vui lòng đến quầy thanh
-                                toán và thực hiện thanh toán với nhân viên. </p>
-
+                                <div class="total_row">
+                                    <div class="total_text">Tổng cộng</div>
+                                    <div class="total_money">132.000 VNĐ</div>
+                                </div>
+                                <div class="form-group" id="cash_button">
+                                    <p> <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm  "><i
+                                                class="fas fa-dollar-sign mr-2"></i> Xác nhận</button> </p>
+                                </div>
+                                <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", vui lòng đến quầy thanh
+                                    toán và thực hiện thanh toán với nhân viên. </p>
+                            </form>
                         </div>
                         <!-- Internet Banking info -->
                         <div id="net-banking" class="tab-pane fade pt-3">
-                            <div class="form-group"> <label for="username">
-                                    <h6>Số bàn</h6>
-                                </label> <input type="text" name="username"
-                                    placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
-                                    class="form-control ">
-                            </div>
-                            <div class="form-group "> <label for="Select Your Bank">
-                                    <h6>Ví điện tử</h6>
-                                </label> <select class="form-control" id="ccmonth">
-                                    <option value="" selected disabled>--Vui lòng chọn ví điện tử tương ứng--
-                                    </option>
-                                    <option>Momo</option>
-                                    <option>ViettelPay</option>
-                                    <option>ZaloPay</option>
-                                </select> </div>
-                            <div class="sub_total_row">
-                                <div class="sub_total">Số tiền</div>
-                                <div class="sub_money">120.000 VNĐ</div>
-                            </div>
-                            <div class="sub_total_row">
-                                <div class="sub_total">VAT (10%)</div>
-                                <div class="sub_money">12.000 VNĐ</div>
-                            </div>
+                            <form role="form" method = 'POST' action = '/processPayment'>
+                                <div class="form-group"> <label for="username">
+                                        <h6>Số bàn</h6>
+                                    </label> <input type="text" name="username"
+                                        placeholder="Vui lòng nhập vào số bàn, nếu mang về nhập vào 'Không'" required
+                                        class="form-control ">
+                                </div>
+                                <div class="form-group "> <label for="Select Your Bank">
+                                        <h6>Ví điện tử</h6>
+                                    </label> <select class="form-control" id="ccmonth">
+                                        <option value="" selected disabled>--Vui lòng chọn ví điện tử tương ứng--
+                                        </option>
+                                        <option>Momo</option>
+                                        <option>ViettelPay</option>
+                                        <option>ZaloPay</option>
+                                    </select> </div>
+                                <input class = 'net-total' name="total" type="hidden" value = "" >
+                                {{#each CartArray}}
+                                <input name="food" type="hidden" value ='{{this.name}} {{this.price}} {{this.quantity}}'>
+                                {{/each}}
+                                <div class="sub_total_row">
+                                    <div class="sub_total">Số tiền</div>
+                                    <div class="sub_money">120.000 VNĐ</div>
+                                </div>
+                                <div class="sub_total_row">
+                                    <div class="sub_total">VAT (10%)</div>
+                                    <div class="vat_money">12.000 VNĐ</div>
+                                </div>
 
-                            <div class="total_row">
-                                <div class="total_text">Tổng cộng</div>
-                                <div class="total_money">132.000 VNĐ</div>
-                            </div>
-                            <div class="form-group" id="cash_button">
-                                <p> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm "><i
-                                            class="fas fa-mobile-alt mr-2"></i> Xác nhận</button> </p>
-                            </div>
-                            <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", bạn sẽ được chuyển đến một
-                                trang an toàn để thanh toán. Sau khi hoàn tất quá trình thanh toán, bạn sẽ
-                                được chuyển trở lại trang web để xem chi tiết đơn hàng của mình. </p>
+                                <div class="total_row">
+                                    <div class="total_text">Tổng cộng</div>
+                                    <div class="total_money">132.000 VNĐ</div>
+                                </div>
+                                <div class="form-group" id="cash_button">
+                                    <p> <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm "><i
+                                                class="fas fa-mobile-alt mr-2"></i> Xác nhận</button> </p>
+                                </div>
+                                <p class="text-muted">Lưu ý: Sau khi nhấp vào nút "Xác nhận", bạn sẽ được chuyển đến một
+                                    trang an toàn để thanh toán. Sau khi hoàn tất quá trình thanh toán, bạn sẽ
+                                    được chuyển trở lại trang web để xem chi tiết đơn hàng của mình. </p>
+                            </form>
                         </div> <!-- End -->
                         <!-- End -->
                     </div>
@@ -246,7 +262,7 @@
                             </div>
                             <div class="content-box__number">
                                 <div class="num">SL:</div>
-                                <div class="count">2</div>
+                                <div class="count">{{this.quantity}}</div>
                             </div>
                         </div>
                         <div class="remove-box">
@@ -266,7 +282,7 @@
                         <div>
                             <div class="Subtotal">Tổng:</div>
                         </div>
-                        <div class="total-amount">330.000 VNĐ
+                        <div class="total-amount">{{totalAmount}} VNĐ
                         </div>
                     </div>
 

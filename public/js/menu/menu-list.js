@@ -48,7 +48,10 @@ function RenderSearch() {
                                 <div class="label-control">
                                     <p class="card-text">GIÁ: ${Number(
                                       searchfoods[i].price
-                                    )}</p>
+                                    ).toLocaleString("vi-VN", {
+                                      style: "currency",
+                                      currency: "VND",
+                                    })}</p>
                                     <a href="#" class="label-icon-cart">
                                         <i class="label-icon fas fa-cart-plus"></i>
                                     </a>
@@ -71,7 +74,10 @@ function RenderSearch() {
                                 <div class="label-control">
                                     <p class="card-text">GIÁ: ${Number(
                                       searchfoods[i].price
-                                    )}</p>
+                                    ).toLocaleString("vi-VN", {
+                                      style: "currency",
+                                      currency: "VND",
+                                    })}</p>
                                     <a href="#" class="label-icon-cart">
                                         <i class="label-icon fas fa-cart-plus"></i>
                                     </a>
@@ -127,9 +133,12 @@ function ShowMenu(category) {
                             <div class="card-body">
                                 <h5 class="card-title">${foods[i].name}</h5>
                                 <div class="label-control">
-                                    <p class="card-text">GIÁ: ${NumberWithCommas(Number(
+                                    <p class="card-text">GIÁ: ${Number(
                                       foods[i].price
-                                    ))}</p>
+                                    ).toLocaleString("vi-VN", {
+                                      style: "currency",
+                                      currency: "VND",
+                                    })}</p>
                                     <a href="#" class="label-icon-cart">
                                         <i class="label-icon fas fa-cart-plus"></i>
                                     </a>
@@ -148,9 +157,12 @@ function ShowMenu(category) {
                             <div class="card-body">
                                 <h5 class="card-title">${foods[i].name}</h5>
                                 <div class="label-control">
-                                    <p class="card-text">GIÁ: ${ NumberWithCommas(Number(
+                                    <p class="card-text">GIÁ: ${Number(
                                       foods[i].price
-                                    ))}</p>
+                                    ).toLocaleString("vi-VN", {
+                                      style: "currency",
+                                      currency: "VND",
+                                    })}</p>
                                     <a href="#" class="label-icon-cart">
                                         <i class="label-icon fas fa-cart-plus"></i>
                                     </a>
@@ -201,9 +213,12 @@ function SetDetail(name) {
         </div>
         <div class="food-base__field">
             <div class="food-base__field--price_name">Giá</div>
-            <div class="food-base__field--price">${ NumberWithCommas((
+            <div class="food-base__field--price">${Number(
               foodSelected.price
-            ))}</div>
+            ).toLocaleString("vi-VN", {
+              style: "currency",
+              currency: "VND",
+            })}</div>
         </div>
     `;
     // set quantity
@@ -271,33 +286,13 @@ for (var i = 0; i < categoryList.length; i++) {
 }
 
 // -------------------CART-------------------------------------------
+// add to cart
 var cartList = [];
 var totalPrice = 0;
 
-function getCurrentCartList() {
-    let imageList = document.querySelectorAll(".imageList")
-    let nameList = document.querySelectorAll(".col-name")
-    let quantityList = document.querySelectorAll(".col-quantity")
-    let amountList = document.querySelectorAll(".amount")
-
-    if (imageList.length > 0) {
-        for (var i = 0; i < imageList.length; i++) {
-            cartList.push({
-                image: imageList[i].src,
-                name: nameList[i].innerText,
-                number: Number(quantityList[i].innerText),
-                price: Number(amountList[i].innerText.replaceAll(".", "")) / Number(quantityList[i].innerText)
-            })
-        }
-
-    }
-    console.log(cartList);
-}
-getCurrentCartList()
-
 function AddToCart(food, foodNum) {
     var check = cartList.find((item) => {
-        return item.name === food.name;
+        return item.foodId === food.foodId;
     });
     if (check) check.number += foodNum;
     else cartList.push({...food, number: foodNum });
@@ -315,6 +310,7 @@ removeAllButton[0].onclick = removeAllButton[1].onclick = () => {
 
 function RenderCart() {
     let cart = document.querySelector(".cart");
+    let total = document.querySelector(".total-amount");
 
     cart.innerHTML = cartList.reduce((temp, item) => {
         return (temp += `
@@ -357,6 +353,7 @@ function RenderCart() {
         <hr />
         `);
     }, ``);
+
     // get price
     GetTotalPrice();
 
@@ -531,16 +528,4 @@ if (search != 1) {
     ShowMenu("menu");
 }
 SetShowDetail();
-
-
-
-/*=====================================
-	  Preloader JS
-======================================*/
-
-//After 2s preloader is fadeOut
-$('.preloader').delay(500).fadeOut('slow');
-setTimeout(function() {
-    //After 2s, the no-scroll class of the body will be removed
-    $('body').removeClass('no-scroll');
-}, 2000); //Here you can change preloader time
+document.querySelectorAll(".header .nav-link")[0].classList.add("active");
