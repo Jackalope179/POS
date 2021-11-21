@@ -8,8 +8,9 @@ var ID = 0;
 
 class paymentController{
     async processPayment(req, res) {
+        console.log(req.body);
         var total = req.body.total;
-        if (total===0){
+        if (total!=0){
             var food = req.body.food;
             ID = getRndInteger(1,10000);
             while(true){
