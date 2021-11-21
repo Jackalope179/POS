@@ -170,10 +170,15 @@ router.get("/datban", async function(req, res, next) {
 
     let bookingListRender = bookingList.map(booking => {
         let dateString = booking.date.getDate() + "/" + (booking.date.getMonth() + 1) + "/" + booking.date.getFullYear();
-
+        let temp_sTime = booking.startTime;
+        let sTime = temp_sTime.split(":")[0] + ":" + temp_sTime.split(":")[1];
+        let temp_eTime = booking.endTime;
+        let eTime = temp_eTime.split(":")[0] + ":" + temp_eTime.split(":")[1];
         return {
             ...booking,
             date: dateString,
+            startTime: sTime,
+            endTime: eTime
         }
     })
 

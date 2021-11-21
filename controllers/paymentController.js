@@ -6,42 +6,41 @@ function getRndInteger(min, max) {
 
 var ID = 0;
 
-class paymentController{
+class paymentController {
     async processPayment(req, res) {
         var total = req.body.total;
-        if (total===0){
+        if (total !== 0) {
             var food = req.body.food;
-            ID = getRndInteger(1,10000);
-            while(true){
+            ID = getRndInteger(1, 10000);
+            while (true) {
                 var check = false;
                 await payment.CheckPayment(ID).then(function(result) {
                     if (result.length > 0) {
-                        ID = getRndInteger(1,10000);
+                        ID = getRndInteger(1, 10000);
                     } else {
                         check = true;
                     }
                 });
-                if(check) {
+                if (check) {
                     break;
                 }
             }
             console.log(ID);
-            await payment.insertPayment(ID, total,0);
+            await payment.insertPayment(ID, total, 0);
 
             for (var i = 0; i < food.length; i++) {
                 var text = food[i];
                 var parsefood = text.split(' ');
                 var name = parsefood[0];
-                for(var j = 1; j < parsefood.length-2; j++){
-                    name  = name + ' '+ parsefood[j];
+                for (var j = 1; j < parsefood.length - 2; j++) {
+                    name = name + ' ' + parsefood[j];
                 }
-                var price = parseInt(parsefood[parsefood.length-2])*1000;
-                var amount = parsefood[parsefood.length-1];
-                await payment.insertFood(name,price,amount,ID);
+                var price = parseInt(parsefood[parsefood.length - 2]) * 1000;
+                var amount = parsefood[parsefood.length - 1];
+                await payment.insertFood(name, price, amount, ID);
             }
             res.redirect('/');
-        }
-        else{
+        } else {
             res.redirect('/');
         }
     };
