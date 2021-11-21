@@ -3,8 +3,8 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "pos",
-    port: 3306
+    database: "pos"
+    // port: 3306
 });
 
 exports.insertPayment = async function(paymentid, total, accountId) {
@@ -22,5 +22,17 @@ exports.insertFood = async function(name, price, amount, paymentId) {
 exports.CheckPayment = async function(paymentId) {
     return await connection.awaitQuery(
         `SELECT * FROM payment WHERE paymetid = ${paymentId}`
+    )
+}
+
+exports.getAllPayment = async function(paymentId) {
+    return await connection.awaitQuery(
+        `SELECT * FROM payment`
+    )
+}
+
+exports.getAllFoodPayment = async function(paymentId) {
+    return await connection.awaitQuery(
+        `SELECT * FROM foodpayment`
     )
 }

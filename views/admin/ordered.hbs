@@ -22,327 +22,91 @@
                 </li>
             </ul>
             <span class="nav-item nav-item--login" id="login-text">
-                <a class="nav-link" href="/login" ><i class="fas fa-sign-in-alt mr-2"></i> Đăng xuất
+                <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt mr-2"></i> Đăng xuất
                     <span class="sr-only">(current)</span></a>
             </span>
         </div>
     </nav>
-</div
+</div>
+
+<form class="">
+    paymentID: <input type="text" hidden name="paymentID" id="paymentID">
+</form>
+
+{{#each foodPayments}}
+<div class="food-payment">
+    <input type="hidden" class="food-paymentid" value={{this.paymentid}}>
+    <input type="hidden" class="food-name" value={{this.Name}}>
+    <input type="hidden" class="food-amount" value={{this.amount}}>
+    <input type="hidden" class="food-Price" value={{this.Price}}>
+</div>
+{{/each}}
 
 <div class="ordered-body">
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th scope="col">Tên khách hàng</th>
-                    <th scope="col">Thời gian mua hàng</th>
-                    <th scope="col">Hình thức thanh toán</th>
-                    <th scope="col">Tổng hóa đơn</th>
-                    <th scope="col">Chi tiết</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>15/11/2021</td>
-                    <td>Tiền mặt</td>
-                    <td>100.000</td>
-                    <td>
-                    <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Mã hóa đơn</th>
+                            <th scope="col>">Thời gian mua hàng</th>
+                            <th scope="col">Tổng hóa đơn</th>
+                            <th scope="col">Chi tiết</th>
+                        </tr>
+                    </thead>
+                    <tbody class="food-payment-detail">
+                        {{#each payments}}
+                        <tr>
+                            <td>{{@index}}</td>
+                            <td>{{this.paymetid}}</td>
+                            <td>{{formatDate this.date}}</td>
+                            <td>{{NumberWithCommas this.totalPrice}}</td>
+                            <td>
+                                <button type="button" name="btn-detail-order" id="btn-detail-order"
+                                    class="btn btn-primary btn-detail-order" data-id="{{this.paymetid}}"
+                                    data-toggle="modal" data-target="#admin-modal"><i class="far fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
-    <div class="modal-container admin-modal" >
+    <div class="modal-container admin-modal  modal-second" id="admin-modal">
         <div class="modal__box">
-        <div class="modal__header">
-            <div class="modal__header-name">CHI TIẾT ĐƠN HÀNG</div>
-            <i class="fas fa-times close__modal-icon"></i>
-        </div>
-        <div class="modal__body scroll_table">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th scope="col">Tên món</th>
-                    <th scope="col">Số lượng</th>
-                    <th scope="col">Tiền</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                </tr>
-                                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                </tr>
-                                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                </tr>
-                                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                </tr>
-                                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                </tr>
-                                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                </tr>
-                                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
-                </tr>
-                                <tr>
-                    <td>Bùi Lương Vinh Hiển</td>
-                    <td>1</td>
-                    <td>20.000</td>
-                </tr>
+            <div class="modal__header">
+                <div class="modal__header-name">CHI TIẾT ĐƠN HÀNG</div>
+                <i class="fas fa-times close__modal-icon" data-dismiss="modal"></i>
+            </div>
+            <div class="modal__body scroll_table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tên món</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody class="order-detail">
+                        {{!-- {{#each foodPayments}} --}}
+                        {{!-- {{#checkPaymentID this.paymentid "paymentID"}} --}}
+                        {{!-- <tr>
+                            <td>{{this.Name}}</td>
+                            <td>{{this.amount}}</td>
+                            <td>{{NumberWithCommas this.Price}}</td>
+                        </tr>
+                        {{/checkPaymentID}} --}}
+                        {{!-- {{/each}} --}}
 
-                </tbody>
-            </table>            
-        </div>
+                    </tbody>
+                </table>
+            </div>
 
+        </div>
+        <script src="./js/admin/ordered/ordered.js"></script>
     </div>
-    <script src="./js/admin/ordered/ordered.js"></script>
-</div>
-
-    
-

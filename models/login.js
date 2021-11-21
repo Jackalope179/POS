@@ -3,8 +3,8 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "pos",
-    port: 3306
+    database: "pos"
+    // port: 3306
 });
 
 exports.CheckAccount = async function(Numphone, password) {
