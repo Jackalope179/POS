@@ -39,7 +39,10 @@ class paymentController{
                 var amount = parsefood[parsefood.length-1];
                 await payment.insertFood(name,price,amount,ID);
             }
+            req.session.food = {};
+            req.session.totalAmount = 0;
             res.redirect('/');
+
         }
         else{
             res.redirect('/');
