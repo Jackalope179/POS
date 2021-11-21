@@ -40,6 +40,14 @@
     text-align: left;
     padding-left: 50px;
   }
+
+  .header .show {
+    display: block !important;
+  }
+
+  .header .show .nav-item {
+    width: 100% !important;
+  }
 }
 
 /* ipad */

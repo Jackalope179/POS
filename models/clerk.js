@@ -1,10 +1,10 @@
 let mysql = require("mysql-await");
 let connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "pos"
-        // port: 3310
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "pos"
+  // port: 3310
 });
 
 exports.getAllClerk = async function() {

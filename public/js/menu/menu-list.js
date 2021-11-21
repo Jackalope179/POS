@@ -533,6 +533,9 @@ if (search != 1) {
 SetShowDetail();
 
 
+// ----------------------NavBar-----------------------------------------
+
+document.querySelector('.nav-item .nav-link').classList.add('active');
 
 /*=====================================
 	  Preloader JS

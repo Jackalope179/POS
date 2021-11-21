@@ -1,47 +1,45 @@
 :root {
-    --input-padding-x: 1.5rem;
-    --input-padding-y: 0.1rem;
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.1rem;
 }
 
 body {
-    background-color: #ffffff;
-    position: inherit;
+  background-color: #ffffff;
+  position: inherit;
 }
 
 #login-body {
-    height: 50vh;
+  height: 50vh;
 }
 
 #register-body {
-    height: 75vh;
+  height: 75vh;
 }
 
 #confirm-register-body {
-    height: 35vh;
+  height: 35vh;
 }
 
 #forgot-body {
-    height: 55vh;
+  height: 55vh;
 }
 
 #forgot-confirm-body {
-    height: 35vh;
+  height: 35vh;
 }
 
 .header {
-    display: none;
+  display: none;
 }
-
 
 /* add bubbles */
 
 .bubbles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-
 
 /* 
 body {
@@ -53,281 +51,284 @@ body::-webkit-scrollbar {
 } */
 
 .circle {
-    position: absolute;
-    z-index: -100;
-    border-radius: 50%;
-    background-color: rgb(220, 220, 220);
-    animation: flying 7s infinite ease-in;
-    opacity: 0.5;
-    bottom: -100px
+  position: absolute;
+  z-index: -100;
+  border-radius: 50%;
+  background-color: rgb(220, 220, 220);
+  animation: flying 7s infinite ease-in;
+  opacity: 0.5;
+  bottom: -100px;
 }
 
 @keyframes flying {
-    0% {
-        bottom: -100px;
-        transform: translateX(0)
-    }
-    50% {
-        transform: translateX(100px)
-    }
-    100% {
-        bottom: 1080px;
-        transform: translateX(-250px)
-    }
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    bottom: 1080px;
+    transform: translateX(-250px);
+  }
 }
 
 .circle:nth-child(1) {
-    width: 60px;
-    height: 60px;
-    left: 20%;
-    animation-delay: 4s
+  width: 60px;
+  height: 60px;
+  left: 20%;
+  animation-delay: 4s;
 }
 
 .circle:nth-child(2) {
-    width: 100px;
-    height: 100px;
-    left: 40%;
-    animation-delay: 3s
+  width: 100px;
+  height: 100px;
+  left: 40%;
+  animation-delay: 3s;
 }
 
 .circle:nth-child(3) {
-    width: 65px;
-    height: 65px;
-    animation-delay: 3.5s
+  width: 65px;
+  height: 65px;
+  animation-delay: 3.5s;
 }
 
 .circle:nth-child(4) {
-    width: 80px;
-    height: 80px;
-    left: 80%;
-    animation-delay: 5s
+  width: 80px;
+  height: 80px;
+  left: 80%;
+  animation-delay: 5s;
 }
 
 .circle:nth-child(5) {
-    width: 40px;
-    height: 40px;
-    left: 60%;
-    animation-delay: 1s
+  width: 40px;
+  height: 40px;
+  left: 60%;
+  animation-delay: 1s;
 }
 
 .circle:nth-child(6) {
-    width: 90px;
-    height: 90px;
-    left: 65%;
-    animation-delay: 2.5s
+  width: 90px;
+  height: 90px;
+  left: 65%;
+  animation-delay: 2.5s;
 }
 
 .circle:nth-child(7) {
-    width: 55px;
-    height: 55px;
-    animation-delay: 2s
+  width: 55px;
+  height: 55px;
+  animation-delay: 2s;
 }
 
 .circle:nth-child(8) {
-    width: 110px;
-    height: 110px;
-    left: 90%;
-    animation-delay: 4.5s
+  width: 110px;
+  height: 110px;
+  left: 90%;
+  animation-delay: 4.5s;
 }
 
 .circle:nth-child(9) {
-    width: 50px;
-    height: 50px;
-    left: 35%;
-    animation-delay: 8s
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-delay: 8s;
 }
 
 .circle:nth-child(10) {
-    width: 45px;
-    height: 45px;
-    left: 65%;
-    animation-delay: 6.5s
+  width: 45px;
+  height: 45px;
+  left: 65%;
+  animation-delay: 6.5s;
 }
 
 .circle:nth-child(11) {
-    width: 75px;
-    height: 75px;
-    left: 25%;
-    animation-delay: 5.5s
+  width: 75px;
+  height: 75px;
+  left: 25%;
+  animation-delay: 5.5s;
 }
 
 .circle:nth-child(12) {
-    width: 110px;
-    height: 110px;
-    left: 12%;
-    animation-delay: 6s
+  width: 110px;
+  height: 110px;
+  left: 12%;
+  animation-delay: 6s;
 }
 
 .circle:nth-child(13) {
-    width: 50px;
-    height: 50px;
-    left: 58%;
-    animation-delay: 4.5s;
+  width: 50px;
+  height: 50px;
+  left: 58%;
+  animation-delay: 4.5s;
 }
 
 .circle:nth-child(14) {
-    width: 45px;
-    height: 45px;
-    animation-delay: 0.5s
+  width: 45px;
+  height: 45px;
+  animation-delay: 0.5s;
 }
 
 .circle:nth-child(15) {
-    width: 75px;
-    height: 75px;
-    left: 15%;
-    animation-delay: 7s
+  width: 75px;
+  height: 75px;
+  left: 15%;
+  animation-delay: 7s;
 }
-
 
 /* end */
 
 .container-login {
-    height: 100%;
+  height: 100%;
 }
 
 .row-login {
-    height: 100%;
+  height: 100%;
 }
 
 .card-signin {
-    border: 0;
-    border-radius: 1rem;
-    box-shadow: 0px 20px 20px #0000001a;
-    overflow: hidden;
-    border: 1px solid #e7e5e5;
-    margin-top: 40px !important;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0px 20px 20px #0000001a;
+  overflow: hidden;
+  border: 1px solid #e7e5e5;
+  margin-top: 40px !important;
 }
 
 .card-confirmotp {
-    top: 15%;
+  top: 15%;
 }
 
 .card.card-signin {
-    margin: auto !important;
-    transform: translateY(10%);
+  margin: auto !important;
+  transform: translateY(10%);
 }
 
 @media (min-width: 768px) {
-    .card.card-signin {
-        transform: translateY(20%);
-    }
+  .card.card-signin {
+    transform: translateY(20%);
+  }
 }
 
 @media (max-width: 767px) {
-    .card.card-signin {
-        transform: translateY(10%);
-    }
+  .card.card-signin {
+    transform: translateY(10%);
+  }
 }
 
 @media (max-width: 360px) {
-    .card.card-signin {
-        transform: translateY(5%);
-    }
+  .card.card-signin {
+    transform: translateY(5%);
+  }
 }
 
 .card.card-signin:hover {
-    cursor: auto;
+  cursor: auto;
 }
 
 .card-signin .card-title {
-    font-weight: 650;
-    font-size: 24px;
-    padding: 15px 0;
-    margin-bottom: 20px;
+  font-weight: 650;
+  font-size: 24px;
+  padding: 15px 0;
+  margin-bottom: 20px;
 }
 
 .card-signin .card-img-left {
-    width: 45%;
-    /* Link to your background image using in the property below! */
-    background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
-    background: scroll center url('https://cdn.brvn.vn/news/480px/2016/8756_Thucannhanh.jpg');
-    background-size: cover;
+  width: 45%;
+  /* Link to your background image using in the property below! */
+  background: scroll center
+    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center
+    url("https://cdn.brvn.vn/news/480px/2016/8756_Thucannhanh.jpg");
+  background-size: cover;
 }
 
 .card-signin .card-login-body {
-    padding: 2rem;
-    width: 55%;
-    background-color: rgb(245, 245, 245);
+  padding: 2rem;
+  width: 55%;
+  background-color: rgb(245, 245, 245);
 }
 
 .form-signin {
-    width: 100%;
+  width: 100%;
 }
 
 .form-signin .btn {
-    font-size: 16px;
-    border-radius: 25px;
-    padding: 0.5rem;
-    margin-top: 16px;
-    transition: all 0.2s;
-    background-color: #f66c2c;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 0.5rem;
+  margin-top: 16px;
+  transition: all 0.2s;
+  background-color: #f66c2c;
+}
+
+.input-phone {
+  line-height: 2.3rem;
 }
 
 .form-signin .btn:hover {
-    background-color: #f65a12;
+  background-color: #f65a12;
 }
 
 .form-label-group {
-    position: relative;
-    /* margin-bottom: 1rem; */
+  position: relative;
+  /* margin-bottom: 1rem; */
 }
 
 .form-label-group input {
-    height: auto;
-    border-radius: 2rem;
+  height: auto;
+  border-radius: 2rem;
 }
 
-.form-label-group>input,
-.form-label-group>label {
-    padding: var(--input-padding-y) var(--input-padding-x);
+.form-label-group > input,
+.form-label-group > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group>label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    margin-bottom: 0;
-    /* Override default `<label>` margin */
-    line-height: 1.5;
-    color: #495057;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    transition: all .1s ease-in-out;
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
 }
 
 label.form-label {
-    position: relative;
-    padding: 0 4px 4px 4px;
-    font-weight: 500;
+  position: relative;
+  padding: 0 4px 4px 4px;
+  font-weight: 500;
 }
-
 
 /* input.form-control {
     padding: 20px 10px;
 } */
 
 .form-label-group input::-webkit-input-placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 .form-label-group input:-ms-input-placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 .form-label-group input::-ms-input-placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 .form-label-group input::-moz-placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 .form-label-group input::placeholder {
-    color: transparent;
+  color: transparent;
 }
-
 
 /* .form-label-group input:not(:placeholder-shown) {
     padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
@@ -335,175 +336,173 @@ label.form-label {
     padding-bottom: calc(var(--input-padding-y) / 3);
 } */
 
-.form-label-group input:not(:placeholder-shown)~label {
-    padding-top: calc(var(--input-padding-y) / 3);
-    padding-bottom: calc(var(--input-padding-y) / 3);
-    font-size: 12px;
-    color: #777;
+.form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
 }
 
 .form-control {
-    padding: 8px 24px;
+  padding: 8px 24px;
 }
 
 .form-control:hover {
-    border-color: #1dbfaf;
+  border-color: #1dbfaf;
 }
 
 .form-label-group.invalid .form-control {
-    border-color: #f33a58;
+  border-color: #f33a58;
 }
 
 .form-message {
-    line-height: 14px;
-    padding: 4px 0 0 12px;
-    font-size: 12px;
-    color: #f33a58;
+  line-height: 14px;
+  padding: 4px 0 0 12px;
+  font-size: 12px;
+  color: #f33a58;
 }
 
 .form-move {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
 }
 
 .form-move-link {
-    display: flex;
-    text-decoration: none;
+  display: flex;
+  text-decoration: none;
 }
-
 
 /* ==================== */
 
 .show-btn-eye {
-    position: absolute;
-    left: 90%;
-    cursor: pointer;
-    position: relative;
-    width: 20px;
-    transform: translateY(-150%);
-    display: block;
+  position: absolute;
+  left: 90%;
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  transform: translateY(-150%);
+  display: block;
 }
 
 .input-pass {
-    height: 40px;
+  height: 40px;
 }
 
 .input-pass span i.hide-btn::before {
-    content: "\f070";
+  content: "\f070";
 }
 
 @media (max-width: 768px) {
-    .card-signin .card-login-body {
-        padding: 2rem;
-        width: 100%;
-    }
+  .card-signin .card-login-body {
+    padding: 2rem;
+    width: 100%;
+  }
 }
-
 
 /* ===================== */
 
 #toast {
-    position: fixed;
-    top: 32px;
-    right: 32px;
-    z-index: 999999;
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 999999;
 }
 
 .toast {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 2px;
-    padding: 20px 0;
-    min-width: 400px;
-    max-width: 450px;
-    border-left: 4px solid;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
-    transition: all linear 0.3s;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 20px 0;
+  min-width: 400px;
+  max-width: 450px;
+  border-left: 4px solid;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  transition: all linear 0.3s;
 }
 
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(calc(100% + 32px));
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeOut {
-    to {
-        opacity: 0;
-    }
+  to {
+    opacity: 0;
+  }
 }
 
 .toast--success {
-    border-color: #47d864;
+  border-color: #47d864;
 }
 
 .toast--success .toast__icon {
-    color: #47d864;
+  color: #47d864;
 }
 
 .toast--info {
-    border-color: #2f86eb;
+  border-color: #2f86eb;
 }
 
 .toast--info .toast__icon {
-    color: #2f86eb;
+  color: #2f86eb;
 }
 
 .toast--warning {
-    border-color: #ffc021;
+  border-color: #ffc021;
 }
 
 .toast--warning .toast__icon {
-    color: #ffc021;
+  color: #ffc021;
 }
 
 .toast--error {
-    border-color: #ff623d;
+  border-color: #ff623d;
 }
 
 .toast--error .toast__icon {
-    color: #ff623d;
+  color: #ff623d;
 }
 
-.toast+.toast {
-    margin-top: 24px;
+.toast + .toast {
+  margin-top: 24px;
 }
 
 .toast__icon {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .toast__icon,
 .toast__close {
-    padding: 0 16px;
+  padding: 0 16px;
 }
 
 .toast__body {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .toast__title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
 }
 
 .toast__msg {
-    font-size: 14px;
-    color: #888;
-    margin-top: 6px;
-    line-height: 1.5;
+  font-size: 14px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.5;
 }
 
 .toast__close {
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
