@@ -15,8 +15,8 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-// const connection = require("./models/food")
-
+// let DB = require('./config')
+// let options = DB.connection
 
 const options = {
     host: 'localhost',
@@ -74,3 +74,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+// module.exports = options;

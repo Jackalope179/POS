@@ -1,11 +1,5 @@
-let mysql = require("mysql-await");
-let connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "pos",
-    // port: 3310
-});
+let connection = require('../config')
+
 
 exports.getBooking = async function(phone) {
     return await connection.awaitQuery(`SELECT * FROM booking join account on accountID = id where phone = ${phone} `)
