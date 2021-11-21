@@ -132,6 +132,7 @@ router.post("/account-admin/deleteClerk", adminController.deleteClerk);
 
 router.post("/account-admin/addClerk", adminController.addClerk);
 
+router.post("/admin-search", adminController.menuSearch);
 // router.post("/forgotpassword/confirmotp", async function(req, res, next) {
 //     res.render("forgotpassword/confirmotp");
 // });

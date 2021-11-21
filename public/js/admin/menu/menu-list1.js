@@ -164,43 +164,11 @@ function SetShowEdit(){
             tem.classList.add('modal--active');
             var info = food.innerText.split("\n");
             SetDetail(info[0]);
-        } 
+        }
         return food;
     })
 }
-// function SetShowEdit1(){
-//     var foodsSelected = document.querySelectorAll('.card-title');
-//     foodsSelected.forEach(food=>{
-//         food.onclick = function(e) {
-//             var tem = document.querySelector('.modal-container');
-//             tem.classList.add('modal--active');
-//         } 
-//         return food;
-//     })
-// }
-// function SetShowEdit2(){
-//     var foodsSelected = document.querySelectorAll('.card-text');
-//     foodsSelected.forEach(food=>{
-//         food.onclick = function(e) {
-//             var tem = document.querySelector('.modal-container');
-//             tem.classList.add('modal--active');
-//         } 
-//         return food;
-//     })
-// }
 
-// function SetShowConfirm(){
-//     var foodsSelected = document.querySelectorAll('.admin__remove');
-//     foodsSelected.forEach(food=>{
-//         food.onclick = function(e) {
-//             var tem = document.querySelector('.modal');
-//             tem.classList.add('modal--active');
-//         } 
-//         return food;
-//     })
-// }
-
-// close confirm
 
 var confirms = document.querySelector('.btn-danger');
 confirms.onclick = function(e) {
@@ -284,21 +252,21 @@ outcarts.onclick = function(e) {
 // select category
 var categoryList = document.getElementsByClassName("single-box");
 for (var i = 0; i < categoryList.length; i++) {
-  categoryList[i].onclick = function () {
-    // active select category
-    var categoryListTemp = document.getElementsByClassName("single-box");
-    for (var i = 0; i < categoryListTemp.length; i++)
-      categoryListTemp[i].className = "single-box";
-    this.classList.add("category-active");
+    categoryList[i].onclick = function() {
+        // active select category
+        var categoryListTemp = document.getElementsByClassName("single-box");
+        for (var i = 0; i < categoryListTemp.length; i++)
+            categoryListTemp[i].className = "single-box";
+        this.classList.add("category-active");
 
-    // render food
-    let foodList = document.querySelector(".food_list-js");
-    let cateName = document.querySelector(".food_list_name-js");
-    this.innerText.toLowerCase();
-    cateName.innerText = this.innerText;
-    ShowMenu(cateName.innerText.toLowerCase());
-    SetShowEdit();
-  };
+        // render food
+        let foodList = document.querySelector(".food_list-js");
+        let cateName = document.querySelector(".food_list_name-js");
+        this.innerText.toLowerCase();
+        cateName.innerText = this.innerText;
+        ShowMenu(cateName.innerText.toLowerCase());
+        SetShowDetail();
+    };
 }
 
 
@@ -315,11 +283,11 @@ function NumberWithCommas(x) {
     btnDeleteFood.onclick = function () {
       foodForm.action = '/menu-admin/' + 'deleteFood';
       // foodForm.method = 'delete'
-      foodForm.submit(); 
+      foodForm.submit();
   }
   });
 
-  
+
 // ----------------------FIRST RUN ------------------------------------------------
 if (search != 1) {
   ShowMenu("menu");

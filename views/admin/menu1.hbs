@@ -80,7 +80,7 @@
         {{!-------------------------------------- Search bar -------------------------------------}}
 
         <div class="search-bar">
-            <form class="search-food" action="/search" method="post">
+            <form class="search-food" action="/admin-search" method="post">
                 <input type="text" name="search" class="search-input" placeholder="Tìm kiếm món ăn">
                 <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
             </form>
@@ -88,7 +88,6 @@
         </div>
         {{!-------------------------------------- Category bar -------------------------------------}}
         <div class="category-list">
-
             <div class="container container-carousel-first">
                 <div class="row">
                     <div class="col-md-12">
@@ -160,7 +159,7 @@
                                                     <div class="img-area">
                                                         <img src="./img/image-food1.jpg" alt="" />
                                                     </div>
-                                                    <p>khác</p>
+                                                    <p>Đồ ngọt</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,7 +169,7 @@
                                                     <img src="./img/image-food1.jpg" alt="" />
                                                 </div>
                                                 <div class="img-text">
-                                                    <p>khác</p>
+                                                    <p>Thức ăn chay</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -411,7 +410,7 @@
                     </div>
                     <div class="modal__description">
                         <form action="/menu-admin/updateFood" class="modal__input" method="POST" name="food-form">
-                            
+
                             {{!-- <label for="">ID món ăn</label> --}}
                             <input type="number" id="modal_foodID" name="foodId" hidden>
                             <label for="">Tên món ăn</label>
@@ -430,7 +429,7 @@
 
                             <label>Ảnh minh họa</label>
                             <input type="text" id="modal_image" name="image" readonly>
-                            
+
                             <button class="btn btn-primary" type="submit">Xác nhận</button>
                             <a href="#" class="btn btn-danger modal__button" data-toggle="modal" data-target="#delete-food-modal">Xóa món ăn</a>
                         </form>

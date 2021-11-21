@@ -1,5 +1,6 @@
 const foodModel = require("../models/food")
 const clerkModel = require("../models/clerk")
+const paymentModel = require("../models/payment")
 class adminController {
 
     async getAllFood(req, res) {
@@ -44,10 +45,14 @@ class adminController {
 
 
     async getAllOrder(req, res) {
+        let payments = await paymentModel.getAllPayment()
+        let foodPayments = await paymentModel.getAllFoodPayment()
         res.render("admin/ordered", {
             title: "Admin Ordered",
             array: [1, 2, 3],
-            layout: "layoutAdmin"
+            layout: "layoutAdmin",
+            payments: payments,
+            foodPayments: foodPayments
         });
     };
 
@@ -81,6 +86,32 @@ class adminController {
     async addClerk(req, res, next) {
         clerkModel.createOneClerk(req.body).then(() => res.redirect('/account-admin')).catch(error => next(error));
     };
+
+    async menuSearch(req, res) {
+        req.session.url = "/menu-admin";
+        let foodSearch = JSON.parse(JSON.stringify(req.body));
+        let searchResult = await foodModel.getFoodBySearch(foodSearch.search);
+        let foodList = await foodModel.getAllFood();
+
+        let data = {
+            title: "POS Management",
+            searchName: foodSearch.search,
+            search: true,
+            foodSearched: searchResult,
+            foodListRender: foodList,
+        };
+
+        if (req.session.login == 1) {
+            data = {
+                ...data,
+                login: 1,
+                CartArray: req.session.food,
+                totalAmount: req.session.totalAmount,
+            }
+        }
+        console.log("here")
+        res.render("admin/menu1", data)
+    }
 
 };
 

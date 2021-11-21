@@ -17,3 +17,15 @@ exports.CheckPayment = async function(paymentId) {
         `SELECT * FROM payment WHERE paymetid = ${paymentId}`
     )
 }
+
+exports.getAllPayment = async function(paymentId) {
+    return await connection.awaitQuery(
+        `SELECT * FROM payment`
+    )
+}
+
+exports.getAllFoodPayment = async function(paymentId) {
+    return await connection.awaitQuery(
+        `SELECT * FROM foodpayment`
+    )
+}
