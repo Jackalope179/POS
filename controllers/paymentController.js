@@ -9,11 +9,7 @@ var ID = 0;
 class paymentController {
     async processPayment(req, res) {
         var total = req.body.total;
-<<<<<<< HEAD
         if (total !== 0) {
-=======
-        if (total!==0){
->>>>>>> 0125b96bdf0c54bcf60a075043554e43c6f14734
             var food = req.body.food;
             ID = getRndInteger(1, 10000);
             while (true) {
@@ -46,13 +42,8 @@ class paymentController {
             req.session.food = {};
             req.session.totalAmount = 0;
             res.redirect('/');
-<<<<<<< HEAD
-        } else {
-=======
 
-        }
-        else{
->>>>>>> 0125b96bdf0c54bcf60a075043554e43c6f14734
+        } else {
             res.redirect('/');
         }
     };
