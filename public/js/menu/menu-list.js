@@ -48,14 +48,7 @@ function RenderSearch() {
                                 <div class="label-control">
                                     <p class="card-text">GIÁ: ${NumberWithCommas(Number(
                                       searchfoods[i].price
-<<<<<<< HEAD
-                                    ).toLocaleString("vi-VN", {
-                                      style: "currency",
-                                      currency: "VND",
-                                    })}</p>
-=======
                                     ))}</p>
->>>>>>> 0125b96bdf0c54bcf60a075043554e43c6f14734
                                     <a href="#" class="label-icon-cart">
                                         <i class="label-icon fas fa-cart-plus"></i>
                                     </a>
@@ -78,14 +71,7 @@ function RenderSearch() {
                                 <div class="label-control">
                                     <p class="card-text">GIÁ: ${NumberWithCommas(Number(
                                       searchfoods[i].price
-<<<<<<< HEAD
-                                    ).toLocaleString("vi-VN", {
-                                      style: "currency",
-                                      currency: "VND",
-                                    })}</p>
-=======
                                     ))}</p>
->>>>>>> 0125b96bdf0c54bcf60a075043554e43c6f14734
                                     <a href="#" class="label-icon-cart">
                                         <i class="label-icon fas fa-cart-plus"></i>
                                     </a>
@@ -536,9 +522,6 @@ if (search != 1) {
     ShowMenu("menu");
 }
 SetShowDetail();
-<<<<<<< HEAD
-document.querySelectorAll(".header .nav-link")[0].classList.add("active");
-=======
 
 
 // ----------------------NavBar-----------------------------------------
@@ -555,4 +538,3 @@ setTimeout(function() {
     //After 2s, the no-scroll class of the body will be removed
     $('body').removeClass('no-scroll');
 }, 2000); //Here you can change preloader time
->>>>>>> 0125b96bdf0c54bcf60a075043554e43c6f14734
