@@ -50,6 +50,7 @@ router.post("/payment", async function(req, res, next) {
     req.session.password = req.body.password;
     req.session.login = 1;
 
+    console.log(req.session.url);
     res.redirect(req.session.url);
     // return res.render("payment", {
     //     login: 1,
@@ -138,6 +139,15 @@ router.post("/thanhtoan", async function(req, res, next) {
         totalAmount: req.session.totalAmount,
     });
 });
+
+router.get("/logout", function(req, res) {
+    req.session.login = 0;
+    req.session.url = "/";
+    req.session.food = {};
+    req.session.totalAmount = 0;
+
+    res.redirect("/login");
+})
 
 router.get("/thanhtoan", async function(req, res, next) {
 

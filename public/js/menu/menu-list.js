@@ -46,9 +46,9 @@ function RenderSearch() {
                                   searchfoods[i].name
                                 }</h5>
                                 <div class="label-control">
-                                    <p class="card-text">GIÁ: ${Number(
+                                    <p class="card-text">GIÁ: ${NumberWithCommas(Number(
                                       searchfoods[i].price
-                                    )}</p>
+                                    ))}</p>
                                     <a href="#" class="label-icon-cart">
                                         <i class="label-icon fas fa-cart-plus"></i>
                                     </a>
@@ -69,9 +69,9 @@ function RenderSearch() {
                                   searchfoods[i].name
                                 }</h5>
                                 <div class="label-control">
-                                    <p class="card-text">GIÁ: ${Number(
+                                    <p class="card-text">GIÁ: ${NumberWithCommas(Number(
                                       searchfoods[i].price
-                                    )}</p>
+                                    ))}</p>
                                     <a href="#" class="label-icon-cart">
                                         <i class="label-icon fas fa-cart-plus"></i>
                                     </a>
@@ -533,6 +533,9 @@ if (search != 1) {
 SetShowDetail();
 
 
+// ----------------------NavBar-----------------------------------------
+
+document.querySelector('.nav-item .nav-link').classList.add('active');
 
 /*=====================================
 	  Preloader JS

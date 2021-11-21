@@ -10,7 +10,7 @@ class paymentController{
     async processPayment(req, res) {
         console.log(req.body);
         var total = req.body.total;
-        if (total!=0){
+        if (total!==0){
             var food = req.body.food;
             ID = getRndInteger(1,10000);
             while(true){
@@ -40,7 +40,10 @@ class paymentController{
                 var amount = parsefood[parsefood.length-1];
                 await payment.insertFood(name,price,amount,ID);
             }
+            req.session.food = {};
+            req.session.totalAmount = 0;
             res.redirect('/');
+
         }
         else{
             res.redirect('/');
