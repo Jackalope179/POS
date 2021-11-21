@@ -16,138 +16,25 @@ const loginController = require("../controllers/loginController")
 
 const paymentController = require("../controllers/paymentController")
 
+const menuController = require("../controllers/menuController")
+
+const bookingController = require("../controllers/bookingController")
+
 
 // Menu home page
-router.get("/", async function(req, res, next) {
-
-    req.session.url = "/";
-
-    let foodList = await foodModel.getAllFood();
-
-    let data = {
-        title: "POS restaurant",
-        foodListRender: foodList,
-    };
-    console.log("CartArray", req.session.food);
-    // console.log("total", totalAmount)
-    if (req.session.login == 1) {
-        data = {
-            ...data,
-            login: 1,
-            CartArray: req.session.food,
-            totalAmount: req.session.totalAmount,
-        }
-    }
-    res.render("menu", data)
-
-});
+router.get("/", menuController.getAllFood);
 
 
 // After login
-router.post("/payment", async function(req, res, next) {
+router.post("/payment", paymentController.returnPayment);
 
-    req.session.phone = req.body.phone;
-    req.session.password = req.body.password;
-    req.session.login = 1;
+router.get("/payment", paymentController.getPaymentPage);
 
-    console.log(req.session.url);
-    res.redirect(req.session.url);
-    // return res.render("payment", {
-    //     login: 1,
-    //     CartArray: req.session.food,
-    //     totalAmount: req.session.totalAmount,
-    // });
-});
-
-router.get("/payment", async function(req, res, next) {
-    req.session.url = "/payment";
-
-    let login = 0
-    if (req.session.login == 1) {
-        login = req.session.login;
-    }
-
-    return res.render("payment", {
-        login: login,
-        CartArray: req.session.food,
-        totalAmount: req.session.totalAmount,
-    });
-});
-
-
-function NumberWithCommas(x) {
-    x = x.toString();
-    var pattern = /(-?\d+)(\d{3})/;
-    while (pattern.test(x)) x = x.replace(pattern, "$1.$2");
-    return x;
-}
-
-router.post("/search", async function(req, res) {
-    req.session.url = "/";
-    let foodSearch = JSON.parse(JSON.stringify(req.body));
-    let searchResult = await foodModel.getFoodBySearch(foodSearch.search);
-    let foodList = await foodModel.getAllFood();
-
-    let data = {
-        CartArray: req.session.food,
-        totalAmount: req.session.totalAmount,
-        title: "POS restaurant",
-        searchName: foodSearch.search,
-        search: true,
-        foodSearched: searchResult,
-        foodListRender: foodList,
-    };
-
-    if (req.session.login == 1) {
-        data = {
-            ...data,
-            login: 1,
-            CartArray: req.session.food,
-            totalAmount: req.session.totalAmount,
-        }
-    }
-    res.render("menu", data)
-});
+router.post("/search", menuController.searchFood);
 // Menu payment post
-router.post("/thanhtoan", async function(req, res, next) {
+router.post("/thanhtoan", paymentController.getPayment);
 
-    req.session.url = "/payment";
-
-    let foodapi = req.body;
-    let foodArray = foodapi.cartList.split("\n");
-    let foodjson = [];
-    foodArray.forEach(function(item) {
-        if (item != "") {
-            let foodAttribute = item.split(",");
-            foodjson.push({
-                name: foodAttribute[0],
-                image: foodAttribute[1],
-                quantity: foodAttribute[2],
-                price: NumberWithCommas(Number(foodAttribute[3].split("\r")[0])),
-            });
-        }
-    });
-    req.session.food = foodjson;
-    req.session.totalAmount = NumberWithCommas(foodapi.totalPrice)
-    let login = 0;
-    if (req.session.login == 1) {
-        login = 1;
-    }
-    return res.render("payment", {
-        login: login,
-        CartArray: req.session.food,
-        totalAmount: req.session.totalAmount,
-    });
-});
-
-router.get("/logout", function(req, res) {
-    req.session.login = 0;
-    req.session.url = "/";
-    req.session.food = {};
-    req.session.totalAmount = 0;
-
-    res.redirect("/login");
-})
+router.get("/logout", loginController.logout)
 
 router.get("/thanhtoan", async function(req, res, next) {
 
@@ -164,60 +51,14 @@ router.get("/thanhtoan", async function(req, res, next) {
     });
 });
 
-router.get("/datban", async function(req, res, next) {
+router.get("/datban", bookingController.getTableBookingPage);
 
-    req.session.url = "/datban";
-
-    let login = 0;
-    let phone = 0;
-
-    if (req.session.login == 1) {
-        login = 1
-        phone = req.session.phone
-    }
-    console.log(phone);
-    let bookingList = await bookingModel.getBooking(phone);
-
-    let bookingListRender = bookingList.map(booking => {
-        let dateString = booking.date.getDate() + "/" + (booking.date.getMonth() + 1) + "/" + booking.date.getFullYear();
-
-        return {
-            ...booking,
-            date: dateString,
-        }
-    })
-
-    console.log("Booking", bookingList);
-    res.render("tablebooking", {
-        login: login,
-        bookingList: bookingListRender
-    });
-});
-
-router.post("/deleteBooking", async function(req, res, next) {
-    await bookingModel.deleteBooking(Number(req.body.bookingid));
-    res.redirect("/datban");
-})
+router.post("/deleteBooking", bookingController.deleteBooking)
 
 
-router.post("/savebooking", async function(req, res, next) {
-    req.session.url = "/datban"
+router.post("/savebooking", bookingController.saveBooking)
 
-    let phone = req.session.phone;
-    let customerSeat = req.body.customerSeat;
-    let startTime = req.body.startTime;
-    let endTime = req.body.endTime;
-    let note = req.body.note;
-    let date = req.body.date;
-
-    await bookingModel.saveBooking(customerSeat, startTime, endTime, date, note, phone);
-    res.redirect("/datban");
-
-})
-
-router.get("/login", async function(req, res, next) {
-    res.render("login/login");
-});
+router.get("/login", loginController.getLoginPage);
 
 router.get("/register", async function(req, res, next) {
     res.render("register/register");

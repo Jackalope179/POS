@@ -24,7 +24,7 @@ class loginController {
             }
         });
     };
-    
+
     async registerOTP(req, res, next) {
         let phoneNum = req.body.phone;
         let pass = req.body.password;
@@ -52,7 +52,7 @@ class loginController {
         }
     };
 
-    async checkAccount(req, res)  {
+    async checkAccount(req, res) {
         let phoneNum = req.body.phone;
         let pass = req.body.password;
         await foodModel.CheckAccount(String(phoneNum), String(pass)).then(function(result) {
@@ -69,7 +69,7 @@ class loginController {
         });
     };
 
-    async forgotpasswordCheckAccount(req, res)  {
+    async forgotpasswordCheckAccount(req, res) {
         let phoneNum = req.body.phone;
         await foodModel.CheckPhone(String(phoneNum)).then(function(result) {
             console.log(result);
@@ -94,7 +94,7 @@ class loginController {
         res.render("forgotpassword/confirmotp", { phone: phoneNum, password: new_pass });
     };
 
-    async forgotpasswordCheckOTP(req, res, next) {
+    async forgotpasswordCheckOTP(req, res) {
         let phoneNum = req.body.phone;
         let password = req.body.new_pass;
         let otp = req.body.otp;
@@ -109,6 +109,19 @@ class loginController {
             });
         }
     };
+
+    async getLoginPage(req, res, next) {
+        res.render("login/login");
+    }
+
+    async logout(req, res) {
+        req.session.login = 0;
+        req.session.url = "/";
+        req.session.food = {};
+        req.session.totalAmount = 0;
+
+        res.redirect("/login");
+    }
 
 };
 
