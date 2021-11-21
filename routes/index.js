@@ -19,6 +19,9 @@ const paymentController = require("../controllers/paymentController")
 
 // Menu home page
 router.get("/", async function(req, res, next) {
+
+    req.session.url = "/";
+
     let foodList = await foodModel.getAllFood();
 
     let data = {
@@ -39,22 +42,25 @@ router.get("/", async function(req, res, next) {
 
 });
 
+
+// After login
 router.post("/payment", async function(req, res, next) {
-    // console.log(req.body);
 
     req.session.phone = req.body.phone;
     req.session.password = req.body.password;
     req.session.login = 1;
 
-
-    return res.render("payment", {
-        login: 1,
-        CartArray: req.session.food,
-        totalAmount: req.session.totalAmount,
-    });
+    res.redirect(req.session.url);
+    // return res.render("payment", {
+    //     login: 1,
+    //     CartArray: req.session.food,
+    //     totalAmount: req.session.totalAmount,
+    // });
 });
 
 router.get("/payment", async function(req, res, next) {
+    req.session.url = "/payment";
+
     let login = 0
     if (req.session.login == 1) {
         login = req.session.login;
@@ -76,6 +82,7 @@ function NumberWithCommas(x) {
 }
 
 router.post("/search", async function(req, res) {
+    req.session.url = "/";
     let foodSearch = JSON.parse(JSON.stringify(req.body));
     let searchResult = await foodModel.getFoodBySearch(foodSearch.search);
     let foodList = await foodModel.getAllFood();
@@ -102,6 +109,9 @@ router.post("/search", async function(req, res) {
 });
 // Menu payment post
 router.post("/thanhtoan", async function(req, res, next) {
+
+    req.session.url = "/payment";
+
     let foodapi = req.body;
     let foodArray = foodapi.cartList.split("\n");
     let foodjson = [];
@@ -130,6 +140,9 @@ router.post("/thanhtoan", async function(req, res, next) {
 });
 
 router.get("/thanhtoan", async function(req, res, next) {
+
+    req.session.url = "/thanhtoan";
+
     let login = 0;
     if (req.session.login == 1) {
         login = 1;
@@ -142,6 +155,9 @@ router.get("/thanhtoan", async function(req, res, next) {
 });
 
 router.get("/datban", async function(req, res, next) {
+
+    req.session.url = "/datban";
+
     let login = 0;
     let phone = 0;
 
@@ -168,9 +184,6 @@ router.get("/datban", async function(req, res, next) {
     });
 });
 
-
-
-
 router.post("/deleteBooking", async function(req, res, next) {
     await bookingModel.deleteBooking(Number(req.body.bookingid));
     res.redirect("/datban");
@@ -178,6 +191,8 @@ router.post("/deleteBooking", async function(req, res, next) {
 
 
 router.post("/savebooking", async function(req, res, next) {
+    req.session.url = "/datban"
+
     let phone = req.session.phone;
     let customerSeat = req.body.customerSeat;
     let startTime = req.body.startTime;
@@ -204,7 +219,7 @@ router.post("/register", async function(req, res, next) {
 
 router.post("/register/checkPhone", loginController.checkPhone);
 
-router.post("/register/confirmotp",loginController.registerOTP);
+router.post("/register/confirmotp", loginController.registerOTP);
 
 router.post("/register/checkOTP", loginController.registerCheckOTP);
 
@@ -241,7 +256,7 @@ router.post("/forgotpassword/confirmotp", async function(req, res, next) {
 });
 
 
-router.post('/processPayment' , paymentController.processPayment);
+router.post('/processPayment', paymentController.processPayment);
 
 
 

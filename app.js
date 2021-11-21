@@ -23,11 +23,7 @@ const options = {
     user: 'root',
     password: '',
     database: 'pos',
-<<<<<<< HEAD
-    port: 3310
-=======
     // port: 3310
->>>>>>> 0df03f126c541b56747d9fa2bfaf615aa1941724
 };
 
 const sessionStore = new MySQLStore(options);
@@ -39,7 +35,7 @@ app.use(
         name: "POScookie",
         login: 0,
         cookie: {
-            maxAge: 60000
+            maxAge: 60000 * 60
         },
         resave: false,
         saveUninitialized: false,
