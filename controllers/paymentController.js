@@ -15,6 +15,7 @@ var ID = 0;
 
 class paymentController {
     async processPayment(req, res) {
+        console.log(req.body);
         var total = req.body.total;
         if (total !== 0) {
             var food = req.body.food;
@@ -34,9 +35,8 @@ class paymentController {
             }
             console.log(ID);
             await payment.insertPayment(ID, total, 0);
-
-            for (var i = 0; i < food.length; i++) {
-                var text = food[i];
+            if (typeof food === 'string') {
+                var text = food;
                 var parsefood = text.split(' ');
                 var name = parsefood[0];
                 for (var j = 1; j < parsefood.length - 2; j++) {
@@ -45,7 +45,23 @@ class paymentController {
                 var price = parseInt(parsefood[parsefood.length - 2]) * 1000;
                 var amount = parsefood[parsefood.length - 1];
                 await payment.insertFood(name, price, amount, ID);
+            } else {
+                for (var i = 0; i < food.length; i++) {
+                    var text = food[i];
+                    var parsefood = text.split(' ');
+                    console.log(parsefood);
+                    var name = parsefood[0];
+                    for (var j = 1; j < parsefood.length - 2; j++) {
+                        name = name + ' ' + parsefood[j];
+                    }
+                    var price = parseInt(parsefood[parsefood.length - 2]) * 1000;
+                    var amount = parsefood[parsefood.length - 1];
+                    console.log(name + ' ' + price + ' ' + amount);
+                    await payment.insertFood(name, price, amount, ID);
+                }
             }
+            req.session.food = {};
+            req.session.totalAmount = 0;
             res.redirect('/');
         } else {
             res.redirect('/');

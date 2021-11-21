@@ -23,7 +23,7 @@ const options = {
     user: 'root',
     password: '',
     database: 'pos',
-    // port: 3310
+    port: 3310
 };
 
 const sessionStore = new MySQLStore(options);
