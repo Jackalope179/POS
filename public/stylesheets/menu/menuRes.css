@@ -17,7 +17,7 @@
     line-height: 35px;
   }
   .cart {
-    height: calc(70% - var(--cart-header-height) - var(--checkout-height));
+    height: calc(65% - var(--cart-header-height) - var(--checkout-height));
   }
   .cart-mobile {
     display: none;
@@ -100,11 +100,25 @@
     --mainmenu-width: calc(98% - var(--submenu-width));
   }
 
+  body {
+    width: 93.5%;
+  }
+
+  .body {
+    padding-left: 10px;
+  }
+
   .search-bar {
     margin: 20px 0px;
     display: flex;
     max-width: 90%;
   }
+
+  .search-food {
+    font-size: 15px;
+    padding-left: 0;
+  }
+
   .cart-container {
     display: none;
   }
@@ -123,6 +137,17 @@
   .cart-mobile__button--active {
     display: block !important;
   }
+
+  .modal-container {
+    left: 0;
+    right: 0;
+  }
+  .modal__box {
+    width: 90%;
+  }
+  .cart-mobile__checkout {
+    bottom: 10%;
+  }
 }
 
 @media (min-width: 840px) {
@@ -134,5 +159,67 @@
 @media (max-width: 840px) {
   .container-carousel-first {
     display: none;
+  }
+}
+
+@media (max-height: 500px) {
+  :root {
+    --margin-left: 20px !important;
+    --submenu-width: 0%;
+    --mainmenu-width: calc(98% - var(--submenu-width));
+  }
+
+  body {
+    width: 93.5%;
+  }
+
+  .body {
+    padding-left: 10px;
+  }
+
+  .search-bar {
+    margin: 20px 60px;
+    display: flex;
+    max-width: 90%;
+  }
+
+  .cart-mobile__container {
+    height: 80%;
+  }
+
+  .cart-mobile__checkout {
+    bottom: 25%;
+  }
+
+  .search-food {
+    font-size: 15px;
+    padding-left: 0;
+  }
+
+  .cart-container {
+    display: none;
+  }
+  .cart-mobile {
+    display: none;
+  }
+
+  .cart-mobile--active {
+    display: flex !important;
+  }
+
+  .cart-mobile__button {
+    display: none !important;
+  }
+
+  .cart-mobile__button--active {
+    display: block !important;
+  }
+
+  .modal-container {
+    left: 0;
+    right: 0;
+  }
+  .modal__box {
+    width: 90%;
   }
 }
