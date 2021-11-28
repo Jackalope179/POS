@@ -9,6 +9,9 @@
 - Lê Đức Khoan
 ## Version
 1.0.0
+## NPM Packets
+- Express
+- Express-handlebars
 ## Requirements
 - `express` >= 4.17.1
 - `express-handlebars` >= 5.3.4
