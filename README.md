@@ -1,4 +1,6 @@
 # POS
+Point of sale (POS) or point of purchase is the time and place where a retail transaction is completed. 
+In this project
 ## Authors
 - Bùi Lương Vinh Hiển
 - Nguyễn Thế Hiệp
