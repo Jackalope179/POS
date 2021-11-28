@@ -1,6 +1,7 @@
 # POS
 Point of sale (POS) or point of purchase is the time and place where a retail transaction is completed. \
-In this project
+This project was implemented in javascript with nodejs environment, used MySQL to store data for the system. \
+Used Framework: Handlebars(frontend), Express(backend)
 ## Authors
 - Bùi Lương Vinh Hiển
 - Nguyễn Thế Hiệp
